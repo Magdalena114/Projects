@@ -1,0 +1,7 @@
+setup.py
+stocks/MyStocks.py
+stocks/__init__.py
+stocks.egg-info/PKG-INFO
+stocks.egg-info/SOURCES.txt
+stocks.egg-info/dependency_links.txt
+stocks.egg-info/top_level.txt

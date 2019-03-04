@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: stocks
+Version: 0.1
+Summary: Stocks Asset Computation
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: This package would help you to have a track of all your stocks.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6.4
