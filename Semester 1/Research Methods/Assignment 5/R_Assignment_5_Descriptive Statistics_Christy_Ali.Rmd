@@ -1,0 +1,102 @@
+---
+title: 'Research Methods Assignment 5: Descriptive Statistics Assignment'
+author: "Christy Kuo - Ali Taheri"
+date: "Novomber 19, 2017"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stats)
+library(knitr)
+library(dplyr)
+library(kableExtra)
+```
+
+### Problem Definition
+
+_**The file Beatles.csv presents information on the 12 studio albums by The Beatles. Specifically, it gives the lengths, in seconds, of the songs, by album: Please Please Me (PPM), With The Beatles (WTB), A Hard Day’s Night (HDN), Beatles for Sale (BFS), Help! (HLP), Rubber Soul (RBS), Revolver (RVR), Sgt. Pepper’s Lonely Hearts Club Band (SPL), The Beatles (TBS), Yellow Submarine (YSB), Abbey Road (ABR), and Let It Be (LIB). The albums are ordered by release date (i.e. PPM was the first album released, WTB was the second album released, etc.). The song-lengths are arranged for each album in increasing order.**_
+
+
+### Reading from CSV file.
+```{r reading from CSV file, warning=FALSE}
+albums=read.csv("Beatles.csv",header= TRUE)
+```
+
+### a) Median song length of albums
+_**Determine the median song length of each album. Construct a bar graph with album name on the horizontal axis and median song length on the vertical axis. Interpret your graph, keeping in mind that the albums are ordered by release date.**_
+
+
+```{r Median of albums, warning=FALSE}
+albums.median=apply(albums,2,median,na.rm=TRUE)
+barplot(albums.median,xlab="Album name",ylab="Median length of album's songs",las=2)
+```
+
+Barplotb shows that median song length of  their albums increased averagely by date of release. 
+
+### b)Range of songs lengths of albums
+_**Determine the range of song lengths for each album. Construct a bar graph with album name on the horizontal axis and range of song lengths on the vertical axis. Interpret your graph.**_
+
+```{r Range of albums, warning=FALSE}
+albums.range=diff(apply(albums,2,range,na.rm=TRUE))
+barplot(albums.range,xlab="Album name",ylab="Range of songs lengths of albums",las=2)
+```
+
+Above barplot shows that range of song lenghts of their albums was below 100 seconds in first 7 albums and it increased to more than 200 seconds for last 5 albums.
+
+### c)Calculation of quartiles
+_**Find the quartiles of song length for each album.**_
+
+```{r Quartiles of albums, warning=FALSE}
+albums.quartile=apply(albums,2,quantile,na.rm=TRUE)
+albums.quartile %>% 
+  kable(digits=2,format="html") %>%
+  kable_styling() %>%
+  column_spec(1, bold=T,color='blue') %>%
+  row_spec(0, bold=T,color='red')
+```
+
+
+### e)Interquartile  range calculation (IQR)
+_**Determine the IQR of song lengths for each album. Construct a bar graph with album name on the horizontal axis and IQR of song lengths on the vertical axis. Interpret your graph.**_
+
+
+```{r IQR of albums, warning=FALSE}
+albums.IQR=apply(albums,2,IQR,na.rm=TRUE)
+barplot(albums.IQR,xlab="Album name",ylab="IQR of songs lengths of albums",las=2)
+```
+
+Barplotb shows that IQR of song length of  their albums is about 30 seconds for first seven albums and it is about 60 seconds for last 5 albums. Only eleventh album has an IQR more than 100 seconds.
+
+### f) Lower and Upper limits of albums
+_**Find the lower and upper limits of song length for each album. Identify which albumns have potential outliers.**_
+
+```{r Lower and Upper limits of albums, warning=FALSE}
+albums.LL=albums.quartile[2,]-1.5*albums.IQR
+albums.UL=albums.quartile[4,]+1.5*albums.IQR
+n=1:12
+#Finding outliers below Lower Limit
+sapply(n,function(n) min(albums[,n],na.rm = TRUE) < albums.LL[n])
+#Finding outliers above Upper Limit
+sapply(n,function(n) max(albums[,n],na.rm = TRUE) > albums.UL[n])
+```
+
+We can see that album of LIB has an outlier below lower limit and albums of RBS ,SPL ,TBS ,YSB and ABR have ouliers above upper limit.
+
+### g) Boxplot for albums
+_**For each album, construct a boxplot of the song lengths, and interpret your results in terms of the variation of the song lengths. Are the outliers the same as what you determined in part e?**_
+
+
+```{r Boxplot,warning=FALSE}
+boxplot(albums,las = 2)
+```
+
+It seems that boxplot will select minimum and maximum of data as lower bound and upper bound when they are respectively upper and lower that LL and UL or they are near to respective values, so outlier od LIB has not been shown.
+
+
+

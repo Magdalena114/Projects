@@ -1,0 +1,98 @@
+---
+title: "Research Methods Assignment 2"
+author: "Max Riching, Alan Kuang, Ali TaheriTari"
+date: "September 24, 2017"
+output: 
+  html_document:
+    theme: spacelab
+    toc: true
+    toc_float: true  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+<br/>
+
+# Question 1
+
+<br/>
+The task is to create a sample of 10 IEEE presidents using the `simple random sampling` technique from a population of 54 presidents, each serving one year from 1963 to 2016.<br/>
+
+<br/>
+First, we have listed each year from 1963 to 2016 and assigned `Gender` = "Male" to all except the two female presidents who served in 1993 and 2007. Then we created a generator that will randomly select 10 years from this list. <br/>
+```{r}
+terms <- as.data.frame(matrix(c(1963:2016), ncol = 1))
+colnames(terms) <- "Year"
+terms$Gender <- "Male"
+terms$Gender[terms$Year == 1993 | terms$Year == 2007] <- "Female"
+
+set.seed(2017); terms[sample.int(54, size = 10),]
+```
+
+<br/>This gives us a dataframe of the term year and gender of each of our 10 presidents. Next, we added a column of president names that correspond to the term years above.
+```{r}
+president_sample <- terms[c(50,29,25,15,39,38,2,21,22,13),]
+president_sample$Names <- c("Gordon Day", "Eric E. Sumner", "Henry L. Bachman", "Robert M. Saunders", "Bruce A. Eisenstein", "Joel B. Snyder", "Clarence H. Linder", "James B. Owens", "Richard Gowen", "Arthur P. Stern")
+
+president_sample <- president_sample[,c(1,3,2)]
+
+(president_sample)
+```
+<br/>
+Looking through the names of our 10 presidents, it is evident that there are 0 female presidents in the sample. <br/>
+<br/>Because each president had an equal chance of being selected, this is an equal probability selection method (EPSEM). 
+
+Reporting our results in a table,
+
+```{r, message = FALSE}
+library(dplyr)
+library(kableExtra)
+library(knitr)
+
+kable(president_sample, format="html") %>% kable_styling()
+```
+<br/>
+
+# Question 2
+
+<br/>
+For a `disproportional random sample` of size 10, we need to separately sample each gender based on the desired distribution. <br/>
+<br/>To get a sample of 90% male and 10% female distribution, we randomly sampled one of the two female presidents from the list. 
+
+```{r}
+female_president <- matrix(c("Martha Sloan", "Leah H. Jamieson"), nrow = 2)
+colnames(female_president) <- c("Names")
+female_president <- as.data.frame(female_president)
+female_president$Gender <- "Female"
+
+female_sample <- set.seed(2017); female_president[sample.int(2, size = 1),]
+```
+<br/>
+We now have a dataframe with one randomly selected woman. Next, we'll take out the two years that saw a female president, and sample 9 of the male presidents. 
+
+```{r}
+male_president <- matrix(c(1963:1992,1994:2006,2008:2016), ncol = 1)
+colnames(male_president) <- c("Year")
+
+male_sample <- set.seed(2017); male_president[sample.int(52, size = 9),]
+```
+<br/>
+Again, creating the dataframe from these 9 observations by name,
+
+```{r}
+male_sample$Names <- c("Peter Staecker", "Carleton A. Bayless", "Bruno O. Weinschel", "Robert M. Saunders", "Bruce A. Eisenstein", "Gordon Day", "Clarence H. Linder", "Robert E. Larson", "James B. Owens")
+male_sample$Gender <- "Male"
+
+male_sample <- as.data.frame(male_sample)
+```
+<br/>
+Now we'll just need to combine the two samples to create the full list of 10 presidents and is reflected in the table below:
+
+```{r}
+sample <- rbind(male_sample, female_president[2,])
+rownames(sample) <- c(1:10)
+kable(sample, format="html") %>% kable_styling()
+```
+<br/>
+This is our sample with 9 male presidents and 1 female president. Because each of the two women in the population have a 50% chance of being selected, while the men have a 9/52 (17.3%) chance, this is not an EPSEM technique. 

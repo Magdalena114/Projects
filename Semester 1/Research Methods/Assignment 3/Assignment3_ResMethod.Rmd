@@ -1,0 +1,63 @@
+---
+title: "Assignment3: Research Validity Assignment"
+author: "Ali Taheri & Joe Jung"
+date: "October 12, 2017"
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    theme: spacelab
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Question 1
+
+What are the design elements (IV, DV)?
+
+**The dependent variable in this study is tip percentages while the independent variable is writing a message on the check informing a customer of a dinner special sometime in the future.**
+
+### Question 2
+
+What are the potential confounds?
+
+**The age, gender, and ethnicity of the accomplice, the legibility of the accomplice's writing, the customer's salary, and how often the customer dines out.**
+
+### Question 3
+
+The message written on the back of the check concerned an upcoming special dinner at the restaurant.
+Is it possible that it was the content of the message, rather than simply a personalized message from the server, that accounts for the results? How might the authors have evaluated this possibility?
+
+**Despite also seeing an increase in tip percentages from manipulating the back of customer's checks (_Rind & Bordia's 1995 & 1996_), this study conducted by Rind and Strohmetz does not necessarily indicate that the actual content of the message is the leading factor to increased tip percentages. For example, a customer may be incentivized to leave a bigger tip because the server took the effort to write anything on the back of the check. To evaluate this possibility, the authors could have included a variation of all three messages in the sample of index cards. These include "Thank You", drawing a happy face, and the personalized helpful message. By adding more characteristics to the independent variable, we can evaluate whether or not the content of the message actually increases tip percentages.**
+
+### Question 4
+
+Researchers used index cards to randomly assign the dining parties to the experimental and control
+conditions. What other strategies could they have used for random assignment in this field experiment?
+
+**The researchers could have also used a random number generator to select numbers corresponding to the tables which would be selected for the experiment, while the others would be part of the control group. Another strategy for random assignment is flipping a coin. For example, the researchers could have assigned heads for control and tails for treatment to determine the assignment for each group.**
+
+### Question 5
+
+Why did the researchers instruct the server to behave in the same way when delivering the check at the end of the meal? What possible threats to internal validity might be created if the server's behavior varied when delivering the check?
+
+**It was important for the server to behave the same way when delivering the check to remove any bias which would affect the percentage of tip the customer decides to give. For example, it would be considered as a history threat if the server was extra friendly or smiled more to certain tables. This might affect the customer's attitudes and behaviors which would make it impossible to determine whether or not the message behind the check did affect the dependent variable. Additionally, having varied behaviors towards different customers is also an example of an instrument change threat. Since the purpose of the study is to find the correlation between leaving a helpful message and increased tip percentage, customers may unconsciously change their criteria they use to make judgments when the servers attitude is different towards certain customers.**
+
+### Question 6
+
+How might the following aspects of this study limit the study's external validity?
+
+- A young female adult was the authors' accomplice.
+<br>
+**With the author's accomplice being a young female adult, it appears that the study cannot be generalized across different diverse settings. The results in this study may not apply if the author's accomplice was an older female, young male, or even an older male.**
+
+- The study was conducted at a private country club.
+<br>
+**This might be an example of reduced ecological validity since the study was only conducted at a private country club, which is a setting for wealthier customers. The findings at this setting are not generalized across all environments, for example, a three star versus a five star restaurant.**
+
+- The meal was buffet style.
+<br>
+**Since the meal was buffet style and customers paid a set price, this concept would limit the study's external validity across other dining options, specifically looking at price range. By looking at the price point of different restaurants, one might argue that customers who dine at higher end restaurants are more likely to tip at a higher percentage.**
+

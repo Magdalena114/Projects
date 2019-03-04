@@ -1,0 +1,439 @@
+---
+title: "Predicting NFL Quarterback Ratings^[ANLT-201 - Linear Algebra for Data Science / Assignment 01]"
+subtitle: "A Least Squares Method and Linear Regression Implementation in R"
+author: "</br>by Arda Ugur, SeyedAli TaheriTari <br/> a_ugur1@u.pacific.edu, s_taheritari@u.pacific.edu </br> </br> University of the Pacific, School of Engineering and Computer Science, Ms. Sci. Data Science</br>"
+date: "September 2017"
+output: 
+ html_document:
+  toc: TRUE
+  toc_float:
+    collapsed: FALSE
+  number_sections: TRUE
+  theme: lumen
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ ![](/Users/satah/Downloads/qbs.jpg)
+</br><br/>
+
+# Introduction
+
+[Quarterback rating](https://en.wikipedia.org/wiki/Passer_rating) (also known as __passer rating__, or __QB rating__) is a measure of the performance of passers, primarily quarterbacks, in American football. Quarterback rating is calculated using player's passing attempts, completions, yards, touchdowns, and interceptions. Since 1973, passer rating has been the official formula used by the NFL to determine its passing leader. Passer rating in the NFL is on a scale from 0 to 158.3. 
+
+The main objective of this study is to provide an example of the __least squares method__ in [R](https://en.wikipedia.org/wiki/Passer_rating) programming language, using the NFL quarterback rating (2008) data set.  
+
+```{r raw_data, include=FALSE}
+#
+# Step 0.1: Read quarterback rating data from .csv file
+#
+library(readr)
+qbratingdata <- read_csv("rating.csv")
+```
+
+# Data Set
+
+```{r raw_table, echo=FALSE}
+#
+# Step 0.2: Print quarterback rating data as reference in the table format
+#
+knitr::kable(qbratingdata[], caption = "2008 NFL Quarterback Ratings")
+```
+
+# Objectives
+
+* __Objective 1__ : Create a least squares model to relate the dependent variable __quarterback rating__ to the __percentage of completions__.
+</br><br/>
+* __Objective 2__ : Create a least squares model to relate the dependent variable __quarterback rating__ to the __percentage of completions__ and __percentage of interceptions__. 
+</br><br/>
+* __Objective 3__ : Determine the __least squares error__ (or the _square root of sum of squared errors_) for models in __Objective 1__ and __Objective 2__. Comment on whether using an additional variable (i.e., the percentage of interceptions) improves the accuracy of the linear regression model for the given data set.
+</br><br/>
+* __Objective 4__ : Using models from __Objective 1__ and __Objective 2__ predict the __quarterback rating__ for 60% completion and 3% interception rates. 
+</br><br/>
+* __Objective 5__ : Go Seahawks!
+
+# Mathematical Preliminaries
+
+Regression analysis is a conceptually simple method for investigating functional relationships among two or more variables. For example, a civil engineer may wish to relate a specific mixture of concrete specimen's compressive strength to its other physical or mechanical attributes (e.g., compressive strength versus density, air content, water/cement ratio, etc.) Or an economist may wish to investigate the relationship between the economic structure and environmental pollution level of a country or a region. 
+</br><br/>
+The investigated relationship is usually expressed in the form of an equation or a model connecting the __response__ (or __dependent__) __variable__ and one or more __explanatory__ or __predictor variables__.We denote the response variable $Y$ and the set of predictor variables by $X_1$, $X_2$, ..., $X_p$, where $p$ denotes the number of predictor variables. The __true__ relationship between $Y$ and $X_1$, $X_2$, \dots ,$X_p$ can be approximated by the following regression model:
+
+$$Y=f(X_1, X_2, \dots, X_p) + \epsilon$$
+where $\epsilon$ is assumed to be a random error representing the discrepancy in the approximation. It accounts for the failure of the model to fit the data exactly. The function $f(X_1, X_2, ..., X_p)$ describes the relationship between $Y$ and $X_1$, $X_2$,\dots, $X_p$. An example to such relationship is the __linear regression model__ which can be expressed as: 
+
+$$ Y= \beta_0 + \beta_1X_1 + \beta_2X_2 +\dots + \beta_pX_p + \epsilon$$ 
+where $\beta_0, \beta_1, \beta_2,\dots,\beta_p$, (called the __regression parameters__ or __regression coefficients__), are basically the unknown constants to be estimated from the data. 
+</br><br/>
+We can represent __simple__ and __multiple regression models__ in matrix notation as well. To do so, first, let us define the following matrices:
+
+\usepackage{amsmath}
+\begin{equation}
+Y = \begin{bmatrix} 
+    y_1 \\
+    y_2\\
+    y_3\\
+    \vdots\\
+    y_n 
+    \end{bmatrix}
+\space\space\space\space\
+X = \begin{bmatrix} 
+    1 & x_{11} & x_{12} & \dots &  x_{1p}\\
+    1 & x_{21} & x_{22} & \dots &  x_{2p}\\
+    1 & x_{31} & x_{32} & \dots &  x_{3p}\\
+    \vdots & \vdots & \vdots &  &  \vdots\\
+    1 & x_{n1} & x_{n2} & \dots &  x_{np}\\
+    \end{bmatrix}
+\space\space\space\space\
+\beta = \begin{bmatrix} 
+    \beta_0\\
+    \beta_1\\
+    \beta_2\\
+    \vdots\\
+    \beta_p 
+    \end{bmatrix}
+\space\space\space\space\
+\epsilon = \begin{bmatrix} 
+    \epsilon_1\\
+    \epsilon_2\\
+    \epsilon_3\\
+    \vdots\\
+    \epsilon_p 
+    \end{bmatrix}
+\end{equation}
+
+so that we can express linear regression models like $Y= \beta_0 + \beta_1X_1 + \beta_2X_2 +\dots + \beta_pX_p + \epsilon$ in terms of systems of linear equations. 
+
+$$ Y = X\beta + \epsilon $$ 
+This approach allows us to utilize numerical and computer methods to solve such systems with multiple unknowns and multiple number of equations. 
+
+</br><br/>
+
+The least squares estimator $\widehat{\beta}$ of $\beta$ is obtained by minimizing the SSE (__Sum of Squared Errors__ or the sum of squared deviations of the observations from their expected values) as below:
+
+$$ SSE=\epsilon_1^2+\epsilon_2^2+...+\epsilon_p^2 $$
+Consequently, in the matrix notation, the least squares estimators are obtained by minimizing $S(\beta)$, where
+$$S(\beta) = \epsilon^T\epsilon = (Y - X\beta)^T(Y - X\beta)$$
+Since we can only estimate $\beta$, minimization of $S(\beta)$ takes us to the system of equations 
+$$(X^TX)\widehat{\beta} = X^TY$$
+And finally, provided that $X^TX$ is invertible, the __least squares estimate__ $\widehat{\beta}$ can be written as: 
+$$\widehat{\beta}=(X^TX)^{-1}X^TY$$
+</br><br/>
+The R language implementation of the given objectives will be based on the mathematical preliminaries summarized in this section. For more detailed information on the mathematical foundations of linear regression analysis, please refer to the [references](#References) listed at the end of this document. 
+
+# The R Implementation
+
+In the following subsections, we are going to implement the mathematical principals of linear regression analysis, using the R programming language, in order to find meaningful answers to the questions stated earlier.
+
+```{r libraries, include=FALSE}
+library(MASS)
+```
+
+```{r qbrating, echo=FALSE}
+#
+# Step 0.3: Get raw data into matrix format
+#
+qbrating_matrix <- cbind(qbratingdata)   # we will use this later in further studies
+```
+
+## Objective 1
+
+Let us create a least squares model to relate the response variable __quarterback rating__ to the __percentage of completions__ as follows:
+
+\usepackage{amsmath}
+\begin{equation}
+ \begin{bmatrix} 
+    1 & 65.3\\
+    1 & 67.4\\
+    1 & 67.1\\
+    \vdots\\
+    1 & 50.2\\
+    \end{bmatrix}
+ \begin{bmatrix} 
+    \beta_0 \\
+    \beta_1\\
+    \end{bmatrix}
++    
+ \begin{bmatrix} 
+    \epsilon_1\\
+    \epsilon_2\\
+    \epsilon_3\\
+    \vdots\\
+    \epsilon_p 
+    \end{bmatrix}    
+=
+  \begin{bmatrix} 
+    105.5\\
+    97.4\\
+    96.9\\
+    \vdots\\
+    66.5 
+    \end{bmatrix}
+\end{equation}
+
+```{r x.a_matrix, echo=FALSE, include=FALSE}
+X.a <- cbind(rep(1,32), qbratingdata$`Pct Comp`)
+print("Matrix for Percentage of Completions:")
+print(X.a)
+```
+
+```{r y.a_vector, echo=FALSE, include=FALSE}
+Y.a <- cbind(qbratingdata$`Rating Pts`)
+print("Vector for Quarterback Rating Points")
+print(Y.a)
+```
+
+Using `ginv` function, we are going to compute the vector for $\beta$ that consists of regression coefficients $\beta_0$ and $\beta_1$
+
+```{r beta.a_vector, echo=FALSE}
+library(MASS)
+Beta.a <- ginv(X.a)%*%Y.a
+print("Regression Coefficients for Quarterback Rating Points based on Percentage of Completions:")
+print(round(Beta.a, digits=3))
+```
+Now, let us compute the predicted values of __Quarterback Rating Points__ $(\widehat{Y})$, using $X$ and computed $\widehat{\beta}$ values
+
+```{r y_hat values, echo=FALSE}
+Y.a_hat <- (X.a)%*%(Beta.a)
+print("Predicted Quarterback Rating Points:")
+print(round(Y.a_hat, digits = 3))
+```
+
+Since we have obtained the predicted __Quarterback Rating Points__ values, we now can compute the __Residuals__ and the __Least Squares Errors__ as follows:
+
+```{r residuals, echo=FALSE}
+Residuals.a <- Y.a - Y.a_hat
+print("Deviation between predicted and observed Quarterback Rating Points:")
+print(round(Residuals.a, digits = 3))
+```
+
+As the Sqareroot of __Sum of Squared Errors__ or the __Residuals Vector__ constitutes the least squares error, we will use `norm` function to compute the length of residuals vector 
+
+```{r least squares, echo=FALSE}
+SSR.a <- norm(Residuals.a, "2")
+sprintf("The least squares error is %.3f", SSR.a)
+```
+We can also plot the observed Quarterback ratings against the predicted values along with a best fit line using `plot` and `line` functions
+
+```{r plots1, echo=FALSE}
+# Plot of observed values
+#
+plot(qbratingdata$`Rating Pts` ~ qbratingdata$`Pct Comp`,main="NFL Quarterback Ratings with respect to Percent Completion", xlab ="Percent Completion", ylab ="Quarterback Rating", col="Blue", pch=16)
+# 
+# Plot of predicted (fitted) values
+#
+lines(Y.a_hat ~ qbratingdata$`Pct Comp`)
+#
+```
+```{r residuals1, echo=FALSE}
+# Plot of regression residuals
+plot(Residuals.a~qbratingdata$`Pct Comp`, main="Regression Residuals", xlab ="Percent Completion", ylab ="Residuals", col="Red", pch=16)
+abline(h=c(0,0))
+```
+
+
+## Objective 2
+
+Let us create a multiple linear regression model to relate the response variable __Quarterback Rating__ to the __Percentage of Completions__ and __Percentage of Interceptions__ as follows:
+
+\usepackage{amsmath}
+
+\begin{equation}
+ \begin{bmatrix} 
+    1 & 65.3 & 2.3\\
+    1 & 67.4 & 1.5\\
+    1 & 67.1 & 2.3\\
+    \vdots\\
+    1 & 50.2 & 2.8\\
+    \end{bmatrix}
+ \begin{bmatrix} 
+    \beta_0 \\
+    \beta_1\\
+    \beta_2\\
+    \end{bmatrix}
++    
+ \begin{bmatrix} 
+    \epsilon_1\\
+    \epsilon_2\\
+    \epsilon_3\\
+    \vdots\\
+    \epsilon_p 
+    \end{bmatrix}    
+=
+  \begin{bmatrix} 
+    105.5\\
+    97.4\\
+    96.9\\
+    \vdots\\
+    66.5 
+    \end{bmatrix}
+\end{equation}
+
+
+```{r x.b_matrix, echo=FALSE, include=FALSE}
+X.b <- cbind(rep(1,32), qbratingdata$`Pct Comp`, qbratingdata$`Pct Int`)
+print("Matrix for Percentage of Completions and Percentage of Interceptions:")
+print(X.b)
+```
+
+```{r y.b_vector, echo=FALSE, include=FALSE}
+Y.b <- cbind(qbratingdata$`Rating Pts`)
+print("Vector for Quarterback Rating Points")
+print(Y.b)
+```
+
+As before, by using `ginv` function, we are going to compute the $\beta$ vector for regression coefficients $\beta_0$, $\beta_1$, and $\beta_2$
+
+```{r Beta.b vector, echo=FALSE}
+Beta.b <- ginv(X.b)%*%Y.b
+print("Regression Coefficients for Quarterback Rating Points ~ Percentage of Completions and ~ Percentage of Interceptions:")
+print(round(Beta.b, digits = 3))
+```
+
+After regression coefficients are obtained, we can compute the predicted values of __Quarterback Rating Points__  $(\widehat{Y})$, in relation to __Percentage of Completions__ and __Percentage of Interceptions__:
+
+```{r y_hat.b, echo=FALSE}
+Y.b_hat <- (X.b)%*%(Beta.b)
+print("Predicted Quarterback Rating Points:")
+print(round(Y.b_hat, digits = 3))
+```
+Since we obtained the predicted values above, we can compute the __Residuals__ and the __Least Squares Error__ as follows:
+
+```{r residuals_b, echo=FALSE}
+Residuals.b <- Y.b - Y.b_hat
+print("Deviation between predicted and observed Quarterback Rating Points:")
+print(round(Residuals.b, digits = 3))
+```
+As the sqareroot of sum of squared errors or the residuals vector constitutes the least squares error, we will use `norm` function to compute the length of residuals vector 
+```{r , echo=FALSE}
+SSR.b <- norm(Residuals.b, "2")
+sprintf("The least squares error is %.3f", SSR.b)
+```
+
+```{r 3D Plot, echo=FALSE}
+#
+library(scatterplot3d)
+library(MASS)
+library(ISLR)
+#
+# We can use the the following lines of code and LM() package to plot the fitted surface
+#
+#response <- matrix(qbrating_matrix$`Rating Pts`)
+#predictor<- matrix(qbrating_matrix$`Pct Comp`)
+#predictor2 <- matrix(qbrating_matrix$`Pct Int`)
+#
+#model.fit <- lm(response ~ predictor+predictor2, data = qbrating_matrix)
+#model.fit
+#
+# 3D Plot of Rating, Completion, and Interceptions
+#
+qbreg3d<-scatterplot3d(x=qbratingdata$`Pct Comp`,y=qbratingdata$`Pct Int`,z=qbratingdata$`Rating Pts`,color="blue",pch=16,xlab='Percent Completion',ylab='Percent Interceptions',zlab='Quarterback Rating')
+#
+# Adding the fitted model plane into 3d scatter plot
+#
+
+# qbreg3d$plane3d(model.fit)
+#
+# We could create the 3d plane by directly using our regression equation as well
+#
+qbreg3d$plane3d(Beta.b[1],x.coef=Beta.b[2],y.coef=Beta.b[3],lty="dashed")
+```
+
+
+## Objective 3
+
+As we determined the __Least Square Errors__ (square root of sum of squared errors) for each regression model in previous subsections (under Objective 1 and Objective 2), we now can discuss whether using an additional variable has improved the accuracy of the regression model for the data set in question.
+
+Let us first revisit the least squares errors for each regression model developed earlier.
+
+```{r objective_3_1, echo=FALSE}
+sprintf("The least squares error for simple linear regression is %.3f", SSR.a)
+sprintf("The least squares error for multiple linear regression model is %.3f", SSR.b)
+```
+
+As it is the objective of linear regression to __minimize__ the square root of residuals, (and ignoring other regression diagnostic measures within the scope of this assignment) we can observe that the second model which is built on two predictor variables, has less deviation from the actual observed values; and consequently, has a smaller sum of squared errors. Based on this observation, we can -and without looking at other regression diagnostic measures- we can surmise that building a regression model with more variables tend to approximate observed values with smaller error. 
+
+## Objective 4
+
+Using the linear regression models developed in objectives (1) and (2) in repsectively, we can predict the quarterback rating points for percentage of completions of 60% and percentage of interceptions of 3%.
+
+However, let us start with writing our regression models out below, before plugging in the numbers:
+
+```{r betas_, echo=FALSE}
+print("Beta values for simple linear model:")
+print(round(Beta.a, digits = 3))
+#
+print("Beta values for multiple linear model:")
+print(round(Beta.b, digits = 3))
+```
+
+$$\widehat{Y_a}=-22.033 + 1.746X_1$$
+and
+
+$$\widehat{Y_b}=-9.109 + 1.662X_1 -3.076X_2$$
+For the simple linear model, using only the percent of completions (60%), we predict that the quarterback rating point will be:
+
+```{r prediction_a, echo=FALSE}
+qbrating.a <- Beta.a[1]+Beta.a[2]*60
+sprintf("For 60 percent completion rate, the quarterback rating is estimated to be %.3f", qbrating.a)
+```
+For the multiple linear model, using the percent of completions (60%) and percent of intercept (3%), we predict that the quarterback rating point will be:
+
+```{r prediction_b, echo=FALSE}
+qbrating.b <- Beta.b[1]+Beta.b[2]*60+Beta.b[3]*3
+sprintf("For 60 percent completion rate and 3 percent interception rate, the quarterback rating is estimated to be %.3f", qbrating.b)
+```
+## Objective 5
+
+![](/Users/ardaugur/Downloads/seahawks.jpg)
+
+# Further Study 
+Let us try to use the R __lm()__ package and compare the results obtained from __lm()__ package to the desired values we computed above.
+
+```{r further setup libs, include=TRUE}
+library(MASS)
+library(ISLR)
+```
+
+__Simple Linear Regression Using lm() Package__
+
+```{r further_study_1, echo=FALSE}
+#
+# Let us define our response and predictor variables
+#
+response <- matrix(qbrating_matrix$`Rating Pts`)
+predictor<- matrix(qbrating_matrix$`Pct Comp`)
+predictor2 <- matrix(qbrating_matrix$`Pct Int`)
+#
+# Let us build our regression models for simple and multiple models
+#
+model.fit1 <- lm(response ~ predictor, data = qbrating_matrix)
+#
+model.fit2 <- lm(response ~ predictor+predictor2, data = qbrating_matrix)
+#
+# Let us check the lm() package outputs for regression coefficients
+#
+print("Regression Coefficients for Simple Model (Percentage of Completions vs. Quarterback Ratings")
+model.fit1
+#
+print("Regression Coefficients for Multiple Model (Percentage of Completions and Percentage of Interceptions vs. Quarterback Ratings")
+model.fit2
+#
+```
+
+The results provided above, shows that the regression coefficients computed by the authors, conforms to those of produced by the __lm() package__ of the R programming language. 
+
+# References
+
+1. Zarei, A. (2017), _Linear Algebra for Data Science - Lecture Notes_, University of the Pacific, School of Engineering and Computer Science, Stockton, CA. 
+</br><br/>
+2. Chatterjee, S., and Hadi, A. S. (2012), _Regression Analysis by Example_, 5th ed., New Jersey: John Wiley & Sons.
+</br><br/>
+3. James, G., Witten, D., Hastie, T., Tibshirani, R. (2013), _An Introduction to Statistical Learning with Applications in R_, 6th printing (2015), New York, Springger Science+Business Media.
+</br><br/>
+4. Davies, T. M. (2016), _The Book of R: A First Course in Programming and Statistics_, 1st ed., San Francisco: No Starch Press.
+
+# Acknowledgements
+
+The authors wish to thank Dr. A. Zarei for providing guidence and help during the process of completion of this research project. 

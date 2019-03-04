@@ -1,0 +1,127 @@
+---
+title: 'Research Methods Project : Analysis of Internet Speed in US'
+author: "Mike Hendrikson - Ali Taheri"
+date: "Novomber 29, 2017"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stats)
+library(knitr)
+library(dplyr)
+library(kableExtra)
+library(gdata)
+```
+
+# Problem Definition
+
+At these days,one important requirement of human is connection to Internet.People are using two main infrastructures for connection to Internet that are fixed and mobile networks.At this analysis, we are trying to have a hypotheis test against claim of Forbes about fixed Internet :"The US ranks 9th in the world in fixed broadband speed at 70.75 Mbps average download and 27.64 Mbps average upload.</br> https://www.forbes.com/sites/kevinmurnane/2017/08/14/speedtest-ranks-internet-access-speed-in-more-than-100-countries/#53814ade65b5. </br> For this target, we conduct a survey and asked from 40 persons about their state, number of people in household,ISP, download speed, upload speed and their media for their landline Internet. At first we would try to have a decriptive analysis on gathered sample data.
+
+
+# Reading from Excel file
+```{r reading from Excel file, warning=FALSE}
+bw=read.xls ("Bandwidth.xlsx", sheet = 1, header = TRUE,na.strings=c("NA"))
+```
+
+# Plots of samples information
+_**At this stage we show some charts about our gathered data.**_
+
+
+```{r Charts, warning=FALSE}
+states=c('Alabama','California','Georgia','Tennessee')
+download.mean.states=sapply(states,function(states) mean(bw[bw$state==states,4],na.rm=TRUE))
+barplot(download.mean.states,
+          ylab="Average download speed",main="Average Download Speed per State",
+          col= c("yellow","blue","green","red"))
+
+households=1:6
+download.per.household=sapply(households,function(households)
+                              mean(bw[bw$household==households,4]/households,na.rm=TRUE))
+barplot(download.per.household,
+          names.arg=households,xlab="Number of persons",
+          ylab="Average download speed",main="Average Download Speed per Person for Household")
+
+ISPs=c("Centurylink","Charter","Comcast","Cox","Frontier","Mediacom","Verizon FiOS",
+       "Windstream")
+download.mean.ISPs=sapply(ISPs,function(ISPs) mean(bw[bw$ISP==ISPs,4],na.rm=TRUE))
+barplot(download.mean.ISPs,ylab="Average download speed",main="Average Download Speed per ISP",las=2)
+
+barplot(table(bw$media),ylab="Number of samples",main="Samples per Media",ylim=c(0,25),
+         col= c("red","yellow","blue"))
+
+boxplot(bw$download,bw$upload,names=c("Download","Upload"),ylab="Speed in Mbps",main= "Gathered data about speed")
+
+```
+
+It is clear that download speed is higher tha upload speed because of residential use. 
+
+
+
+# Download Speed
+
+
+There are about 37 samples of data, so we could do hypothesis test by consideration of normal distribution or t distribution. We do not have any information about standard deviation of download speed, so we could use t-test for this target.
+
+```{r Hypothesis test for download speed, warning=FALSE}
+t.test(na.omit(bw$download),alternative = "two.sided", mu=70.75,conf.level =.99)
+```
+
+P-value is very greater than 0.01, so we could interpret that at the 1% significance level, the data provides sufficient evidence to conclude that the mean download speed of landline connections to internet in US is 70.75 Mbps.
+
+
+# Upload speed
+
+We could do above process for upload speed too.
+
+```{r Hypothesis test for upoad speed, warning=FALSE}
+t.test(na.omit(bw$upload),alternative = "two.sided", mu=27.64 ,conf.level =.99)
+```
+
+P-value is very less than 0.01, so we can Inperet that at the 1% significance level, the sample provides enough evidence to believe that mean upload speed of landline connections to internet in US is different from 27.64 Mbps.
+
+
+# Regression test
+At this stage we plan to fit a regression line between download speed and number of persons in households. After check of linearity, we would check homoscedasticity and normality.
+
+## 1) Linearity check
+```{r Regression, warning=FALSE}
+download=bw$download
+household=bw$household
+m=lm(download~household,na.action = na.exclude)
+plot(household,download,xlab="# of people in household",ylab="download Speed",
+     main="Scatter plot of download speed vs number of persons",las=1)
+abline(m)
+
+```
+We could see that there is not a linear relation between download speed and number of persons. We think main reason of this issue is that subscibers do not know their exact download speed requirement and will purchase a service without considerations of their needs.
+
+```{r R-squared calculation, warning=FALSE}
+summary(m)$r.squared
+```
+
+It shows that only 2% of changes in download speed could be explained by number of people in household that is very low.
+
+## 2) Homoscedasticity check
+```{r Homoscedasticity Analysis, warning=FALSE}
+dResid=resid(m) #Residuals
+plot(household, dResid, ylab="Residulas",
+     xlab="# of people in household",
+     main="Residual Plot for download speed")
+abline(0,0,col="red")
+```
+
+We can say that the residuals are decreasing by increasing number of people in household and it violates homoscedasticity.
+
+## 3) Normality check
+```{r Normality Analysis, warning=FALSE}
+qqnorm(dResid, main= "Normal Q-Q Plot for residuals of download speed")
+qqline(dResid)
+```
+
+This Q-Q plot shows that we have normality condition modestly. It means thatb we could assume that real values of download speeds for fixed number of persond per households would have normal distribution.
