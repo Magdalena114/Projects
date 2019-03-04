@@ -1,0 +1,1 @@
+f0a3b2b89cd97cc38e2763d36fd696e8d106c2ed968e0c81643c6688f994076c software-methods [11/Feb/2018:07:23:09 +0000] 52.95.24.235 - 95D180AD56003AC7 REST.HEAD.BUCKET - "HEAD /software-methods HTTP/1.1" 301 PermanentRedirect 469 - 2 - "-" "S3Console/0.4, aws-internal/3" -

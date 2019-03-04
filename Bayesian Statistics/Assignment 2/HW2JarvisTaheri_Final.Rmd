@@ -1,0 +1,427 @@
+---
+title: "ANLT 203 Assignment 2: Naive Bayes and Logistic Classifiers"
+author: "Austin Jarvis & Ali Taheri"
+date: "February 15th, 2018"
+output:  
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+    number_sections: false
+    theme: flatly
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+library(stats)
+```
+
+## Problem 1
+
+Implement a Naive Bayes classifier using e1071 package in R to predict whether
+it is a good day to play tennis based on the information in the training data.
+The file "NaiveBayes.csv" provides information about whether previous days
+were good or bad days for playing tennis. Use the last row in this file for test
+and all other rows for training.
+
+
+```{r Naive Bayes Classifier, warning=FALSE}
+library(e1071)
+trtest=read.csv('NaiveBayes.csv')
+tr=trtest[1:nrow(trtest)-1,]
+summary(tr)
+```
+
+```
+
+### Problem 1.1
+
+What's the prior distribution for playing/not playing tennis?
+
+
+```{r }
+model=naiveBayes(Play~., data=tr)
+cat("Prior probabilities are: \n")
+round(model$apriori/nrow(tr),2)
+
+```
+
+### Problem 1.2
+
+ Determine the likelihood for outlook (sunny/not sunny).
+ 
+ 
+```{r}
+cat("Likelihood for outlook is: \n")
+round(model$tables$Sunny,2)
+
+```
+
+
+### Problem 1.3
+
+Determine the likelihood for temperature (hot/not hot).
+ 
+ 
+```{r}
+cat("Likelihood for temperature is: \n")
+round(model$tables$Hot,2)
+
+```
+
+### Problem 1.4
+
+Determine the likelihood for wind (windy/not windy).
+ 
+ 
+```{r}
+cat("Likelihood for wind is: \n")
+round(model$tables$Windy,2)
+```
+
+
+### Problem 1.5
+
+What's the posterior probability for the test pattern? Do you predict
+playing tennis or not for the given weather condition?
+
+ 
+ 
+```{r Posterior of test Pattern,warning=FALSE}
+test=trtest[nrow(trtest),]
+output=predict(model,test,"raw")
+cat("Posterior probability for test pattern is:", round(output,3))
+output=predict(model,test,"class")
+cat("Our prediction about playing for the given weather condition is:", as.character(output))
+```
+
+
+## Problem 2
+
+In this problem you cannot use an existing Naive Bayes classifier implementation
+or package.
+Implement a Naive Bayes classifier in R to apply it to the task of classifying
+handwritten digits. Files mnist-train and mnist-test contain training and test
+digits, together with their ground truth labels (first column). Each row in these
+files corresponds to a different digit.
+Each image is 28x28, hence there are 784 pixel in every image. Columns
+2-785 in the data files correspond to the pixel intensity, a value between 0 to
+255. Column 1 corresponds to the correct label for each digit.
+You should convert the pixel intensities to a single binary indicator feature
+(Fi) for each pixel. Specifically, if the intensity is smaller than 255/2 map it to
+a zero, otherwise to a one
+
+### Problem 2.1
+
+Estimate the priors P(class) based on the frequencies of different
+classes in the training set. Report the values in a table. Round
+to 3 decimal places.
+
+```{r Posterior probability distribution,warning=FALSE}
+library(xtable)
+tr=read.csv("mnist_train.csv",header=FALSE)
+tr[,2:785][tr[,2:785] <= 127]= 0
+tr[,2:785][tr[,2:785] > 127]= 1
+
+tr[,1]=factor(tr[,1])
+col_names <- names(tr[,2:785])
+tr[,col_names] <- lapply(tr[,col_names] , factor,c("0","1"))
+
+digitTable=table(tr[,1])
+priorDigit= digitTable/sum(digitTable)
+round(priorDigit,3)
+
+```
+
+### Problem 2.2
+
+ Estimate the likelihoods P(Fi
+|class) for every pixel location i
+and for every digit class from 0 to 9. The likelihood estimate is
+P(Fi = f|class) =(Number of times pixel i has value f in training examples
+from this class) / (Total number of training examples from this class)
+Note that you have to smooth the likelihoods to ensure that there are no
+zero counts. Laplace smoothing is a very simple method that increases the
+1
+observation count of every value f by some constant k. This corresponds to
+adding k to the numerator above, and k*V to the denominator (where V
+is the number of possible values the feature can take on). The higher the
+value of k, the stronger the smoothing. Experiment with different integer
+values of k from 1 to 5. While you need to find all the likelihoods for k=1
+to 5, I'd like you to report the following values in your report: For k=1
+and k=5 P(F682 = 0|class = 5) and P(F772 = 1|class = 9). Round
+to 3 decimal places.
+
+```{r Likelihood with smoothing,warning=FALSE}
+Lklhd=array(rep(0,10*784*2*5),dim=c(10,784,2,5))
+class.frequency=table(tr[,c(1,2)])[,1]+table(tr[,c(1,2)])[,2]
+
+for (class in 0:9) {
+    for (n in 1:784){
+      pixel.freq=table(tr[,c(1,n+1)])[class+1,1]
+      class.freq=class.frequency[class+1]
+       for (k in 1:5) {
+         Lklhd[class+1,n,1,k]= (pixel.freq+k)/(class.freq+k*2)
+    }
+  }
+}
+
+Lklhd[,,2,]=1-Lklhd[,,1,]
+
+cat("Likelihood for value of 0 for pixel# of 682 with smoothing factor of 1 given digit 5 is:", round(Lklhd[6,682,1,1],3),"\n")
+cat("Likelihood for value of 0 for pixel# of 682 with smoothing factor of 5 given digit 5 is:", round(Lklhd[6,682,1,5],3),"\n")
+cat("Likelihood for value of 1 for pixel# of 772 with smoothing factor of 1 given digit 9 is:", round(Lklhd[10,772,2,1],3),"\n")
+cat("Likelihood for value of 1 for pixel# of 772 with smoothing factor of 5 given digit 9 is:", round(Lklhd[10,772,2,5],3),"\n")
+```
+### Problem 2.3
+
+ Perform maximum a posteriori (MAP) classification of test
+digits according to the learned Naive Bayes modeles. Suppose a test image
+has feature values f1, f2, ... , f784. According to this model, the
+posterior probability (up to scale) of each class given the digit is given by:
+P(class)P(f1|class)(f2|class)...P(f784|class)
+Note that in order to avoid underflow, you need to work with the log of
+the above quantity:
+log P(class) + log P(f1|class) + log P(f2|class) + ... + log P(f784|class)
+Compute the above decision function values for all ten classes for every test
+image, then use them for MAP classification. For the first test image,
+report the log posterior probability of P(class = 5|f1, f2, ..., f784)
+and P(class = 7|f1, f2, ..., f784) for k=1 and k=5.
+
+```{r MAP classification,warning=FALSE}
+test=read.csv("mnist_test.csv",header=FALSE)
+test[,2:785][test[,2:785] <= 127]= 1 # 0 items
+test[,2:785][test[,2:785] > 127]= 2  # 1 items
+
+log.priorDigit=log(priorDigit)
+log.Lklhd=log(Lklhd)
+posterior=array(rep(log.priorDigit, 10*nrow(test)*5), c(10,nrow(test) , 5))
+
+for (row in 1:nrow(test)) {
+  for( class in 1:10){
+    for(k in 1:5){
+      for (n in 2:785) {
+        posterior[class,row,k]=posterior[class,row,k]+log.Lklhd[class,n-1,test[row,n],k]
+      }
+    }
+  }
+}
+
+cat("Log posterior probability for being digit 5 of first test image with smoothing factor of 1 is:", round(posterior[6,1,1],3),"\n")
+cat("Log posterior probability for being digit 5 of first test image with smoothing factor of 5 is:", round(posterior[6,1,5],3),"\n")
+cat("Log posterior probability for being digit 7 of first test image with smoothing factor of 1 is:", round(posterior[8,1,1],3),"\n")
+cat("Log posterior probability for being digit 7 of first test image with smoothing factor of 5 is:", round(posterior[8,1,5],3),"\n")
+```
+
+
+### Problem 2.4
+
+Use the true class labels of the test images from the mnist test
+file to check the correctness of the estimated label for each test digit. Report
+your performance in terms of the classification rate (percentage
+of all test images correctly classified) for each value of k
+from 1 to 5.
+
+
+```{r True classification rate,warning=FALSE}
+result=array(rep(NaN , nrow(test)*5) , c(nrow(test),5))
+for (k in 1:5){
+  for (row in 1:nrow(test)) {
+    result[row,k]= which.max(posterior[,row,k])-1
+  }
+}
+k=1:5
+classification.rate=sapply(k, function(k) 100*length(which(result[1:nrow(test),k] == test[1:nrow(test),1]))/nrow(test) )
+
+optmized.k=which.max(classification.rate)
+
+names(classification.rate) = c("1", "2","3","4","5")
+cat("Percentages of true classification rate for different smoothing factors are: \n")
+classification.rate
+```
+
+
+### Problem 2.5
+
+Report your confusion matrix for the best k. This is a
+10x10 matrix whose entry in row r and column c is the percentage of test
+images from class r that are classified as class c. (Tip: You should be able
+to achieve at least 70% accuracy on the test set.)
+
+
+```{r Confusion Matrix,warning=FALSE}
+result=cbind(result,as.integer(test[,1]))
+Confusion.Matrix=matrix(rep(0,100),10,10)
+for (row in 1:10){
+  for (col in 1:10){
+    Confusion.Matrix[row,col]= length(which((result[,6] == row-1) & (result[,optmized.k]== col-1) ))
+  }
+}
+
+rownames(Confusion.Matrix)=c("0","1","2","3","4","5","6","7","8","9")
+colnames(Confusion.Matrix)= c("0","1","2","3","4","5","6","7","8","9")
+
+Confusion.Matrix %>%
+  kable(digits=0 , format="html") %>%
+  kable_styling() %>%
+  column_spec(1 , bold=T , color="blue") %>%
+  row_spec(0 , bold=T , color="red")
+
+
+```
+
+
+## Problem 3
+
+Given the function f(x) = x^2 + 6x:
+
+
+### Problem 3.1
+
+Use derivative of f(x) to find the value of x that minimizes this function: $$f(x) = x^2 + 6x$$
+
+Derivative: $$df(x) = 2x+6$$
+
+to minimize set equal to 0: $$0 = 2x +6$$
+$$x=-3$$
+
+### Problem 3.2
+
+Use gradient descent to find the value of x that minimizes this function.
+Compare your answer with the previous part. 
+
+```{r Gradient Descent,warning=FALSE}
+f <- function(w ){
+return(w^2+6*w)
+}
+
+old.w=10
+eta=.01
+new.w=old.w-eta
+while(f(new.w) < f(old.w)) {
+  temp=new.w
+  new.w=old.w-eta*(2*old.w+6)
+  old.w=temp
+}
+
+w= old.w
+cat("This function would be minimum at:", round(w,3) )
+```
+
+
+## Problem 4
+
+The Space Shuttle Challenger disaster occurred on January 28, 1986, when it
+broke apart 73 seconds into its flight, leading to the deaths of its seven crew
+members. The spacecraft disintegrated over the Atlantic Ocean, off the coast
+of central Florida at 11:38 EST. Disintegration of the entire vehicle began after
+an O-ring seal in its right solid rocket booster failed at liftoff. Subsequently, a
+special commission was appointed to investigate the accident. The commission
+found that NASA disregarded warnings from engineers about the dangers of
+launching posed by the low temperatures of that morning, claiming that engineers
+could not provide a convincing argument against the launch (source:
+Wikipedia, Applied Probability for Engineers).
+File Oring.csv provides data on launch temperature and O-ring failure for
+the 24-space shuttle launches prior to the Challenger disaster. There are six
+O-rings used to seal field joints on the rocket motor assembly. A +1 in the
+O-rings indicates that at least one O-ring failure had occurred on that launch
+and a 0 indicates that no failure had occurred.
+
+### Problem 4.1
+
+Normalize the launch temperature
+.
+
+```{r Temperature Normalizing ,warning=FALSE}
+oring=read.csv("Oring.csv",header=TRUE)
+Temp=oring$Temp
+Failure=oring$Failure
+mu=mean(Temp)
+sigma=sd(Temp)
+Temp=(Temp-mu)/sigma
+
+cat(round(Temp,2))
+```
+
+
+### Problem 4.2
+
+Create a logistic regression model using the gradient decent technique to
+predict the probability of O-ring failure based on the launch temperature.
+Provide the equation for your model.
+
+```{r Logistic Regression model ,warning=FALSE}
+
+e=exp(1)
+
+h <- function (x,a,b) {
+return(1/(1+e^(-a-b*x)))
+}
+
+logl <- function(a,b){
+  return(sum(Failure*log(h(Temp,a,b)) + (1-Failure)*log(1-h(Temp,a,b))))
+}
+
+old.a=5
+old.b=5
+eta=.1
+new.b=old.b-eta
+new.a=old.a-eta
+while(-logl(new.a,new.b) < -logl(old.a,old.b)) {
+
+  tmp.b=new.b
+  new.b=old.b-eta*(sum((h(Temp,old.a,old.b)-Failure)*Temp))
+  old.b=tmp.b
+  
+  tmp.a=new.a
+  new.a=old.a-eta*sum((h(Temp,old.a,old.b)-Failure))
+  old.a=tmp.a
+  
+}
+a=old.a
+b=old.b
+
+cat("Optimized parameter for a would be:",round(a,3),"\n")
+cat("Optimized parameter for b would be:",round(b,3))
+```
+
+
+Equation of Logistic Regression would be:
+
+\[
+\begin{eqnarray}
+P(Failure | Temp) & = & \frac{1}{1+e^{1.103+1.264\times Temp}}
+\end{eqnarray}
+\]
+
+
+### Problem 4.3
+
+ Provide a plot of the original data along with your logistic model
+
+```{r plots ,warning=FALSE}
+temp=seq(-4,4,.001)
+prediction=h(temp,a,b)
+plot(temp,prediction,col="blue",ylab="Probability of Failure",xlab="Normalized Temperature",main="Logistic Regression model \n for Failure probability of orings based on Temperature")
+points(Temp,Failure,col="red")
+
+```
+
+### Problem 4.4
+
+The actual temperature at the Challenger launch was 31 degrees Fahrenheit.
+According to your model what was the probability of O-ring failure
+on the Challenger launch? Could the engineers have used your model to
+provide a convincing argument to NASA? Elaborate. 
+
+```{r Model usage ,warning=FALSE}
+test.temp=31
+normalized.test.temp=(test.temp-mu)/sigma
+failure.prob=h(normalized.test.temp,a,b)
+cat("Probability of failure at this temperature is about:",round(failure.prob,3))
+```
+We could see that probability of failure at this temperature is  about 0.998 by our logistic regression model. This shows that according to our model the chance of failure is very high. Additionally the data shows that all 3 temperatures below 60 degrees Fahrenheit resulted in failure, information that perhaps should have convinced NASA to postpone the launch for warmer weather!
+
+
+

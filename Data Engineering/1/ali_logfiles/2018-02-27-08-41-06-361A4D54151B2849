@@ -1,0 +1,1 @@
+f0a3b2b89cd97cc38e2763d36fd696e8d106c2ed968e0c81643c6688f994076c visual-storytelling [27/Feb/2018:07:00:20 +0000] 136.60.153.92 arn:aws:iam::775143853433:user/jblair 305F243B3A359EEB REST.GET.ACL - "GET /visual-storytelling/?acl HTTP/1.1" 403 AccessDenied 243 - 22 - "-" "S3Console/0.4" -

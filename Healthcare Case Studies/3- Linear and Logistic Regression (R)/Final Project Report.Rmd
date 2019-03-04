@@ -1,0 +1,597 @@
+---
+title: "ANLT272~Healthcare Case Studies~Final Project: Regression "
+author:  "Denise Lee, Max Riching, Ali Taheri"
+date: "Mar 2, 2018"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float:
+      collapsed: TRUE
+    number_sections: FALSE  
+    theme: cerulean
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(stats)
+library(ggplot2)
+library(dplyr)
+library(car)
+library(leaps)
+library(glmnet)
+library(plotmo)
+library(readr)
+library(caret)
+library(GGally)
+library(pROC)
+library(cowplot)
+library(gridExtra)
+```
+
+# Introduction
+
+We will use a data set that contains paid healthcare claims data for patients from a variety of commercial health care plans. We will focus on the claims recorded for patients that are using anti-diabetic drugs. The dataset features include the diagnoses, medical treatments and prescription drugs that were covered and paid for by the patients' health care benefits plan. 
+
+There are two objectives of this analysis, the first one being to create a linear regression model to predict the total healthcare costs the patient incurs after starting use of an antidiabetic drug (post index total costs), and the second being to create a logistic regression model that can predict the patient's daily compliance to a drug adherence of 80% or more (pdc_80_flag). These models will be trained using different features in this dataset. Among the features that are being explored are pre- and post- index claims for various comorbidity diagnoses, number of hospitalizations, number of emergency room visits and total health care expenses.
+
+# Dataset
+
+The claims data being used to create the models were obtained from health care providers and stored in the LifeLink Health Plan Claims Database. This database contains health care claims data from over 75 million patients enrolled in over 80 health care plans from different regions of the US [PharMetrics Legacy Health Plan Claims Data Dictionary, p. 4]. For the purposes of creating our specific models, the data was filtered to capture observations that are pertinent to patients that are using antidiabetic drugs. This involved filtering by drug class and determining the specific index date for the patient's first use of the antidiabetic drug.
+
+## Read and examine the data
+
+Our first step in the process was to read in the dataset and extract the observations pertaining to the drug class of antidiabetics. 
+```{r}
+d <- read.csv('DataExtract.csv', header =TRUE, stringsAsFactors = FALSE)
+d <- d[d$drug_class=='*ANTIDIABETICS*',]
+str(d)
+```
+
+After filtering by the drug class of interest, the dataset consisted of 1722 observations and 95 variables. The variables are a combination of categorical and continuous values relating to the diagnoses, medical treatments, medications, inpatient/outpatient visits and costs incurred relative to the index date for the antidiabetic drug usage. The variables of interest that we are trying to predict are post_total_cost, a continuous variable, and pdc_80_flag, a binary variable. To prepare our data for analysis, We identified categorical variables by looking at the total number of unique values for each variable. Those identified as categorical were converted to factors.
+
+```{r echo=FALSE}
+#d %>%
+ #sapply(unique) %>%
+ #sapply(length)
+```
+```{r}
+#colnames(d)
+```
+
+```{r}
+for(i in 1:ncol(d)){
+  if(((length(unique(d[,i]))<=6)&(i!=2)) | (i%in%c(61,82))){
+    d[,i] <- as.factor(d[,i])
+  }
+}
+#str(d)
+```
+
+
+# Data Exploration
+
+## Post Index Total Cost Distribution
+
+Since the distribution of the post index total cost was not Guassian, we transformed the variable by taking the log of the post_total_cost value, creating a more normal distribution.
+
+```{r stepwise , warning=FALSE}
+#PDF of dependent variable
+outcome =scale(log(d$post_total_cost))
+par(mfrow=c(1,2))
+qqnorm(outcome)
+qqline(outcome)
+
+plot(density(outcome) , xlab = 'post_total_cost' , main = 'Standardized post_total_cost PDF')
+```
+
+The quantiles and probability distribution of log(post_total_cost) shows an acceptably normal distribution. Additionally, We assessed the distribution of the total post-index costs in relation to the categorical predictor variables. 
+
+```{r echo=FALSE}
+bp <- function(var) {
+  plot <- ggplot(aes(var, log(post_total_cost)), data = d, ylim=c (0,14)) + 
+    geom_boxplot(aes(fill = var), outlier.size=0.5) + 
+    labs(fill='Feature Cat')+
+    ylab('log(Post Index Total Costs)') +
+    xlab(NULL)+
+    expand_limits(y= c(0,14))+
+    theme(axis.title=element_text(size=10, face = 'bold'), legend.text = element_text(size=10), legend.title = element_text(size=10), axis.text.y = element_text(size=8), axis.text.x =element_text(size=8))
+  return(plot)
+}
+
+d$age_cat <- factor(d$age_cat, label=c('19-34','35-44', '45-54','55-64','65-74','75+'))
+ip <- bp(d$post_ip_flag)
+er <- bp(d$post_er_flag)
+sx <- bp(d$sexN)
+re <- bp(d$regionN)
+pr <- bp(d$idx_prodtypeN)
+pa <- bp(d$idx_paytypN)
+age <- bp(d$age_cat)
+```
+```{r echo=FALSE}
+plot_grid(ip, er, sx, re, ncol =2, labels = c('Post Index In-Patient', 'Post Index ER', 'Gender at Index', 'Region'), label_size=10, label_x=0.25)
+
+```
+
+The boxplots show that there appears to be difference between patients that had more than one post hospitalization and more than one post emergency rooom visit. The gender of the patient at index did not seem make a difference, and the region did not have a significant overall impact on the distribution.
+
+```{r echo=FALSE}
+#grid.arrange(g pr,pa, age, ncol = 2,labels = c('Product Type', 'Payment Type', 'Age'), label_size=10, label_x=0.25)
+plot_grid(pr,pa, age, rel_widths=c(1,1,2), ncol = 2, labels=c('Product Type', 'Payment Type', 'Age'), label_size=10, label_x=0.25)
+```
+
+Product type and payment type appeared to have a subtle effect on the mean and distribution that was more pronounced in certain categories than others.Age group also appeared to have an effect on the distribution, with older patients having higher average costs post index. Rather than relying on a subjective visual assessment, we applied the Levene test and t-test on the categorical variables with binary factors, and used ANOVA testing for factors that had more than one level, such as the age category and region variables. To select continuous variables, we employed the built-in linear regression function in R. 
+
+```{r echo=FALSE}
+#removing unnecessary variables
+d_lin=d[ , !(names(d) %in% c("log_pre_ip_cost","log_pre_er_cost", "log_pre_op_cost" , "log_pre_rx_cost","age_grpN" ,  "ratio_G_total_cost","ratio_G_total_cost_post","patient_key","post_rx_cost","pdc_80_flag" , "pdc_cat", "drug_class"))]
+
+#transform output variable
+d_lin$post_total_cost <- log(d_lin$post_total_cost)
+
+#Separating continous and categorical variables
+contVar = subset(d_lin , select=sapply(d_lin, is.numeric))
+contVar.except.outcome = contVar[ , !(names(contVar) %in% c("post_total_cost"))]
+catVar = subset(d_lin ,select=sapply(d_lin, is.factor))
+```
+
+```{r echo=FALSE}
+#Removing categorical variables that do not show a significant difference between categories (p-value 0.01 or greater).
+for (col_num in 1:ncol(catVar)) {
+  if (length(levels(catVar[,col_num])) == 2) {
+       var.eq = TRUE
+       levene.result=leveneTest(d_lin$post_total_cost , catVar[,col_num])
+       if (levene.result$`Pr(>F)`[1] < 0.01) { var.eq = FALSE}
+        t.result=t.test(d_lin$post_total_cost ~ catVar[,col_num] , mu=0 , alternative ="two.sided" , conf=0.99 ,var.eq=var.eq)
+       if ( t.result$p.value > 0.01) { d_lin=d_lin[ , names(d_lin) != names(catVar)[col_num] ] }
+  } 
+  else{
+      anova.result = summary(aov(d_lin$post_total_cost ~ catVar[,col_num]))[[1]][["Pr(>F)"]][1]
+      if (anova.result > 0.01) { d_lin=d_lin[ , names(d_lin) != names(catVar)[col_num]]}
+  }
+}
+```
+
+We assessed the p-values at a 99% confidence level, meaning that we rejected the null hypothesis for p-values less than 0.01, implying that the population variances were significantly different enough to have predictive power on the target variable. Variables that showed multicollinearity or that were calculated from other variables were manually removed from the dataset.
+
+```{r}
+correlation = cor(contVar.except.outcome,d_lin$post_total_cost)
+(correlation = apply(correlation, 2 , sort))
+```
+
+Correlations were assessed between the continuous variables and the post index total cost. The continous variable with the highest positive correlation was post_medical_cost. The variable with the lowest correlation was pre_er_cost. The variable with the highest negative correlaton was generic_rate_post.
+
+```{r}
+#subset selection, using all continuous variables
+model = lm(d_lin$post_total_cost ~., data = d_lin)
+
+```
+
+```{r echo=FALSE}
+#Variable Selection for linear model
+d_lin =d_lin[ , !(names(d_lin) %in%c("pre_total_cost","pre_medical_cost","post_medical_cost","pre_ip_flag"))]
+contVar= contVar[ , !(names(contVar) %in%c("pre_total_cost","pre_medical_cost","post_medical_cost","pre_ip_flag"))]
+```
+
+We used the results from our subset selection to further filter the data for stepwise regression.
+
+## Distribution of Patient Adherence
+
+The second variable of interest is the patient drug adherence, which is represented by patient daily compliance of 80% captured by the variable pdc_80_flag.
+
+```{r warning=FALSE}
+ggplot(aes(d$pdc_80_flag), data = d)+geom_histogram(aes(fill=d$pdc_80_flag), stat = 'count')
+```
+
+The histogram shows that of the patients using antidiabetic drugs, less than half are adherent.
+
+```{r}
+ggplot(d, aes(sexN, fill=pdc_80_flag))+geom_bar()
+ggplot(d, aes(pre_er_flag, fill=pdc_80_flag))+geom_bar()
+ggplot(d, aes(post_ip_flag, fill=pdc_80_flag))+geom_bar()
+ggplot(d, aes(age_cat, fill=pdc_80_flag))+geom_bar(position = 'dodge')
+
+```
+The boxplots show that drug adherence is slightly less among female patients and appears significantly less in patients that have more than one pre-index emergency room visit. Among the age categories, adherence improves as that age of the patients increase. 
+
+```{r}
+ggplot(d, aes(generic_cost,fill=pdc_80_flag))+geom_density(alpha=0.5)+xlim(0,2500)
+```
+
+The distribution did not show much separation due to the cost among generic drugs.
+
+```{r}
+#Select variables for logistic model
+d_log <- d[,-c(1,12,50,92,94,95)] # don't need pdc, know drug class since we filtered on it
+
+```
+
+# Train, Test and Validation Sets
+
+To create our training and validation sets, we followed a general rule of thumb to set aside twenty percent of our data for validation testing. The hold-out set was randomly selected by row index. Since the logistic regression model required the removal of values that were "N/A", the hold-out sets were selected indvidually for each model.
+
+```{r}
+#Separating train and test data
+set.seed(2018)
+
+#Sample Indexes for linear model Cross-Validation
+indices = sample(1:nrow(d), size=0.2*nrow(d_lin))
+
+testD_lin = d_lin[indices,]
+trainD_lin = d_lin[-indices,]
+
+#Remove na values and sample for logistic model cross-validation
+d_log <- na.omit(d_log)
+sample <- sample.int(n = nrow(d_log), size = floor(0.8*nrow(d_log)), replace=F)
+train <- d_log[sample,]
+test <- d_log[-sample,]
+```
+
+
+# Linear Regression Model
+
+## Stepwise Regression
+
+Stepwise linear regression was performed on 18 continuous features selected by p-values determined from using the built-in R function for linear regression.
+
+```{r echo=FALSE}
+#stepwise regression
+full = lm(post_total_cost~ . , data=trainD_lin)
+
+null=lm(post_total_cost ~ post_op_cost  , data=trainD_lin)
+
+m2 = update(null, .~. + post_ip_cost)
+
+m3 = update(m2, .~. + num_op_post)
+
+m4 = update(m3, .~. + pre_total_cat)
+
+m5 = update(m4, .~. + generic_cost_post )
+
+m6 = update(m5, .~. + post_er_flag )
+
+m7 = update(m6, .~. + post_ip_flag )
+
+m8 = update(m7, .~. + brand_cost_post )
+
+m9 = update(m8, .~. + num_gpi6_post  )
+
+m10 = update(m9, .~. + post_er_cost   )
+
+m11 = update(m10, .~. + generic_rate_post   )
+
+#m12 = update(m11, .~. + drug_class   )
+m12 = m11
+
+m13 = update(m11, .~. + idx_copay  )
+
+m14 = update(m13, .~. + Other_Cancer   )
+
+m15 = update(m14, .~. + age_cat   )
+
+m16 = update(m15, .~. + pre_er_flag  )
+
+m17 = update(m16, .~. + num_er_post   )
+
+m18 = update(m17, .~. + num_ip_post     )
+
+m19 = update(m18, .~. + total_los_post    )
+
+```
+
+### Model Assumptions
+
+```{r}
+#Residual Analysis
+par(mfrow=c(2,2))
+plot(m19)
+```
+
+The residual analysis showed a slight deterministic pattern. More analysis into the data would be required to improve the residual distribution. Overall, the model assumptions for linearity were acceptable.
+
+### Cross-Validation for Stepwise Linear Model
+
+```{r, warning=FALSE}
+#Cross Validation
+xTest = model.matrix(post_total_cost ~ ., data = testD_lin)[,-1]
+prediction= predict(m19, newx = xTest)
+
+Eout= mean((testD_lin$post_total_cost - prediction)^2)
+```
+
+Testing our model with the hold-out set returned an MSE of `r round(Eout,3)`.
+
+## Backward and Forward Linear Regression
+
+To improve on our error rate determined from the validation set, backward and forward stepwise regression were implemented using the built-in function regsubsets() function in R.
+
+```{r Backward and Forward , warning=FALSE}
+#Forward solution
+subsetMod= regsubsets(post_total_cost ~ . , data = trainD_lin, method ="forward" , nvmax=20)
+```
+
+```{r echo=FALSE}
+subsetModSum = summary(subsetMod)
+
+#par(mfrow = c(1,2))
+plot(subsetModSum$bic, xlab = "Number of Variables" , ylab= "BIC (forward method)")
+plot(subsetMod , scale = "bic")
+coefficients=coef(subsetMod , which.min(subsetModSum$bic))
+```
+```{r}
+xTest = model.matrix(post_total_cost ~ ., data = testD_lin)
+
+#Calculate MSE
+Eout= mean((sapply(1:nrow(testD_lin),
+                   function(k) xTest[k,names(coefficients)] %*% coefficients
+                   ) - testD_lin$post_total_cost)^2)
+
+adjr <- (subsetModSum$adjr2)
+#number of variables with highest adjusted r^2
+var<- which.max(subsetModSum$adjr2)
+```
+
+For the forward solution, the optimal number of coefficients was `r var`, and the MSE was `r round(Eout,3)`. The 14 selected variables with associated p-values are shown below.
+
+```{r}
+coef(subsetMod, which.max(subsetModSum$adjr2))
+```
+
+```{r}
+#Backward solution
+subsetMod= regsubsets(post_total_cost ~ . , data = trainD_lin, method ="backward" , nvmax=20)
+```
+```{r echo=FALSE}
+subsetModSum = summary(subsetMod)
+
+plot(subsetModSum$bic, xlab = "Number of Variables" , ylab= "BIC (backward method)")
+plot(subsetMod , scale = "bic")
+coefficients=coef(subsetMod , which.min(subsetModSum$bic))
+
+xTest = model.matrix(post_total_cost ~ ., data = testD_lin)
+
+Eout= mean((sapply(1:nrow(testD_lin) ,
+                   function(k) xTest[k,names(coefficients)] %*% coefficients
+                   ) - testD_lin$post_total_cost)^2)
+
+vars <- which.max(subsetModSum$adjr2)
+
+```
+
+The same process was performed using the backward regression method. The number of coefficients that gave the largest adjusted r-squared value was `r vars`, and the resulting MSE was `r round(Eout,3)`. The 13 selected variables and associated p-values are shown below.
+
+```{r echo=FALSE}
+coefficients
+```
+
+### Ridge Regression using glmnet library
+
+```{r Ridge Regression, warning=FALSE, echo=FALSE}
+lambdaRange = 10^seq(-2,2,length = 100)
+x = model.matrix(post_total_cost ~ ., data = trainD_lin)[,-1]
+```
+
+```{r}
+#Set alpha to zero for Ridge
+ridMod = glmnet(x,trainD_lin$post_total_cost, alpha = 0, lambda = lambdaRange)
+```
+```{r echo=FALSE}
+plot(ridMod, main = 'Ridge Regularization')
+```
+
+## Cross-Validation for Ridge
+
+```{r CV for Ridge, warning=FALSE}
+cv.out = cv.glmnet(x, trainD_lin$post_total_cost, alpha = 0)
+plotres(cv.out)
+
+bestLambda = cv.out$lambda.min
+
+coef(cv.out, s = bestLambda)
+```
+
+```{r}
+xTest = model.matrix(post_total_cost ~ ., data = testD_lin)[,-1]
+prediction= predict(ridMod, newx = xTest, s = bestLambda)
+Eout= mean((testD_lin$post_total_cost - prediction)^2)
+```
+
+Using ridge regression, the best $\lambda$ occured at 86 coefficients that included all features. The MSE was `r round(Eout,3)` and the lambda value was `r round(bestLambda,4)`.
+
+## Lasso Regression using glmnet library
+
+```{r Lasso Regression, warning=FALSE}
+#Set alpha to one for lasso
+lassoMod = glmnet(x,trainD_lin$post_total_cost, alpha = 1 , lambda = lambdaRange)
+```
+
+
+```{r echo=FALSE}
+plot(lassoMod)
+#We can obtain the actual coefficients at one or more lambdas
+#coef(ridMod,s=0.1)
+```
+
+## Cross-Validation for Lasso
+
+```{r CV for Lasso, warning=FALSE}
+
+cv.out = cv.glmnet(x, trainD_lin$post_total_cost, alpha = 1)
+plotres(cv.out)
+
+bestLambda = cv.out$lambda.min
+
+coef(cv.out, s = bestLambda)
+```
+
+```{r}
+xTest = model.matrix(post_total_cost ~ ., data = testD_lin)[,-1]
+prediction= predict(ridMod, newx = xTest, s = bestLambda)
+Eout=mean((testD_lin$post_total_cost - prediction)^2)
+
+```
+Using lasso regression, the best $\lambda$ occured at approximately 60 coefficients that included 45 features. The MSE was `r round(Eout,3)` and the lambda value was `r round(bestLambda,4)`.
+
+
+# Logistic Regression Model
+
+To build a logistic regression model for predicting patient adherence, ridge and lasso regression was applied, followed by cross-validation to find the optimal $\lambda$ value and preferred number of features and coefficients.
+
+```{r}
+#Expected Outputs
+ytrain <- train$pdc_80_flag
+ytest <- test$pdc_80_flag
+
+```
+
+## Ridge Regression in glmnet
+
+```{r}
+x <- model.matrix(pdc_80_flag~.,data=train)[,-1]
+x.test <- model.matrix(pdc_80_flag~.,data=test)[,-1]
+
+ridMod <- glmnet(x,ytrain,alpha =0, family="binomial")
+```
+```{r echo=FALSE}
+plot(ridMod,xvar="lambda", label=TRUE)
+```
+
+## Cross-Validation for Ridge
+
+```{r}
+cv.ridge <- cv.glmnet(x, y=ytrain, alpha=0,family="binomial")
+plot(cv.ridge)
+best.lambda.ridge <- cv.ridge$lambda.min
+```
+As expected for ridge regression, every variable in the model has a non-zero coefficient. By cross-validation, the best value for lambda is about `r round(best.lambda.ridge,4)` for 115 coefficients.
+
+
+The coefficients associated with the ridge regression model are as follows:
+```{r}
+coef(ridMod, s=best.lambda.ridge)
+```
+
+## Lasso Regression
+
+```{r}
+lassMod <- glmnet(x,ytrain,alpha =1, family="binomial")
+```
+```{r}
+plot(lassMod,xvar="lambda", label=TRUE)
+```
+
+## Cross-Validation for Lasso
+
+```{r}
+cv.lasso <- cv.glmnet(x, y=ytrain, alpha=1,family="binomial")
+plot(cv.lasso)
+best.lambda.lasso <- cv.lasso$lambda.min
+```
+By cross-validation, the best value for lambda is about `r round(best.lambda.lasso,4)` at approximantely 30-40 coefficients that included 27 features.
+
+The coefficients associated with the lasso regression model are as follows:
+```{r}
+coef(lassMod, s=best.lambda.lasso)
+```
+
+
+## Prediction with Ridge and Lasso
+
+```{r echo=FALSE}
+ridgePreds<- predict(cv.ridge,newx=x.test,s=best.lambda.ridge,type="response")
+lassoPreds <- predict(cv.lasso,newx=x.test,s=best.lambda.lasso,type="response")
+
+preds<- cbind(ridgePreds,lassoPreds,ytest)
+(roc <- roc(preds[,3]~preds[,1]))
+```
+```{r echo=FALSE}
+(roc2 <- roc(preds[,3]~preds[,2]))
+```
+
+```{r echo=FALSE}
+plot(roc,col='blue')
+lines(roc2)
+```
+
+In the plot above, the ridge model is shown in blue and the lasso in black. The lasso model showed a slightly higher ROC AUC score of 0.78 in comparison to the ridge model at 0.75. Visually, the shape of the two curves do not different significantly.
+
+```{r echo=FALSE}
+preds[,1:2][preds[,1:2]>0.5]<-1
+preds[,1:2][preds[,1:2]<0.5]<-0
+
+cat('Ridge Classification Rate:', round(sum(preds[,1]==ytest)/length(ytest),2))
+cat('Lasso Classification Rate:', round(sum(preds[,2]==ytest)/length(ytest),2))
+```
+Patient adherence of 1 was assigned to outputs greater than 0.5. These patients would be classified as at least 80% compliant with drug adherence. Although the classification rate is slightly lower, we favor the lasso regression which is more sparse at approximately 30 to 40 coefficients compared to 115 in the ridge. The lasso regression model was further evaluated at different values for lambda.
+
+```{r echo=FALSE}
+lassoPreds <- predict(cv.lasso,newx=x.test,s=c(0.01,0.015,0.02,0.025,0.03,0.035,0.04,0.045,0.05,0.055,0.06),type="response")
+lassoPreds[lassoPreds>0.5]<-1
+lassoPreds[lassoPreds<0.5]<-0
+
+
+scores <- c()
+
+for(i in 1:ncol(lassoPreds)){
+  score <- sum(lassoPreds[,i]==ytest)/length(ytest)
+  scores <- c(scores,score)
+}
+
+lambdas=c(0.01,0.015,0.02,0.025,0.03,0.035,0.04,0.045,0.05,0.055,0.06)
+
+scores.df <- data.frame(Lambda=lambdas, "Test Accuracy"=scores)
+plot(scores.df)
+
+roc3 <- roc(ytest~lassoPreds[,4])
+roc3
+plot(roc3)
+
+coef(lassMod, s=.03)
+```
+
+Changes in $\lambda$ appeared to lower the test accuracy rate of the lasso regression model. For example, at $\lambda =0.03$, the AUC value decreases to 0.63. 
+
+# Results
+
+The results for each model after cross-validation are summarized in the tables below.
+
+```{r echo = FALSE, warning=FALSE}
+Linear <- c('Stepwise', 'Forward', 'Backward', 'Ridge', 'Lasso')
+MSE <- c(3.62, 0.860, 0.853, 0.820, 0.821)
+Lambda1 <- c(NA, NA, NA, 0.1867,0.0102)
+Variables <- c(18,14,13,63,45)
+
+Logistic <- c('Ridge', 'Lasso','Lasso')
+Lambda <- c(0.0461, 0.0122, 0.030)
+ROC_AUC <- c(0.75,0.78,0.63)
+Classification_Rate <- c(0.73, 0.72, 0.67)
+VariablesL <- c(90, 30, 12)
+
+library(kableExtra)
+library(knitr)
+
+Lin <- data.frame(cbind(Linear, MSE, Lambda1, Variables))
+colnames(Lin) <- c('Linear Regression Method', 'MSE', 'Lambda','No. Variables')
+Lin %>%
+  kable('html', row.names=F) %>%
+  kable_styling(bootstrap_options='bordered', full_width = F, position = 'left', font_size = 14)
+```
+Although the ridge regression outperformed the lasso regression by a very small margin, to predict the total post index costs, we would opt for the lasso regression linear model with a $\lambda$ value of 0.0102 due to the decrease in complexity of the model.
+
+
+```{r echo=FALSE}
+Log <- data.frame(cbind(Logistic,Lambda, ROC_AUC, Classification_Rate, VariablesL))
+colnames(Log) = c('Logistic Regression Method', 'Lambda', 'ROC AUC Value', 'Classification Rate', '~No. Variables')
+Log %>%
+  kable('html', row.names=F) %>%
+  kable_styling(bootstrap_options='bordered', full_width = F, position = 'left', font_size = 14)
+```
+To classify patient drug adherence of at least 80%, we choose the lasso regression logistic model with a $\lambda$ value of 0.0122 and an AUC value of 0.78.
+
+# Conclusion
+
+In building two regression models, one linear and one logistic, it was found that the use of ridge and lasso constraints on the parameters could have varying effects. After selecting features based on statistical analysis of variance and mean between groups within the categories (p-value < 0.01), we used cross-validation techniques to omit features from the model to reduce the mean square error or increase the classification rate. In the case of using subset selection methods for building the linear model, the backward method produced the lowest MSE when compared to stepwise and forward methods. The ridge regression outperformed subset selection and lasso by a minimal amount. However, due to the complexity of the model, we prefer the lasso regression for simplicity at negligible expense to the accuracy. For the logistic model, we determined that the lasso regression was optimal for the same reasons. Evaluating different values of $\lambda$ to decrease complexity of the model did not produce an appreciable effect on our classification rate in the logistic model. Future endeavors would include applying the elastic net method.
+
+In performing the different regression techniques, we learned that feature selection performed through statistical analysis relative to the target output is critical in reducing the complexity of the model before regression methods are applied. This helps in limiting the effects of multicolinearity in the case of the linear regression model. For the logistic model, changes to lambda within the optimal bounds in order to reduce features did not seem to improve the accuracy of our model, however, more exploration could be done to assess the selected threshold value of 0.5 that was used to classify. It is also notable that we achieved roughly the same accuracy with less variables, which reduces our risk of overfitting with future test data.
+
+Among the potential improvements, we found that use of residual analyses can reveal that more work should be done to understand the features in the model. For this project, the objective was to make a prediction using the data with little knowledge of the background of the topic. This exercise demonstrated that within data, there is a large amount of predictive power where regression tools are used.

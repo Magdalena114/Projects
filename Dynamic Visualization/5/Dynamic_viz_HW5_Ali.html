@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Full-Fledged Dynamic/Interactive Visualization</title>
+  <meta charset="utf-8" />
+  <script src="./d3.v4.min.js" type="text/JavaScript"></script>
+  <script src="./colorbrewer.js" type="text/JavaScript"></script>
+  <script src="./lodash.min.js" type="text/JavaScript"></script>
+  <script src="./HW5_org_data.js" type="text/JavaScript"></script>
+  <script src="./HW5_assist_viz.js" type="text/JavaScript"></script>
+  <link rel="stylesheet" type="text/css" href="./Dynamic_viz_HW5_Ali.css">
+</head>
+<body>
+<h1>Dynamic Visualization of American Time Survey Dataset</h1>
+<div id="tooltip" class="hidden">
+  <p><strong><span id="education">Education Level</span>:</strong></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Mean Age &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span id="mean_age"></span></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Mean # Children&nbsp;&nbsp;&nbsp; : <span id="mean_children"></span></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Mean weekly Work: <span id="mean_work"></span></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Mean daily Sleep&nbsp;&nbsp;&nbsp;: <span id="mean_sleep"></span></p>
+</div>
+
+<div id="viz">
+</div>
+
+<div id="sort_controls"><p>Sort by? </p>
+  <button type="button" id="education_sort">Education Level</button>
+  <button type="button" id="mean_age_sort">Average Age</button>
+  <button type="button" id="mean_children_sort">Average # Children</button>
+  <button type="button" id="mean_work_sort">Mean Work</button>
+  <button type="button" id="mean_sleep_sort">Mean Sleep</button>
+  <button type="button" id="mean_housework_sort">Mean Housework</button>
+  <button type="button" id="mean_childcare_sort">Mean Childcare</button>
+  <button type="button" id="mean_shopping_sort">Mean Shopping</button>
+  <button type="button" id="mean_tv_sort">Mean TV</button>
+</div>
+
+<div id="display_controls"><p>Display? (on Y-axis) </p>
+  <button type="button" id="mean_age_display">Average Age</button>
+  <button type="button" id="mean_children_display">Average # Childrend</button>
+  <button type="button" id="mean_work_display">Mean Work</button>
+  <button type="button" id="mean_sleep_display">Mean Sleep</button>
+  <button type="button" id="mean_housework_display">Mean Housework</button>
+  <button type="button" id="mean_childcare_display">Mean Childcare</button>
+  <button type="button" id="mean_shopping_display">Mean Shopping</button>
+  <button type="button" id="mean_tv_display">Mean TV</button>
+</div>
+
+</body>
+<footer>
+  <script src="./Dynamic_viz_HW5_Ali.js" type="text/JavaScript"></script>
+</footer>
+</html>

@@ -1,0 +1,160 @@
+---
+title: "ANLT-203_01 Assignment 1: Bayes Theorem and Estimating a Population Proportion "
+author:  "Brandon Reynolds - Ali Taheri"
+date: "JAN 28, 2017"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stats)
+```
+
+
+
+
+## Problem 1
+
+### 1) 
+
+```{r Simulation of 10K trials, warning=FALSE}
+#Number of experiment
+n=1:10000
+
+# Generation of samples:We consider '1' as head and '0' as tail
+samples=matrix(nrow=10000,ncol=30)
+samples[n,]=sapply(n,function(n) rbinom(n=30, size=1, prob=0.5))
+
+#Calculation of maximum run per each experiment
+longest.run=vector(length=10000)
+longest.run[n]=sapply(n,function(n) max(rle(samples[n,])$lengths))
+
+avg.longest.run=mean(longest.run)
+cat("Average value of longest run is:",avg.longest.run)                    
+```
+
+### 2) 
+
+```{r Calculation of probability of a run with length of 7 or more,warning=FALSE}
+number.run.greater.seven=10000-length(which(longest.run<7))
+prob.run.greater.seven=number.run.greater.seven/10000
+cat("Probability of a run with length more than 7 is :",prob.run.greater.seven)
+
+```
+
+We find probability by repetition of experiments, so we followes frequentists's view of probabilty.
+
+## Problem 2
+
+### 1)
+
+Null hypothesis:        $H_0$ : $\pi$ = 0.5 <br/>
+Alternative hypothesis: $H_a$ : $\pi$ $\neq$ 0.5
+
+### 2) 
+```{r Posterior probability distribution,warning=FALSE}
+pi=seq(0,1,0.125)
+prior=c(.001,.002,.008,.014,.95,.014,.008,.002,.001)
+L=pi^15*(1-pi)^5
+unnormPost=L*prior
+post=unnormPost/sum(unnormPost)
+plot(pi,post,type='h',lwd=10,ylab='Posterior Probability')
+print(round(post,3))
+```
+
+## Problem 3
+
+### 1)
+
+Null hypothesis: $H_0$: $\theta \le 0.2$ <br/>
+Alternative hypothesis: $H_a$: $\theta > 0.2$ 
+
+### 2)
+We could use our current information about this player for estimation of prior distribution. With survey data, sample proportion is 40/120 that is about .33 . If we consider 41 and 81 as our $\alpha$ and $\beta$, credible interval of prior would be (.26, .42) that seems short and are very higher than 0.2 . Therefor we will decrease sample size and keep prior mean equal to sample proportion that is .33. If we consider sample size of 28, $\alpha$+$\beta$ would be 30 and $\alpha$/30 would be equal to .33. With these relations we will have value of 10 for alpha and value of 20 for $\beta$. 
+
+$prior \propto \theta^{9}(1-\theta)^{19}$
+
+### 3)
+
+$Likelihood = \binom{30}{5} \theta^{5}(1-\theta)^{25}$
+
+For simplicity, we could exclude constact factor:
+
+$Likelihood \propto \theta^{5}(1-\theta)^{25}$
+
+### 4)
+By consideration of beta(33,66) as prior, we would have:
+
+$prior \propto \theta^{32}(1-\theta)^{65}$
+
+Based on Bayes theorem:
+
+$posterior \propto Likelihood \times prior$
+
+Therfore we would have:
+
+$posterir \propto \theta^{37}(1-\theta)^{90}$
+
+### 5)
+```{r Plot posterior density,warning=FALSE}
+theta=seq(0,1,.0004)
+Posterior=beta(38,91)*theta^37*(1-theta)^90
+plot(theta,Posterior,xlab="Proportion",main="Distribution of Posterior",col="blue")
+```
+
+### 6)
+
+```{r Plot all,warning=FALSE}
+# x as proportion or theta
+x=seq(0,1,.0004) 
+prior=dbeta(x,33,66)
+likelihood=choose(30,5)*x^5*(1-x)^25
+posterior=dbeta(x,38,91)
+plot(x,posterior,col="blue",ylab=NA,xlab="Proportion",main="Prior,Likelihood and Posterior")
+points(x,4*likelihood,col="red")
+points(x,prior,col="green")
+legend(.65,8,legend=c("prior","4 x likelihood","posterior"),col=c("green","red","blue"),lty=c(1,1,1),ncol=1)
+```
+
+
+
+
+### 7)
+
+```{r Hypothesis Tert,warning=FALSE}
+prob.null.hypothesis=pbeta(.2,38,91)
+cat("Probablity of Null hypotheis is:",round(prob.null.hypothesis,3))
+```
+
+We could see that probability of null hypotheis is lower than 0.05, so with predefined level of 0.05, we would reject null hypothesis in favor of alternative hypotheis. Therfore, she will play in the first game.
+
+### 8)
+
+```{r Credible Interval,warning=FALSE}
+alpha=38
+beta=91
+cred=qbeta(c(0.025,0.975),alpha,beta)
+cat("95% credible interval would be:",round(cred,2))
+```
+
+### 9)
+
+```{r statistics of posterior,warning=FALSE}
+mean=alpha/(alpha+beta)
+median=qbeta(0.5,alpha,beta)
+mode=(alpha-1)/(alpha+beta-2)
+cat("Mean   of posterior is:",round(mean,4),"\n")
+cat("Median of posterior is:",round(median,4),"\n")
+cat("Mode   of posterior is:",round(mode,4),"\n")
+```
+
+We can see that median is between mode and mean.
+
+
+
+

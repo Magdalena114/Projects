@@ -1,0 +1,38 @@
+svg {
+    height: 500px;
+    width: 500px;
+    border: 1px solid gray;
+  }
+line {
+  shape-rendering: crispEdges;
+  stroke: #000000;
+  } 
+
+line.minor  {
+  stroke: #777777;
+  stroke-dasharray: 2,2;
+} 
+
+path.domain {
+  fill: none;
+  stroke: black;
+}
+
+/* defined class */
+.title {
+  font-family: 'Monotype Sorts', dingbats, 'ITC Zapf Dingbats', fantasy;
+  font-size: 40px;
+  font-style: italic;
+  text-shadow: 3px 2px red;
+  text-anchor: middle;
+}
+
+/* defined id */
+
+#description {
+  font-family: Arial;
+  font-size: 16px;
+  text-shadow: 3px 2px yellow;
+  text-anchor: middle;
+
+}

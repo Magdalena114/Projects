@@ -1,0 +1,49 @@
+// Need to specify whether using proto2 or proto3.
+syntax = "proto2";
+
+
+// Our main data storage object will be a "movie".
+message Movie {
+  optional string color=1;
+  optional float num_critic_for_reviews = 2;
+  optional float duration = 3;
+  optional float gross = 4;         
+  optional string genres = 5;      
+  required string movie_title = 6;    
+  optional float facenumber_in_poster =7;
+  optional int64 num_voted_users =8;
+  optional int64 cast_total_facebook_likes =9;
+  optional string plot_keywords = 10;  
+  optional string movie_imdb_link = 11;
+  optional float num_user_for_reviews =12;
+  optional string language = 13;
+  optional string country = 14;
+  optional string content_rating = 15;
+  optional float budget = 16;
+  optional float title_year =17;
+  optional float imdb_score =18;
+  optional float aspect_ratio =19;
+  optional int32 movie_facebook_likes =20;
+    
+// Information regarding the Movie people (including director and casts)
+message Person {
+  required string name = 1;
+  optional int32 num_facebook_likes = 2;       
+ 
+  enum role_of_person {
+      Director = 0;
+      actor_1 = 1;
+      actor_2 = 2;
+      actor_3 = 3;
+    }
+  optional role_of_person role = 3 [default = Director];
+   
+}
+  
+  repeated Person person = 21;    // And, of course, multiple persons are possible
+}
+
+message MovieBase {
+  repeated Movie movie = 1;          // Finally, our MovieBase can be full of many movie,
+}
+

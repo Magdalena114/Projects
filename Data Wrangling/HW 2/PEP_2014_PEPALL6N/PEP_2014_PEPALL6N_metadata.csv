@@ -1,0 +1,2170 @@
+year.id,Id
+year.display-label,Year
+hisp.id,Id
+hisp.display-label,Hispanic Origin
+GEO.id,Id
+GEO.id2,Id2
+GEO.display-label,Geography
+totpop_sex0_age999,Total; Both Sexes; Total
+wa_sex0_age999,Race Alone - White; Both Sexes; Total
+ba_sex0_age999,Race Alone - Black or African American; Both Sexes; Total
+ia_sex0_age999,Race Alone - American Indian and Alaska Native; Both Sexes; Total
+aa_sex0_age999,Race Alone - Asian; Both Sexes; Total
+na_sex0_age999,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes; Total
+tom_sex0_age999,Two or More Races; Both Sexes; Total
+totpop_sex0_age0,Total; Both Sexes;  0
+wa_sex0_age0,Race Alone - White; Both Sexes;  0
+ba_sex0_age0,Race Alone - Black or African American; Both Sexes;  0
+ia_sex0_age0,Race Alone - American Indian and Alaska Native; Both Sexes;  0
+aa_sex0_age0,Race Alone - Asian; Both Sexes;  0
+na_sex0_age0,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  0
+tom_sex0_age0,Two or More Races; Both Sexes;  0
+totpop_sex0_age1,Total; Both Sexes;  1
+wa_sex0_age1,Race Alone - White; Both Sexes;  1
+ba_sex0_age1,Race Alone - Black or African American; Both Sexes;  1
+ia_sex0_age1,Race Alone - American Indian and Alaska Native; Both Sexes;  1
+aa_sex0_age1,Race Alone - Asian; Both Sexes;  1
+na_sex0_age1,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  1
+tom_sex0_age1,Two or More Races; Both Sexes;  1
+totpop_sex0_age2,Total; Both Sexes;  2
+wa_sex0_age2,Race Alone - White; Both Sexes;  2
+ba_sex0_age2,Race Alone - Black or African American; Both Sexes;  2
+ia_sex0_age2,Race Alone - American Indian and Alaska Native; Both Sexes;  2
+aa_sex0_age2,Race Alone - Asian; Both Sexes;  2
+na_sex0_age2,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  2
+tom_sex0_age2,Two or More Races; Both Sexes;  2
+totpop_sex0_age3,Total; Both Sexes;  3
+wa_sex0_age3,Race Alone - White; Both Sexes;  3
+ba_sex0_age3,Race Alone - Black or African American; Both Sexes;  3
+ia_sex0_age3,Race Alone - American Indian and Alaska Native; Both Sexes;  3
+aa_sex0_age3,Race Alone - Asian; Both Sexes;  3
+na_sex0_age3,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  3
+tom_sex0_age3,Two or More Races; Both Sexes;  3
+totpop_sex0_age4,Total; Both Sexes;  4
+wa_sex0_age4,Race Alone - White; Both Sexes;  4
+ba_sex0_age4,Race Alone - Black or African American; Both Sexes;  4
+ia_sex0_age4,Race Alone - American Indian and Alaska Native; Both Sexes;  4
+aa_sex0_age4,Race Alone - Asian; Both Sexes;  4
+na_sex0_age4,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  4
+tom_sex0_age4,Two or More Races; Both Sexes;  4
+totpop_sex0_age5,Total; Both Sexes;  5
+wa_sex0_age5,Race Alone - White; Both Sexes;  5
+ba_sex0_age5,Race Alone - Black or African American; Both Sexes;  5
+ia_sex0_age5,Race Alone - American Indian and Alaska Native; Both Sexes;  5
+aa_sex0_age5,Race Alone - Asian; Both Sexes;  5
+na_sex0_age5,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  5
+tom_sex0_age5,Two or More Races; Both Sexes;  5
+totpop_sex0_age6,Total; Both Sexes;  6
+wa_sex0_age6,Race Alone - White; Both Sexes;  6
+ba_sex0_age6,Race Alone - Black or African American; Both Sexes;  6
+ia_sex0_age6,Race Alone - American Indian and Alaska Native; Both Sexes;  6
+aa_sex0_age6,Race Alone - Asian; Both Sexes;  6
+na_sex0_age6,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  6
+tom_sex0_age6,Two or More Races; Both Sexes;  6
+totpop_sex0_age7,Total; Both Sexes;  7
+wa_sex0_age7,Race Alone - White; Both Sexes;  7
+ba_sex0_age7,Race Alone - Black or African American; Both Sexes;  7
+ia_sex0_age7,Race Alone - American Indian and Alaska Native; Both Sexes;  7
+aa_sex0_age7,Race Alone - Asian; Both Sexes;  7
+na_sex0_age7,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  7
+tom_sex0_age7,Two or More Races; Both Sexes;  7
+totpop_sex0_age8,Total; Both Sexes;  8
+wa_sex0_age8,Race Alone - White; Both Sexes;  8
+ba_sex0_age8,Race Alone - Black or African American; Both Sexes;  8
+ia_sex0_age8,Race Alone - American Indian and Alaska Native; Both Sexes;  8
+aa_sex0_age8,Race Alone - Asian; Both Sexes;  8
+na_sex0_age8,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  8
+tom_sex0_age8,Two or More Races; Both Sexes;  8
+totpop_sex0_age9,Total; Both Sexes;  9
+wa_sex0_age9,Race Alone - White; Both Sexes;  9
+ba_sex0_age9,Race Alone - Black or African American; Both Sexes;  9
+ia_sex0_age9,Race Alone - American Indian and Alaska Native; Both Sexes;  9
+aa_sex0_age9,Race Alone - Asian; Both Sexes;  9
+na_sex0_age9,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  9
+tom_sex0_age9,Two or More Races; Both Sexes;  9
+totpop_sex0_age10,Total; Both Sexes;  10
+wa_sex0_age10,Race Alone - White; Both Sexes;  10
+ba_sex0_age10,Race Alone - Black or African American; Both Sexes;  10
+ia_sex0_age10,Race Alone - American Indian and Alaska Native; Both Sexes;  10
+aa_sex0_age10,Race Alone - Asian; Both Sexes;  10
+na_sex0_age10,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  10
+tom_sex0_age10,Two or More Races; Both Sexes;  10
+totpop_sex0_age11,Total; Both Sexes;  11
+wa_sex0_age11,Race Alone - White; Both Sexes;  11
+ba_sex0_age11,Race Alone - Black or African American; Both Sexes;  11
+ia_sex0_age11,Race Alone - American Indian and Alaska Native; Both Sexes;  11
+aa_sex0_age11,Race Alone - Asian; Both Sexes;  11
+na_sex0_age11,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  11
+tom_sex0_age11,Two or More Races; Both Sexes;  11
+totpop_sex0_age12,Total; Both Sexes;  12
+wa_sex0_age12,Race Alone - White; Both Sexes;  12
+ba_sex0_age12,Race Alone - Black or African American; Both Sexes;  12
+ia_sex0_age12,Race Alone - American Indian and Alaska Native; Both Sexes;  12
+aa_sex0_age12,Race Alone - Asian; Both Sexes;  12
+na_sex0_age12,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  12
+tom_sex0_age12,Two or More Races; Both Sexes;  12
+totpop_sex0_age13,Total; Both Sexes;  13
+wa_sex0_age13,Race Alone - White; Both Sexes;  13
+ba_sex0_age13,Race Alone - Black or African American; Both Sexes;  13
+ia_sex0_age13,Race Alone - American Indian and Alaska Native; Both Sexes;  13
+aa_sex0_age13,Race Alone - Asian; Both Sexes;  13
+na_sex0_age13,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  13
+tom_sex0_age13,Two or More Races; Both Sexes;  13
+totpop_sex0_age14,Total; Both Sexes;  14
+wa_sex0_age14,Race Alone - White; Both Sexes;  14
+ba_sex0_age14,Race Alone - Black or African American; Both Sexes;  14
+ia_sex0_age14,Race Alone - American Indian and Alaska Native; Both Sexes;  14
+aa_sex0_age14,Race Alone - Asian; Both Sexes;  14
+na_sex0_age14,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  14
+tom_sex0_age14,Two or More Races; Both Sexes;  14
+totpop_sex0_age15,Total; Both Sexes;  15
+wa_sex0_age15,Race Alone - White; Both Sexes;  15
+ba_sex0_age15,Race Alone - Black or African American; Both Sexes;  15
+ia_sex0_age15,Race Alone - American Indian and Alaska Native; Both Sexes;  15
+aa_sex0_age15,Race Alone - Asian; Both Sexes;  15
+na_sex0_age15,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  15
+tom_sex0_age15,Two or More Races; Both Sexes;  15
+totpop_sex0_age16,Total; Both Sexes;  16
+wa_sex0_age16,Race Alone - White; Both Sexes;  16
+ba_sex0_age16,Race Alone - Black or African American; Both Sexes;  16
+ia_sex0_age16,Race Alone - American Indian and Alaska Native; Both Sexes;  16
+aa_sex0_age16,Race Alone - Asian; Both Sexes;  16
+na_sex0_age16,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  16
+tom_sex0_age16,Two or More Races; Both Sexes;  16
+totpop_sex0_age17,Total; Both Sexes;  17
+wa_sex0_age17,Race Alone - White; Both Sexes;  17
+ba_sex0_age17,Race Alone - Black or African American; Both Sexes;  17
+ia_sex0_age17,Race Alone - American Indian and Alaska Native; Both Sexes;  17
+aa_sex0_age17,Race Alone - Asian; Both Sexes;  17
+na_sex0_age17,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  17
+tom_sex0_age17,Two or More Races; Both Sexes;  17
+totpop_sex0_age18,Total; Both Sexes;  18
+wa_sex0_age18,Race Alone - White; Both Sexes;  18
+ba_sex0_age18,Race Alone - Black or African American; Both Sexes;  18
+ia_sex0_age18,Race Alone - American Indian and Alaska Native; Both Sexes;  18
+aa_sex0_age18,Race Alone - Asian; Both Sexes;  18
+na_sex0_age18,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  18
+tom_sex0_age18,Two or More Races; Both Sexes;  18
+totpop_sex0_age19,Total; Both Sexes;  19
+wa_sex0_age19,Race Alone - White; Both Sexes;  19
+ba_sex0_age19,Race Alone - Black or African American; Both Sexes;  19
+ia_sex0_age19,Race Alone - American Indian and Alaska Native; Both Sexes;  19
+aa_sex0_age19,Race Alone - Asian; Both Sexes;  19
+na_sex0_age19,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  19
+tom_sex0_age19,Two or More Races; Both Sexes;  19
+totpop_sex0_age20,Total; Both Sexes;  20
+wa_sex0_age20,Race Alone - White; Both Sexes;  20
+ba_sex0_age20,Race Alone - Black or African American; Both Sexes;  20
+ia_sex0_age20,Race Alone - American Indian and Alaska Native; Both Sexes;  20
+aa_sex0_age20,Race Alone - Asian; Both Sexes;  20
+na_sex0_age20,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  20
+tom_sex0_age20,Two or More Races; Both Sexes;  20
+totpop_sex0_age21,Total; Both Sexes;  21
+wa_sex0_age21,Race Alone - White; Both Sexes;  21
+ba_sex0_age21,Race Alone - Black or African American; Both Sexes;  21
+ia_sex0_age21,Race Alone - American Indian and Alaska Native; Both Sexes;  21
+aa_sex0_age21,Race Alone - Asian; Both Sexes;  21
+na_sex0_age21,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  21
+tom_sex0_age21,Two or More Races; Both Sexes;  21
+totpop_sex0_age22,Total; Both Sexes;  22
+wa_sex0_age22,Race Alone - White; Both Sexes;  22
+ba_sex0_age22,Race Alone - Black or African American; Both Sexes;  22
+ia_sex0_age22,Race Alone - American Indian and Alaska Native; Both Sexes;  22
+aa_sex0_age22,Race Alone - Asian; Both Sexes;  22
+na_sex0_age22,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  22
+tom_sex0_age22,Two or More Races; Both Sexes;  22
+totpop_sex0_age23,Total; Both Sexes;  23
+wa_sex0_age23,Race Alone - White; Both Sexes;  23
+ba_sex0_age23,Race Alone - Black or African American; Both Sexes;  23
+ia_sex0_age23,Race Alone - American Indian and Alaska Native; Both Sexes;  23
+aa_sex0_age23,Race Alone - Asian; Both Sexes;  23
+na_sex0_age23,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  23
+tom_sex0_age23,Two or More Races; Both Sexes;  23
+totpop_sex0_age24,Total; Both Sexes;  24
+wa_sex0_age24,Race Alone - White; Both Sexes;  24
+ba_sex0_age24,Race Alone - Black or African American; Both Sexes;  24
+ia_sex0_age24,Race Alone - American Indian and Alaska Native; Both Sexes;  24
+aa_sex0_age24,Race Alone - Asian; Both Sexes;  24
+na_sex0_age24,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  24
+tom_sex0_age24,Two or More Races; Both Sexes;  24
+totpop_sex0_age25,Total; Both Sexes;  25
+wa_sex0_age25,Race Alone - White; Both Sexes;  25
+ba_sex0_age25,Race Alone - Black or African American; Both Sexes;  25
+ia_sex0_age25,Race Alone - American Indian and Alaska Native; Both Sexes;  25
+aa_sex0_age25,Race Alone - Asian; Both Sexes;  25
+na_sex0_age25,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  25
+tom_sex0_age25,Two or More Races; Both Sexes;  25
+totpop_sex0_age26,Total; Both Sexes;  26
+wa_sex0_age26,Race Alone - White; Both Sexes;  26
+ba_sex0_age26,Race Alone - Black or African American; Both Sexes;  26
+ia_sex0_age26,Race Alone - American Indian and Alaska Native; Both Sexes;  26
+aa_sex0_age26,Race Alone - Asian; Both Sexes;  26
+na_sex0_age26,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  26
+tom_sex0_age26,Two or More Races; Both Sexes;  26
+totpop_sex0_age27,Total; Both Sexes;  27
+wa_sex0_age27,Race Alone - White; Both Sexes;  27
+ba_sex0_age27,Race Alone - Black or African American; Both Sexes;  27
+ia_sex0_age27,Race Alone - American Indian and Alaska Native; Both Sexes;  27
+aa_sex0_age27,Race Alone - Asian; Both Sexes;  27
+na_sex0_age27,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  27
+tom_sex0_age27,Two or More Races; Both Sexes;  27
+totpop_sex0_age28,Total; Both Sexes;  28
+wa_sex0_age28,Race Alone - White; Both Sexes;  28
+ba_sex0_age28,Race Alone - Black or African American; Both Sexes;  28
+ia_sex0_age28,Race Alone - American Indian and Alaska Native; Both Sexes;  28
+aa_sex0_age28,Race Alone - Asian; Both Sexes;  28
+na_sex0_age28,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  28
+tom_sex0_age28,Two or More Races; Both Sexes;  28
+totpop_sex0_age29,Total; Both Sexes;  29
+wa_sex0_age29,Race Alone - White; Both Sexes;  29
+ba_sex0_age29,Race Alone - Black or African American; Both Sexes;  29
+ia_sex0_age29,Race Alone - American Indian and Alaska Native; Both Sexes;  29
+aa_sex0_age29,Race Alone - Asian; Both Sexes;  29
+na_sex0_age29,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  29
+tom_sex0_age29,Two or More Races; Both Sexes;  29
+totpop_sex0_age30,Total; Both Sexes;  30
+wa_sex0_age30,Race Alone - White; Both Sexes;  30
+ba_sex0_age30,Race Alone - Black or African American; Both Sexes;  30
+ia_sex0_age30,Race Alone - American Indian and Alaska Native; Both Sexes;  30
+aa_sex0_age30,Race Alone - Asian; Both Sexes;  30
+na_sex0_age30,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  30
+tom_sex0_age30,Two or More Races; Both Sexes;  30
+totpop_sex0_age31,Total; Both Sexes;  31
+wa_sex0_age31,Race Alone - White; Both Sexes;  31
+ba_sex0_age31,Race Alone - Black or African American; Both Sexes;  31
+ia_sex0_age31,Race Alone - American Indian and Alaska Native; Both Sexes;  31
+aa_sex0_age31,Race Alone - Asian; Both Sexes;  31
+na_sex0_age31,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  31
+tom_sex0_age31,Two or More Races; Both Sexes;  31
+totpop_sex0_age32,Total; Both Sexes;  32
+wa_sex0_age32,Race Alone - White; Both Sexes;  32
+ba_sex0_age32,Race Alone - Black or African American; Both Sexes;  32
+ia_sex0_age32,Race Alone - American Indian and Alaska Native; Both Sexes;  32
+aa_sex0_age32,Race Alone - Asian; Both Sexes;  32
+na_sex0_age32,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  32
+tom_sex0_age32,Two or More Races; Both Sexes;  32
+totpop_sex0_age33,Total; Both Sexes;  33
+wa_sex0_age33,Race Alone - White; Both Sexes;  33
+ba_sex0_age33,Race Alone - Black or African American; Both Sexes;  33
+ia_sex0_age33,Race Alone - American Indian and Alaska Native; Both Sexes;  33
+aa_sex0_age33,Race Alone - Asian; Both Sexes;  33
+na_sex0_age33,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  33
+tom_sex0_age33,Two or More Races; Both Sexes;  33
+totpop_sex0_age34,Total; Both Sexes;  34
+wa_sex0_age34,Race Alone - White; Both Sexes;  34
+ba_sex0_age34,Race Alone - Black or African American; Both Sexes;  34
+ia_sex0_age34,Race Alone - American Indian and Alaska Native; Both Sexes;  34
+aa_sex0_age34,Race Alone - Asian; Both Sexes;  34
+na_sex0_age34,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  34
+tom_sex0_age34,Two or More Races; Both Sexes;  34
+totpop_sex0_age35,Total; Both Sexes;  35
+wa_sex0_age35,Race Alone - White; Both Sexes;  35
+ba_sex0_age35,Race Alone - Black or African American; Both Sexes;  35
+ia_sex0_age35,Race Alone - American Indian and Alaska Native; Both Sexes;  35
+aa_sex0_age35,Race Alone - Asian; Both Sexes;  35
+na_sex0_age35,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  35
+tom_sex0_age35,Two or More Races; Both Sexes;  35
+totpop_sex0_age36,Total; Both Sexes;  36
+wa_sex0_age36,Race Alone - White; Both Sexes;  36
+ba_sex0_age36,Race Alone - Black or African American; Both Sexes;  36
+ia_sex0_age36,Race Alone - American Indian and Alaska Native; Both Sexes;  36
+aa_sex0_age36,Race Alone - Asian; Both Sexes;  36
+na_sex0_age36,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  36
+tom_sex0_age36,Two or More Races; Both Sexes;  36
+totpop_sex0_age37,Total; Both Sexes;  37
+wa_sex0_age37,Race Alone - White; Both Sexes;  37
+ba_sex0_age37,Race Alone - Black or African American; Both Sexes;  37
+ia_sex0_age37,Race Alone - American Indian and Alaska Native; Both Sexes;  37
+aa_sex0_age37,Race Alone - Asian; Both Sexes;  37
+na_sex0_age37,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  37
+tom_sex0_age37,Two or More Races; Both Sexes;  37
+totpop_sex0_age38,Total; Both Sexes;  38
+wa_sex0_age38,Race Alone - White; Both Sexes;  38
+ba_sex0_age38,Race Alone - Black or African American; Both Sexes;  38
+ia_sex0_age38,Race Alone - American Indian and Alaska Native; Both Sexes;  38
+aa_sex0_age38,Race Alone - Asian; Both Sexes;  38
+na_sex0_age38,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  38
+tom_sex0_age38,Two or More Races; Both Sexes;  38
+totpop_sex0_age39,Total; Both Sexes;  39
+wa_sex0_age39,Race Alone - White; Both Sexes;  39
+ba_sex0_age39,Race Alone - Black or African American; Both Sexes;  39
+ia_sex0_age39,Race Alone - American Indian and Alaska Native; Both Sexes;  39
+aa_sex0_age39,Race Alone - Asian; Both Sexes;  39
+na_sex0_age39,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  39
+tom_sex0_age39,Two or More Races; Both Sexes;  39
+totpop_sex0_age40,Total; Both Sexes;  40
+wa_sex0_age40,Race Alone - White; Both Sexes;  40
+ba_sex0_age40,Race Alone - Black or African American; Both Sexes;  40
+ia_sex0_age40,Race Alone - American Indian and Alaska Native; Both Sexes;  40
+aa_sex0_age40,Race Alone - Asian; Both Sexes;  40
+na_sex0_age40,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  40
+tom_sex0_age40,Two or More Races; Both Sexes;  40
+totpop_sex0_age41,Total; Both Sexes;  41
+wa_sex0_age41,Race Alone - White; Both Sexes;  41
+ba_sex0_age41,Race Alone - Black or African American; Both Sexes;  41
+ia_sex0_age41,Race Alone - American Indian and Alaska Native; Both Sexes;  41
+aa_sex0_age41,Race Alone - Asian; Both Sexes;  41
+na_sex0_age41,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  41
+tom_sex0_age41,Two or More Races; Both Sexes;  41
+totpop_sex0_age42,Total; Both Sexes;  42
+wa_sex0_age42,Race Alone - White; Both Sexes;  42
+ba_sex0_age42,Race Alone - Black or African American; Both Sexes;  42
+ia_sex0_age42,Race Alone - American Indian and Alaska Native; Both Sexes;  42
+aa_sex0_age42,Race Alone - Asian; Both Sexes;  42
+na_sex0_age42,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  42
+tom_sex0_age42,Two or More Races; Both Sexes;  42
+totpop_sex0_age43,Total; Both Sexes;  43
+wa_sex0_age43,Race Alone - White; Both Sexes;  43
+ba_sex0_age43,Race Alone - Black or African American; Both Sexes;  43
+ia_sex0_age43,Race Alone - American Indian and Alaska Native; Both Sexes;  43
+aa_sex0_age43,Race Alone - Asian; Both Sexes;  43
+na_sex0_age43,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  43
+tom_sex0_age43,Two or More Races; Both Sexes;  43
+totpop_sex0_age44,Total; Both Sexes;  44
+wa_sex0_age44,Race Alone - White; Both Sexes;  44
+ba_sex0_age44,Race Alone - Black or African American; Both Sexes;  44
+ia_sex0_age44,Race Alone - American Indian and Alaska Native; Both Sexes;  44
+aa_sex0_age44,Race Alone - Asian; Both Sexes;  44
+na_sex0_age44,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  44
+tom_sex0_age44,Two or More Races; Both Sexes;  44
+totpop_sex0_age45,Total; Both Sexes;  45
+wa_sex0_age45,Race Alone - White; Both Sexes;  45
+ba_sex0_age45,Race Alone - Black or African American; Both Sexes;  45
+ia_sex0_age45,Race Alone - American Indian and Alaska Native; Both Sexes;  45
+aa_sex0_age45,Race Alone - Asian; Both Sexes;  45
+na_sex0_age45,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  45
+tom_sex0_age45,Two or More Races; Both Sexes;  45
+totpop_sex0_age46,Total; Both Sexes;  46
+wa_sex0_age46,Race Alone - White; Both Sexes;  46
+ba_sex0_age46,Race Alone - Black or African American; Both Sexes;  46
+ia_sex0_age46,Race Alone - American Indian and Alaska Native; Both Sexes;  46
+aa_sex0_age46,Race Alone - Asian; Both Sexes;  46
+na_sex0_age46,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  46
+tom_sex0_age46,Two or More Races; Both Sexes;  46
+totpop_sex0_age47,Total; Both Sexes;  47
+wa_sex0_age47,Race Alone - White; Both Sexes;  47
+ba_sex0_age47,Race Alone - Black or African American; Both Sexes;  47
+ia_sex0_age47,Race Alone - American Indian and Alaska Native; Both Sexes;  47
+aa_sex0_age47,Race Alone - Asian; Both Sexes;  47
+na_sex0_age47,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  47
+tom_sex0_age47,Two or More Races; Both Sexes;  47
+totpop_sex0_age48,Total; Both Sexes;  48
+wa_sex0_age48,Race Alone - White; Both Sexes;  48
+ba_sex0_age48,Race Alone - Black or African American; Both Sexes;  48
+ia_sex0_age48,Race Alone - American Indian and Alaska Native; Both Sexes;  48
+aa_sex0_age48,Race Alone - Asian; Both Sexes;  48
+na_sex0_age48,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  48
+tom_sex0_age48,Two or More Races; Both Sexes;  48
+totpop_sex0_age49,Total; Both Sexes;  49
+wa_sex0_age49,Race Alone - White; Both Sexes;  49
+ba_sex0_age49,Race Alone - Black or African American; Both Sexes;  49
+ia_sex0_age49,Race Alone - American Indian and Alaska Native; Both Sexes;  49
+aa_sex0_age49,Race Alone - Asian; Both Sexes;  49
+na_sex0_age49,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  49
+tom_sex0_age49,Two or More Races; Both Sexes;  49
+totpop_sex0_age50,Total; Both Sexes;  50
+wa_sex0_age50,Race Alone - White; Both Sexes;  50
+ba_sex0_age50,Race Alone - Black or African American; Both Sexes;  50
+ia_sex0_age50,Race Alone - American Indian and Alaska Native; Both Sexes;  50
+aa_sex0_age50,Race Alone - Asian; Both Sexes;  50
+na_sex0_age50,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  50
+tom_sex0_age50,Two or More Races; Both Sexes;  50
+totpop_sex0_age51,Total; Both Sexes;  51
+wa_sex0_age51,Race Alone - White; Both Sexes;  51
+ba_sex0_age51,Race Alone - Black or African American; Both Sexes;  51
+ia_sex0_age51,Race Alone - American Indian and Alaska Native; Both Sexes;  51
+aa_sex0_age51,Race Alone - Asian; Both Sexes;  51
+na_sex0_age51,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  51
+tom_sex0_age51,Two or More Races; Both Sexes;  51
+totpop_sex0_age52,Total; Both Sexes;  52
+wa_sex0_age52,Race Alone - White; Both Sexes;  52
+ba_sex0_age52,Race Alone - Black or African American; Both Sexes;  52
+ia_sex0_age52,Race Alone - American Indian and Alaska Native; Both Sexes;  52
+aa_sex0_age52,Race Alone - Asian; Both Sexes;  52
+na_sex0_age52,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  52
+tom_sex0_age52,Two or More Races; Both Sexes;  52
+totpop_sex0_age53,Total; Both Sexes;  53
+wa_sex0_age53,Race Alone - White; Both Sexes;  53
+ba_sex0_age53,Race Alone - Black or African American; Both Sexes;  53
+ia_sex0_age53,Race Alone - American Indian and Alaska Native; Both Sexes;  53
+aa_sex0_age53,Race Alone - Asian; Both Sexes;  53
+na_sex0_age53,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  53
+tom_sex0_age53,Two or More Races; Both Sexes;  53
+totpop_sex0_age54,Total; Both Sexes;  54
+wa_sex0_age54,Race Alone - White; Both Sexes;  54
+ba_sex0_age54,Race Alone - Black or African American; Both Sexes;  54
+ia_sex0_age54,Race Alone - American Indian and Alaska Native; Both Sexes;  54
+aa_sex0_age54,Race Alone - Asian; Both Sexes;  54
+na_sex0_age54,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  54
+tom_sex0_age54,Two or More Races; Both Sexes;  54
+totpop_sex0_age55,Total; Both Sexes;  55
+wa_sex0_age55,Race Alone - White; Both Sexes;  55
+ba_sex0_age55,Race Alone - Black or African American; Both Sexes;  55
+ia_sex0_age55,Race Alone - American Indian and Alaska Native; Both Sexes;  55
+aa_sex0_age55,Race Alone - Asian; Both Sexes;  55
+na_sex0_age55,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  55
+tom_sex0_age55,Two or More Races; Both Sexes;  55
+totpop_sex0_age56,Total; Both Sexes;  56
+wa_sex0_age56,Race Alone - White; Both Sexes;  56
+ba_sex0_age56,Race Alone - Black or African American; Both Sexes;  56
+ia_sex0_age56,Race Alone - American Indian and Alaska Native; Both Sexes;  56
+aa_sex0_age56,Race Alone - Asian; Both Sexes;  56
+na_sex0_age56,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  56
+tom_sex0_age56,Two or More Races; Both Sexes;  56
+totpop_sex0_age57,Total; Both Sexes;  57
+wa_sex0_age57,Race Alone - White; Both Sexes;  57
+ba_sex0_age57,Race Alone - Black or African American; Both Sexes;  57
+ia_sex0_age57,Race Alone - American Indian and Alaska Native; Both Sexes;  57
+aa_sex0_age57,Race Alone - Asian; Both Sexes;  57
+na_sex0_age57,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  57
+tom_sex0_age57,Two or More Races; Both Sexes;  57
+totpop_sex0_age58,Total; Both Sexes;  58
+wa_sex0_age58,Race Alone - White; Both Sexes;  58
+ba_sex0_age58,Race Alone - Black or African American; Both Sexes;  58
+ia_sex0_age58,Race Alone - American Indian and Alaska Native; Both Sexes;  58
+aa_sex0_age58,Race Alone - Asian; Both Sexes;  58
+na_sex0_age58,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  58
+tom_sex0_age58,Two or More Races; Both Sexes;  58
+totpop_sex0_age59,Total; Both Sexes;  59
+wa_sex0_age59,Race Alone - White; Both Sexes;  59
+ba_sex0_age59,Race Alone - Black or African American; Both Sexes;  59
+ia_sex0_age59,Race Alone - American Indian and Alaska Native; Both Sexes;  59
+aa_sex0_age59,Race Alone - Asian; Both Sexes;  59
+na_sex0_age59,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  59
+tom_sex0_age59,Two or More Races; Both Sexes;  59
+totpop_sex0_age60,Total; Both Sexes;  60
+wa_sex0_age60,Race Alone - White; Both Sexes;  60
+ba_sex0_age60,Race Alone - Black or African American; Both Sexes;  60
+ia_sex0_age60,Race Alone - American Indian and Alaska Native; Both Sexes;  60
+aa_sex0_age60,Race Alone - Asian; Both Sexes;  60
+na_sex0_age60,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  60
+tom_sex0_age60,Two or More Races; Both Sexes;  60
+totpop_sex0_age61,Total; Both Sexes;  61
+wa_sex0_age61,Race Alone - White; Both Sexes;  61
+ba_sex0_age61,Race Alone - Black or African American; Both Sexes;  61
+ia_sex0_age61,Race Alone - American Indian and Alaska Native; Both Sexes;  61
+aa_sex0_age61,Race Alone - Asian; Both Sexes;  61
+na_sex0_age61,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  61
+tom_sex0_age61,Two or More Races; Both Sexes;  61
+totpop_sex0_age62,Total; Both Sexes;  62
+wa_sex0_age62,Race Alone - White; Both Sexes;  62
+ba_sex0_age62,Race Alone - Black or African American; Both Sexes;  62
+ia_sex0_age62,Race Alone - American Indian and Alaska Native; Both Sexes;  62
+aa_sex0_age62,Race Alone - Asian; Both Sexes;  62
+na_sex0_age62,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  62
+tom_sex0_age62,Two or More Races; Both Sexes;  62
+totpop_sex0_age63,Total; Both Sexes;  63
+wa_sex0_age63,Race Alone - White; Both Sexes;  63
+ba_sex0_age63,Race Alone - Black or African American; Both Sexes;  63
+ia_sex0_age63,Race Alone - American Indian and Alaska Native; Both Sexes;  63
+aa_sex0_age63,Race Alone - Asian; Both Sexes;  63
+na_sex0_age63,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  63
+tom_sex0_age63,Two or More Races; Both Sexes;  63
+totpop_sex0_age64,Total; Both Sexes;  64
+wa_sex0_age64,Race Alone - White; Both Sexes;  64
+ba_sex0_age64,Race Alone - Black or African American; Both Sexes;  64
+ia_sex0_age64,Race Alone - American Indian and Alaska Native; Both Sexes;  64
+aa_sex0_age64,Race Alone - Asian; Both Sexes;  64
+na_sex0_age64,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  64
+tom_sex0_age64,Two or More Races; Both Sexes;  64
+totpop_sex0_age65,Total; Both Sexes;  65
+wa_sex0_age65,Race Alone - White; Both Sexes;  65
+ba_sex0_age65,Race Alone - Black or African American; Both Sexes;  65
+ia_sex0_age65,Race Alone - American Indian and Alaska Native; Both Sexes;  65
+aa_sex0_age65,Race Alone - Asian; Both Sexes;  65
+na_sex0_age65,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  65
+tom_sex0_age65,Two or More Races; Both Sexes;  65
+totpop_sex0_age66,Total; Both Sexes;  66
+wa_sex0_age66,Race Alone - White; Both Sexes;  66
+ba_sex0_age66,Race Alone - Black or African American; Both Sexes;  66
+ia_sex0_age66,Race Alone - American Indian and Alaska Native; Both Sexes;  66
+aa_sex0_age66,Race Alone - Asian; Both Sexes;  66
+na_sex0_age66,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  66
+tom_sex0_age66,Two or More Races; Both Sexes;  66
+totpop_sex0_age67,Total; Both Sexes;  67
+wa_sex0_age67,Race Alone - White; Both Sexes;  67
+ba_sex0_age67,Race Alone - Black or African American; Both Sexes;  67
+ia_sex0_age67,Race Alone - American Indian and Alaska Native; Both Sexes;  67
+aa_sex0_age67,Race Alone - Asian; Both Sexes;  67
+na_sex0_age67,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  67
+tom_sex0_age67,Two or More Races; Both Sexes;  67
+totpop_sex0_age68,Total; Both Sexes;  68
+wa_sex0_age68,Race Alone - White; Both Sexes;  68
+ba_sex0_age68,Race Alone - Black or African American; Both Sexes;  68
+ia_sex0_age68,Race Alone - American Indian and Alaska Native; Both Sexes;  68
+aa_sex0_age68,Race Alone - Asian; Both Sexes;  68
+na_sex0_age68,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  68
+tom_sex0_age68,Two or More Races; Both Sexes;  68
+totpop_sex0_age69,Total; Both Sexes;  69
+wa_sex0_age69,Race Alone - White; Both Sexes;  69
+ba_sex0_age69,Race Alone - Black or African American; Both Sexes;  69
+ia_sex0_age69,Race Alone - American Indian and Alaska Native; Both Sexes;  69
+aa_sex0_age69,Race Alone - Asian; Both Sexes;  69
+na_sex0_age69,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  69
+tom_sex0_age69,Two or More Races; Both Sexes;  69
+totpop_sex0_age70,Total; Both Sexes;  70
+wa_sex0_age70,Race Alone - White; Both Sexes;  70
+ba_sex0_age70,Race Alone - Black or African American; Both Sexes;  70
+ia_sex0_age70,Race Alone - American Indian and Alaska Native; Both Sexes;  70
+aa_sex0_age70,Race Alone - Asian; Both Sexes;  70
+na_sex0_age70,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  70
+tom_sex0_age70,Two or More Races; Both Sexes;  70
+totpop_sex0_age71,Total; Both Sexes;  71
+wa_sex0_age71,Race Alone - White; Both Sexes;  71
+ba_sex0_age71,Race Alone - Black or African American; Both Sexes;  71
+ia_sex0_age71,Race Alone - American Indian and Alaska Native; Both Sexes;  71
+aa_sex0_age71,Race Alone - Asian; Both Sexes;  71
+na_sex0_age71,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  71
+tom_sex0_age71,Two or More Races; Both Sexes;  71
+totpop_sex0_age72,Total; Both Sexes;  72
+wa_sex0_age72,Race Alone - White; Both Sexes;  72
+ba_sex0_age72,Race Alone - Black or African American; Both Sexes;  72
+ia_sex0_age72,Race Alone - American Indian and Alaska Native; Both Sexes;  72
+aa_sex0_age72,Race Alone - Asian; Both Sexes;  72
+na_sex0_age72,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  72
+tom_sex0_age72,Two or More Races; Both Sexes;  72
+totpop_sex0_age73,Total; Both Sexes;  73
+wa_sex0_age73,Race Alone - White; Both Sexes;  73
+ba_sex0_age73,Race Alone - Black or African American; Both Sexes;  73
+ia_sex0_age73,Race Alone - American Indian and Alaska Native; Both Sexes;  73
+aa_sex0_age73,Race Alone - Asian; Both Sexes;  73
+na_sex0_age73,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  73
+tom_sex0_age73,Two or More Races; Both Sexes;  73
+totpop_sex0_age74,Total; Both Sexes;  74
+wa_sex0_age74,Race Alone - White; Both Sexes;  74
+ba_sex0_age74,Race Alone - Black or African American; Both Sexes;  74
+ia_sex0_age74,Race Alone - American Indian and Alaska Native; Both Sexes;  74
+aa_sex0_age74,Race Alone - Asian; Both Sexes;  74
+na_sex0_age74,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  74
+tom_sex0_age74,Two or More Races; Both Sexes;  74
+totpop_sex0_age75,Total; Both Sexes;  75
+wa_sex0_age75,Race Alone - White; Both Sexes;  75
+ba_sex0_age75,Race Alone - Black or African American; Both Sexes;  75
+ia_sex0_age75,Race Alone - American Indian and Alaska Native; Both Sexes;  75
+aa_sex0_age75,Race Alone - Asian; Both Sexes;  75
+na_sex0_age75,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  75
+tom_sex0_age75,Two or More Races; Both Sexes;  75
+totpop_sex0_age76,Total; Both Sexes;  76
+wa_sex0_age76,Race Alone - White; Both Sexes;  76
+ba_sex0_age76,Race Alone - Black or African American; Both Sexes;  76
+ia_sex0_age76,Race Alone - American Indian and Alaska Native; Both Sexes;  76
+aa_sex0_age76,Race Alone - Asian; Both Sexes;  76
+na_sex0_age76,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  76
+tom_sex0_age76,Two or More Races; Both Sexes;  76
+totpop_sex0_age77,Total; Both Sexes;  77
+wa_sex0_age77,Race Alone - White; Both Sexes;  77
+ba_sex0_age77,Race Alone - Black or African American; Both Sexes;  77
+ia_sex0_age77,Race Alone - American Indian and Alaska Native; Both Sexes;  77
+aa_sex0_age77,Race Alone - Asian; Both Sexes;  77
+na_sex0_age77,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  77
+tom_sex0_age77,Two or More Races; Both Sexes;  77
+totpop_sex0_age78,Total; Both Sexes;  78
+wa_sex0_age78,Race Alone - White; Both Sexes;  78
+ba_sex0_age78,Race Alone - Black or African American; Both Sexes;  78
+ia_sex0_age78,Race Alone - American Indian and Alaska Native; Both Sexes;  78
+aa_sex0_age78,Race Alone - Asian; Both Sexes;  78
+na_sex0_age78,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  78
+tom_sex0_age78,Two or More Races; Both Sexes;  78
+totpop_sex0_age79,Total; Both Sexes;  79
+wa_sex0_age79,Race Alone - White; Both Sexes;  79
+ba_sex0_age79,Race Alone - Black or African American; Both Sexes;  79
+ia_sex0_age79,Race Alone - American Indian and Alaska Native; Both Sexes;  79
+aa_sex0_age79,Race Alone - Asian; Both Sexes;  79
+na_sex0_age79,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  79
+tom_sex0_age79,Two or More Races; Both Sexes;  79
+totpop_sex0_age80,Total; Both Sexes;  80
+wa_sex0_age80,Race Alone - White; Both Sexes;  80
+ba_sex0_age80,Race Alone - Black or African American; Both Sexes;  80
+ia_sex0_age80,Race Alone - American Indian and Alaska Native; Both Sexes;  80
+aa_sex0_age80,Race Alone - Asian; Both Sexes;  80
+na_sex0_age80,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  80
+tom_sex0_age80,Two or More Races; Both Sexes;  80
+totpop_sex0_age81,Total; Both Sexes;  81
+wa_sex0_age81,Race Alone - White; Both Sexes;  81
+ba_sex0_age81,Race Alone - Black or African American; Both Sexes;  81
+ia_sex0_age81,Race Alone - American Indian and Alaska Native; Both Sexes;  81
+aa_sex0_age81,Race Alone - Asian; Both Sexes;  81
+na_sex0_age81,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  81
+tom_sex0_age81,Two or More Races; Both Sexes;  81
+totpop_sex0_age82,Total; Both Sexes;  82
+wa_sex0_age82,Race Alone - White; Both Sexes;  82
+ba_sex0_age82,Race Alone - Black or African American; Both Sexes;  82
+ia_sex0_age82,Race Alone - American Indian and Alaska Native; Both Sexes;  82
+aa_sex0_age82,Race Alone - Asian; Both Sexes;  82
+na_sex0_age82,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  82
+tom_sex0_age82,Two or More Races; Both Sexes;  82
+totpop_sex0_age83,Total; Both Sexes;  83
+wa_sex0_age83,Race Alone - White; Both Sexes;  83
+ba_sex0_age83,Race Alone - Black or African American; Both Sexes;  83
+ia_sex0_age83,Race Alone - American Indian and Alaska Native; Both Sexes;  83
+aa_sex0_age83,Race Alone - Asian; Both Sexes;  83
+na_sex0_age83,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  83
+tom_sex0_age83,Two or More Races; Both Sexes;  83
+totpop_sex0_age84,Total; Both Sexes;  84
+wa_sex0_age84,Race Alone - White; Both Sexes;  84
+ba_sex0_age84,Race Alone - Black or African American; Both Sexes;  84
+ia_sex0_age84,Race Alone - American Indian and Alaska Native; Both Sexes;  84
+aa_sex0_age84,Race Alone - Asian; Both Sexes;  84
+na_sex0_age84,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  84
+tom_sex0_age84,Two or More Races; Both Sexes;  84
+totpop_sex0_age85,Total; Both Sexes;  85
+wa_sex0_age85,Race Alone - White; Both Sexes;  85
+ba_sex0_age85,Race Alone - Black or African American; Both Sexes;  85
+ia_sex0_age85,Race Alone - American Indian and Alaska Native; Both Sexes;  85
+aa_sex0_age85,Race Alone - Asian; Both Sexes;  85
+na_sex0_age85,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  85
+tom_sex0_age85,Two or More Races; Both Sexes;  85
+totpop_sex0_age86,Total; Both Sexes;  86
+wa_sex0_age86,Race Alone - White; Both Sexes;  86
+ba_sex0_age86,Race Alone - Black or African American; Both Sexes;  86
+ia_sex0_age86,Race Alone - American Indian and Alaska Native; Both Sexes;  86
+aa_sex0_age86,Race Alone - Asian; Both Sexes;  86
+na_sex0_age86,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  86
+tom_sex0_age86,Two or More Races; Both Sexes;  86
+totpop_sex0_age87,Total; Both Sexes;  87
+wa_sex0_age87,Race Alone - White; Both Sexes;  87
+ba_sex0_age87,Race Alone - Black or African American; Both Sexes;  87
+ia_sex0_age87,Race Alone - American Indian and Alaska Native; Both Sexes;  87
+aa_sex0_age87,Race Alone - Asian; Both Sexes;  87
+na_sex0_age87,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  87
+tom_sex0_age87,Two or More Races; Both Sexes;  87
+totpop_sex0_age88,Total; Both Sexes;  88
+wa_sex0_age88,Race Alone - White; Both Sexes;  88
+ba_sex0_age88,Race Alone - Black or African American; Both Sexes;  88
+ia_sex0_age88,Race Alone - American Indian and Alaska Native; Both Sexes;  88
+aa_sex0_age88,Race Alone - Asian; Both Sexes;  88
+na_sex0_age88,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  88
+tom_sex0_age88,Two or More Races; Both Sexes;  88
+totpop_sex0_age89,Total; Both Sexes;  89
+wa_sex0_age89,Race Alone - White; Both Sexes;  89
+ba_sex0_age89,Race Alone - Black or African American; Both Sexes;  89
+ia_sex0_age89,Race Alone - American Indian and Alaska Native; Both Sexes;  89
+aa_sex0_age89,Race Alone - Asian; Both Sexes;  89
+na_sex0_age89,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  89
+tom_sex0_age89,Two or More Races; Both Sexes;  89
+totpop_sex0_age90,Total; Both Sexes;  90
+wa_sex0_age90,Race Alone - White; Both Sexes;  90
+ba_sex0_age90,Race Alone - Black or African American; Both Sexes;  90
+ia_sex0_age90,Race Alone - American Indian and Alaska Native; Both Sexes;  90
+aa_sex0_age90,Race Alone - Asian; Both Sexes;  90
+na_sex0_age90,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  90
+tom_sex0_age90,Two or More Races; Both Sexes;  90
+totpop_sex0_age91,Total; Both Sexes;  91
+wa_sex0_age91,Race Alone - White; Both Sexes;  91
+ba_sex0_age91,Race Alone - Black or African American; Both Sexes;  91
+ia_sex0_age91,Race Alone - American Indian and Alaska Native; Both Sexes;  91
+aa_sex0_age91,Race Alone - Asian; Both Sexes;  91
+na_sex0_age91,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  91
+tom_sex0_age91,Two or More Races; Both Sexes;  91
+totpop_sex0_age92,Total; Both Sexes;  92
+wa_sex0_age92,Race Alone - White; Both Sexes;  92
+ba_sex0_age92,Race Alone - Black or African American; Both Sexes;  92
+ia_sex0_age92,Race Alone - American Indian and Alaska Native; Both Sexes;  92
+aa_sex0_age92,Race Alone - Asian; Both Sexes;  92
+na_sex0_age92,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  92
+tom_sex0_age92,Two or More Races; Both Sexes;  92
+totpop_sex0_age93,Total; Both Sexes;  93
+wa_sex0_age93,Race Alone - White; Both Sexes;  93
+ba_sex0_age93,Race Alone - Black or African American; Both Sexes;  93
+ia_sex0_age93,Race Alone - American Indian and Alaska Native; Both Sexes;  93
+aa_sex0_age93,Race Alone - Asian; Both Sexes;  93
+na_sex0_age93,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  93
+tom_sex0_age93,Two or More Races; Both Sexes;  93
+totpop_sex0_age94,Total; Both Sexes;  94
+wa_sex0_age94,Race Alone - White; Both Sexes;  94
+ba_sex0_age94,Race Alone - Black or African American; Both Sexes;  94
+ia_sex0_age94,Race Alone - American Indian and Alaska Native; Both Sexes;  94
+aa_sex0_age94,Race Alone - Asian; Both Sexes;  94
+na_sex0_age94,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  94
+tom_sex0_age94,Two or More Races; Both Sexes;  94
+totpop_sex0_age95,Total; Both Sexes;  95
+wa_sex0_age95,Race Alone - White; Both Sexes;  95
+ba_sex0_age95,Race Alone - Black or African American; Both Sexes;  95
+ia_sex0_age95,Race Alone - American Indian and Alaska Native; Both Sexes;  95
+aa_sex0_age95,Race Alone - Asian; Both Sexes;  95
+na_sex0_age95,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  95
+tom_sex0_age95,Two or More Races; Both Sexes;  95
+totpop_sex0_age96,Total; Both Sexes;  96
+wa_sex0_age96,Race Alone - White; Both Sexes;  96
+ba_sex0_age96,Race Alone - Black or African American; Both Sexes;  96
+ia_sex0_age96,Race Alone - American Indian and Alaska Native; Both Sexes;  96
+aa_sex0_age96,Race Alone - Asian; Both Sexes;  96
+na_sex0_age96,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  96
+tom_sex0_age96,Two or More Races; Both Sexes;  96
+totpop_sex0_age97,Total; Both Sexes;  97
+wa_sex0_age97,Race Alone - White; Both Sexes;  97
+ba_sex0_age97,Race Alone - Black or African American; Both Sexes;  97
+ia_sex0_age97,Race Alone - American Indian and Alaska Native; Both Sexes;  97
+aa_sex0_age97,Race Alone - Asian; Both Sexes;  97
+na_sex0_age97,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  97
+tom_sex0_age97,Two or More Races; Both Sexes;  97
+totpop_sex0_age98,Total; Both Sexes;  98
+wa_sex0_age98,Race Alone - White; Both Sexes;  98
+ba_sex0_age98,Race Alone - Black or African American; Both Sexes;  98
+ia_sex0_age98,Race Alone - American Indian and Alaska Native; Both Sexes;  98
+aa_sex0_age98,Race Alone - Asian; Both Sexes;  98
+na_sex0_age98,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  98
+tom_sex0_age98,Two or More Races; Both Sexes;  98
+totpop_sex0_age99,Total; Both Sexes;  99
+wa_sex0_age99,Race Alone - White; Both Sexes;  99
+ba_sex0_age99,Race Alone - Black or African American; Both Sexes;  99
+ia_sex0_age99,Race Alone - American Indian and Alaska Native; Both Sexes;  99
+aa_sex0_age99,Race Alone - Asian; Both Sexes;  99
+na_sex0_age99,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  99
+tom_sex0_age99,Two or More Races; Both Sexes;  99
+totpop_sex0_age100plus,Total; Both Sexes;  100+
+wa_sex0_age100plus,Race Alone - White; Both Sexes;  100+
+ba_sex0_age100plus,Race Alone - Black or African American; Both Sexes;  100+
+ia_sex0_age100plus,Race Alone - American Indian and Alaska Native; Both Sexes;  100+
+aa_sex0_age100plus,Race Alone - Asian; Both Sexes;  100+
+na_sex0_age100plus,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes;  100+
+tom_sex0_age100plus,Two or More Races; Both Sexes;  100+
+totpop_sex0_medage,Total; Both Sexes; Median age (years)
+wa_sex0_medage,Race Alone - White; Both Sexes; Median age (years)
+ba_sex0_medage,Race Alone - Black or African American; Both Sexes; Median age (years)
+ia_sex0_medage,Race Alone - American Indian and Alaska Native; Both Sexes; Median age (years)
+aa_sex0_medage,Race Alone - Asian; Both Sexes; Median age (years)
+na_sex0_medage,Race Alone - Native Hawaiian and Other Pacific Islander; Both Sexes; Median age (years)
+tom_sex0_medage,Two or More Races; Both Sexes; Median age (years)
+totpop_sex1_age999,Total; Male; Total
+wa_sex1_age999,Race Alone - White; Male; Total
+ba_sex1_age999,Race Alone - Black or African American; Male; Total
+ia_sex1_age999,Race Alone - American Indian and Alaska Native; Male; Total
+aa_sex1_age999,Race Alone - Asian; Male; Total
+na_sex1_age999,Race Alone - Native Hawaiian and Other Pacific Islander; Male; Total
+tom_sex1_age999,Two or More Races; Male; Total
+totpop_sex1_age0,Total; Male;  0
+wa_sex1_age0,Race Alone - White; Male;  0
+ba_sex1_age0,Race Alone - Black or African American; Male;  0
+ia_sex1_age0,Race Alone - American Indian and Alaska Native; Male;  0
+aa_sex1_age0,Race Alone - Asian; Male;  0
+na_sex1_age0,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  0
+tom_sex1_age0,Two or More Races; Male;  0
+totpop_sex1_age1,Total; Male;  1
+wa_sex1_age1,Race Alone - White; Male;  1
+ba_sex1_age1,Race Alone - Black or African American; Male;  1
+ia_sex1_age1,Race Alone - American Indian and Alaska Native; Male;  1
+aa_sex1_age1,Race Alone - Asian; Male;  1
+na_sex1_age1,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  1
+tom_sex1_age1,Two or More Races; Male;  1
+totpop_sex1_age2,Total; Male;  2
+wa_sex1_age2,Race Alone - White; Male;  2
+ba_sex1_age2,Race Alone - Black or African American; Male;  2
+ia_sex1_age2,Race Alone - American Indian and Alaska Native; Male;  2
+aa_sex1_age2,Race Alone - Asian; Male;  2
+na_sex1_age2,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  2
+tom_sex1_age2,Two or More Races; Male;  2
+totpop_sex1_age3,Total; Male;  3
+wa_sex1_age3,Race Alone - White; Male;  3
+ba_sex1_age3,Race Alone - Black or African American; Male;  3
+ia_sex1_age3,Race Alone - American Indian and Alaska Native; Male;  3
+aa_sex1_age3,Race Alone - Asian; Male;  3
+na_sex1_age3,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  3
+tom_sex1_age3,Two or More Races; Male;  3
+totpop_sex1_age4,Total; Male;  4
+wa_sex1_age4,Race Alone - White; Male;  4
+ba_sex1_age4,Race Alone - Black or African American; Male;  4
+ia_sex1_age4,Race Alone - American Indian and Alaska Native; Male;  4
+aa_sex1_age4,Race Alone - Asian; Male;  4
+na_sex1_age4,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  4
+tom_sex1_age4,Two or More Races; Male;  4
+totpop_sex1_age5,Total; Male;  5
+wa_sex1_age5,Race Alone - White; Male;  5
+ba_sex1_age5,Race Alone - Black or African American; Male;  5
+ia_sex1_age5,Race Alone - American Indian and Alaska Native; Male;  5
+aa_sex1_age5,Race Alone - Asian; Male;  5
+na_sex1_age5,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  5
+tom_sex1_age5,Two or More Races; Male;  5
+totpop_sex1_age6,Total; Male;  6
+wa_sex1_age6,Race Alone - White; Male;  6
+ba_sex1_age6,Race Alone - Black or African American; Male;  6
+ia_sex1_age6,Race Alone - American Indian and Alaska Native; Male;  6
+aa_sex1_age6,Race Alone - Asian; Male;  6
+na_sex1_age6,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  6
+tom_sex1_age6,Two or More Races; Male;  6
+totpop_sex1_age7,Total; Male;  7
+wa_sex1_age7,Race Alone - White; Male;  7
+ba_sex1_age7,Race Alone - Black or African American; Male;  7
+ia_sex1_age7,Race Alone - American Indian and Alaska Native; Male;  7
+aa_sex1_age7,Race Alone - Asian; Male;  7
+na_sex1_age7,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  7
+tom_sex1_age7,Two or More Races; Male;  7
+totpop_sex1_age8,Total; Male;  8
+wa_sex1_age8,Race Alone - White; Male;  8
+ba_sex1_age8,Race Alone - Black or African American; Male;  8
+ia_sex1_age8,Race Alone - American Indian and Alaska Native; Male;  8
+aa_sex1_age8,Race Alone - Asian; Male;  8
+na_sex1_age8,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  8
+tom_sex1_age8,Two or More Races; Male;  8
+totpop_sex1_age9,Total; Male;  9
+wa_sex1_age9,Race Alone - White; Male;  9
+ba_sex1_age9,Race Alone - Black or African American; Male;  9
+ia_sex1_age9,Race Alone - American Indian and Alaska Native; Male;  9
+aa_sex1_age9,Race Alone - Asian; Male;  9
+na_sex1_age9,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  9
+tom_sex1_age9,Two or More Races; Male;  9
+totpop_sex1_age10,Total; Male;  10
+wa_sex1_age10,Race Alone - White; Male;  10
+ba_sex1_age10,Race Alone - Black or African American; Male;  10
+ia_sex1_age10,Race Alone - American Indian and Alaska Native; Male;  10
+aa_sex1_age10,Race Alone - Asian; Male;  10
+na_sex1_age10,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  10
+tom_sex1_age10,Two or More Races; Male;  10
+totpop_sex1_age11,Total; Male;  11
+wa_sex1_age11,Race Alone - White; Male;  11
+ba_sex1_age11,Race Alone - Black or African American; Male;  11
+ia_sex1_age11,Race Alone - American Indian and Alaska Native; Male;  11
+aa_sex1_age11,Race Alone - Asian; Male;  11
+na_sex1_age11,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  11
+tom_sex1_age11,Two or More Races; Male;  11
+totpop_sex1_age12,Total; Male;  12
+wa_sex1_age12,Race Alone - White; Male;  12
+ba_sex1_age12,Race Alone - Black or African American; Male;  12
+ia_sex1_age12,Race Alone - American Indian and Alaska Native; Male;  12
+aa_sex1_age12,Race Alone - Asian; Male;  12
+na_sex1_age12,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  12
+tom_sex1_age12,Two or More Races; Male;  12
+totpop_sex1_age13,Total; Male;  13
+wa_sex1_age13,Race Alone - White; Male;  13
+ba_sex1_age13,Race Alone - Black or African American; Male;  13
+ia_sex1_age13,Race Alone - American Indian and Alaska Native; Male;  13
+aa_sex1_age13,Race Alone - Asian; Male;  13
+na_sex1_age13,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  13
+tom_sex1_age13,Two or More Races; Male;  13
+totpop_sex1_age14,Total; Male;  14
+wa_sex1_age14,Race Alone - White; Male;  14
+ba_sex1_age14,Race Alone - Black or African American; Male;  14
+ia_sex1_age14,Race Alone - American Indian and Alaska Native; Male;  14
+aa_sex1_age14,Race Alone - Asian; Male;  14
+na_sex1_age14,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  14
+tom_sex1_age14,Two or More Races; Male;  14
+totpop_sex1_age15,Total; Male;  15
+wa_sex1_age15,Race Alone - White; Male;  15
+ba_sex1_age15,Race Alone - Black or African American; Male;  15
+ia_sex1_age15,Race Alone - American Indian and Alaska Native; Male;  15
+aa_sex1_age15,Race Alone - Asian; Male;  15
+na_sex1_age15,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  15
+tom_sex1_age15,Two or More Races; Male;  15
+totpop_sex1_age16,Total; Male;  16
+wa_sex1_age16,Race Alone - White; Male;  16
+ba_sex1_age16,Race Alone - Black or African American; Male;  16
+ia_sex1_age16,Race Alone - American Indian and Alaska Native; Male;  16
+aa_sex1_age16,Race Alone - Asian; Male;  16
+na_sex1_age16,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  16
+tom_sex1_age16,Two or More Races; Male;  16
+totpop_sex1_age17,Total; Male;  17
+wa_sex1_age17,Race Alone - White; Male;  17
+ba_sex1_age17,Race Alone - Black or African American; Male;  17
+ia_sex1_age17,Race Alone - American Indian and Alaska Native; Male;  17
+aa_sex1_age17,Race Alone - Asian; Male;  17
+na_sex1_age17,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  17
+tom_sex1_age17,Two or More Races; Male;  17
+totpop_sex1_age18,Total; Male;  18
+wa_sex1_age18,Race Alone - White; Male;  18
+ba_sex1_age18,Race Alone - Black or African American; Male;  18
+ia_sex1_age18,Race Alone - American Indian and Alaska Native; Male;  18
+aa_sex1_age18,Race Alone - Asian; Male;  18
+na_sex1_age18,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  18
+tom_sex1_age18,Two or More Races; Male;  18
+totpop_sex1_age19,Total; Male;  19
+wa_sex1_age19,Race Alone - White; Male;  19
+ba_sex1_age19,Race Alone - Black or African American; Male;  19
+ia_sex1_age19,Race Alone - American Indian and Alaska Native; Male;  19
+aa_sex1_age19,Race Alone - Asian; Male;  19
+na_sex1_age19,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  19
+tom_sex1_age19,Two or More Races; Male;  19
+totpop_sex1_age20,Total; Male;  20
+wa_sex1_age20,Race Alone - White; Male;  20
+ba_sex1_age20,Race Alone - Black or African American; Male;  20
+ia_sex1_age20,Race Alone - American Indian and Alaska Native; Male;  20
+aa_sex1_age20,Race Alone - Asian; Male;  20
+na_sex1_age20,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  20
+tom_sex1_age20,Two or More Races; Male;  20
+totpop_sex1_age21,Total; Male;  21
+wa_sex1_age21,Race Alone - White; Male;  21
+ba_sex1_age21,Race Alone - Black or African American; Male;  21
+ia_sex1_age21,Race Alone - American Indian and Alaska Native; Male;  21
+aa_sex1_age21,Race Alone - Asian; Male;  21
+na_sex1_age21,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  21
+tom_sex1_age21,Two or More Races; Male;  21
+totpop_sex1_age22,Total; Male;  22
+wa_sex1_age22,Race Alone - White; Male;  22
+ba_sex1_age22,Race Alone - Black or African American; Male;  22
+ia_sex1_age22,Race Alone - American Indian and Alaska Native; Male;  22
+aa_sex1_age22,Race Alone - Asian; Male;  22
+na_sex1_age22,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  22
+tom_sex1_age22,Two or More Races; Male;  22
+totpop_sex1_age23,Total; Male;  23
+wa_sex1_age23,Race Alone - White; Male;  23
+ba_sex1_age23,Race Alone - Black or African American; Male;  23
+ia_sex1_age23,Race Alone - American Indian and Alaska Native; Male;  23
+aa_sex1_age23,Race Alone - Asian; Male;  23
+na_sex1_age23,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  23
+tom_sex1_age23,Two or More Races; Male;  23
+totpop_sex1_age24,Total; Male;  24
+wa_sex1_age24,Race Alone - White; Male;  24
+ba_sex1_age24,Race Alone - Black or African American; Male;  24
+ia_sex1_age24,Race Alone - American Indian and Alaska Native; Male;  24
+aa_sex1_age24,Race Alone - Asian; Male;  24
+na_sex1_age24,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  24
+tom_sex1_age24,Two or More Races; Male;  24
+totpop_sex1_age25,Total; Male;  25
+wa_sex1_age25,Race Alone - White; Male;  25
+ba_sex1_age25,Race Alone - Black or African American; Male;  25
+ia_sex1_age25,Race Alone - American Indian and Alaska Native; Male;  25
+aa_sex1_age25,Race Alone - Asian; Male;  25
+na_sex1_age25,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  25
+tom_sex1_age25,Two or More Races; Male;  25
+totpop_sex1_age26,Total; Male;  26
+wa_sex1_age26,Race Alone - White; Male;  26
+ba_sex1_age26,Race Alone - Black or African American; Male;  26
+ia_sex1_age26,Race Alone - American Indian and Alaska Native; Male;  26
+aa_sex1_age26,Race Alone - Asian; Male;  26
+na_sex1_age26,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  26
+tom_sex1_age26,Two or More Races; Male;  26
+totpop_sex1_age27,Total; Male;  27
+wa_sex1_age27,Race Alone - White; Male;  27
+ba_sex1_age27,Race Alone - Black or African American; Male;  27
+ia_sex1_age27,Race Alone - American Indian and Alaska Native; Male;  27
+aa_sex1_age27,Race Alone - Asian; Male;  27
+na_sex1_age27,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  27
+tom_sex1_age27,Two or More Races; Male;  27
+totpop_sex1_age28,Total; Male;  28
+wa_sex1_age28,Race Alone - White; Male;  28
+ba_sex1_age28,Race Alone - Black or African American; Male;  28
+ia_sex1_age28,Race Alone - American Indian and Alaska Native; Male;  28
+aa_sex1_age28,Race Alone - Asian; Male;  28
+na_sex1_age28,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  28
+tom_sex1_age28,Two or More Races; Male;  28
+totpop_sex1_age29,Total; Male;  29
+wa_sex1_age29,Race Alone - White; Male;  29
+ba_sex1_age29,Race Alone - Black or African American; Male;  29
+ia_sex1_age29,Race Alone - American Indian and Alaska Native; Male;  29
+aa_sex1_age29,Race Alone - Asian; Male;  29
+na_sex1_age29,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  29
+tom_sex1_age29,Two or More Races; Male;  29
+totpop_sex1_age30,Total; Male;  30
+wa_sex1_age30,Race Alone - White; Male;  30
+ba_sex1_age30,Race Alone - Black or African American; Male;  30
+ia_sex1_age30,Race Alone - American Indian and Alaska Native; Male;  30
+aa_sex1_age30,Race Alone - Asian; Male;  30
+na_sex1_age30,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  30
+tom_sex1_age30,Two or More Races; Male;  30
+totpop_sex1_age31,Total; Male;  31
+wa_sex1_age31,Race Alone - White; Male;  31
+ba_sex1_age31,Race Alone - Black or African American; Male;  31
+ia_sex1_age31,Race Alone - American Indian and Alaska Native; Male;  31
+aa_sex1_age31,Race Alone - Asian; Male;  31
+na_sex1_age31,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  31
+tom_sex1_age31,Two or More Races; Male;  31
+totpop_sex1_age32,Total; Male;  32
+wa_sex1_age32,Race Alone - White; Male;  32
+ba_sex1_age32,Race Alone - Black or African American; Male;  32
+ia_sex1_age32,Race Alone - American Indian and Alaska Native; Male;  32
+aa_sex1_age32,Race Alone - Asian; Male;  32
+na_sex1_age32,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  32
+tom_sex1_age32,Two or More Races; Male;  32
+totpop_sex1_age33,Total; Male;  33
+wa_sex1_age33,Race Alone - White; Male;  33
+ba_sex1_age33,Race Alone - Black or African American; Male;  33
+ia_sex1_age33,Race Alone - American Indian and Alaska Native; Male;  33
+aa_sex1_age33,Race Alone - Asian; Male;  33
+na_sex1_age33,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  33
+tom_sex1_age33,Two or More Races; Male;  33
+totpop_sex1_age34,Total; Male;  34
+wa_sex1_age34,Race Alone - White; Male;  34
+ba_sex1_age34,Race Alone - Black or African American; Male;  34
+ia_sex1_age34,Race Alone - American Indian and Alaska Native; Male;  34
+aa_sex1_age34,Race Alone - Asian; Male;  34
+na_sex1_age34,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  34
+tom_sex1_age34,Two or More Races; Male;  34
+totpop_sex1_age35,Total; Male;  35
+wa_sex1_age35,Race Alone - White; Male;  35
+ba_sex1_age35,Race Alone - Black or African American; Male;  35
+ia_sex1_age35,Race Alone - American Indian and Alaska Native; Male;  35
+aa_sex1_age35,Race Alone - Asian; Male;  35
+na_sex1_age35,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  35
+tom_sex1_age35,Two or More Races; Male;  35
+totpop_sex1_age36,Total; Male;  36
+wa_sex1_age36,Race Alone - White; Male;  36
+ba_sex1_age36,Race Alone - Black or African American; Male;  36
+ia_sex1_age36,Race Alone - American Indian and Alaska Native; Male;  36
+aa_sex1_age36,Race Alone - Asian; Male;  36
+na_sex1_age36,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  36
+tom_sex1_age36,Two or More Races; Male;  36
+totpop_sex1_age37,Total; Male;  37
+wa_sex1_age37,Race Alone - White; Male;  37
+ba_sex1_age37,Race Alone - Black or African American; Male;  37
+ia_sex1_age37,Race Alone - American Indian and Alaska Native; Male;  37
+aa_sex1_age37,Race Alone - Asian; Male;  37
+na_sex1_age37,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  37
+tom_sex1_age37,Two or More Races; Male;  37
+totpop_sex1_age38,Total; Male;  38
+wa_sex1_age38,Race Alone - White; Male;  38
+ba_sex1_age38,Race Alone - Black or African American; Male;  38
+ia_sex1_age38,Race Alone - American Indian and Alaska Native; Male;  38
+aa_sex1_age38,Race Alone - Asian; Male;  38
+na_sex1_age38,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  38
+tom_sex1_age38,Two or More Races; Male;  38
+totpop_sex1_age39,Total; Male;  39
+wa_sex1_age39,Race Alone - White; Male;  39
+ba_sex1_age39,Race Alone - Black or African American; Male;  39
+ia_sex1_age39,Race Alone - American Indian and Alaska Native; Male;  39
+aa_sex1_age39,Race Alone - Asian; Male;  39
+na_sex1_age39,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  39
+tom_sex1_age39,Two or More Races; Male;  39
+totpop_sex1_age40,Total; Male;  40
+wa_sex1_age40,Race Alone - White; Male;  40
+ba_sex1_age40,Race Alone - Black or African American; Male;  40
+ia_sex1_age40,Race Alone - American Indian and Alaska Native; Male;  40
+aa_sex1_age40,Race Alone - Asian; Male;  40
+na_sex1_age40,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  40
+tom_sex1_age40,Two or More Races; Male;  40
+totpop_sex1_age41,Total; Male;  41
+wa_sex1_age41,Race Alone - White; Male;  41
+ba_sex1_age41,Race Alone - Black or African American; Male;  41
+ia_sex1_age41,Race Alone - American Indian and Alaska Native; Male;  41
+aa_sex1_age41,Race Alone - Asian; Male;  41
+na_sex1_age41,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  41
+tom_sex1_age41,Two or More Races; Male;  41
+totpop_sex1_age42,Total; Male;  42
+wa_sex1_age42,Race Alone - White; Male;  42
+ba_sex1_age42,Race Alone - Black or African American; Male;  42
+ia_sex1_age42,Race Alone - American Indian and Alaska Native; Male;  42
+aa_sex1_age42,Race Alone - Asian; Male;  42
+na_sex1_age42,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  42
+tom_sex1_age42,Two or More Races; Male;  42
+totpop_sex1_age43,Total; Male;  43
+wa_sex1_age43,Race Alone - White; Male;  43
+ba_sex1_age43,Race Alone - Black or African American; Male;  43
+ia_sex1_age43,Race Alone - American Indian and Alaska Native; Male;  43
+aa_sex1_age43,Race Alone - Asian; Male;  43
+na_sex1_age43,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  43
+tom_sex1_age43,Two or More Races; Male;  43
+totpop_sex1_age44,Total; Male;  44
+wa_sex1_age44,Race Alone - White; Male;  44
+ba_sex1_age44,Race Alone - Black or African American; Male;  44
+ia_sex1_age44,Race Alone - American Indian and Alaska Native; Male;  44
+aa_sex1_age44,Race Alone - Asian; Male;  44
+na_sex1_age44,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  44
+tom_sex1_age44,Two or More Races; Male;  44
+totpop_sex1_age45,Total; Male;  45
+wa_sex1_age45,Race Alone - White; Male;  45
+ba_sex1_age45,Race Alone - Black or African American; Male;  45
+ia_sex1_age45,Race Alone - American Indian and Alaska Native; Male;  45
+aa_sex1_age45,Race Alone - Asian; Male;  45
+na_sex1_age45,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  45
+tom_sex1_age45,Two or More Races; Male;  45
+totpop_sex1_age46,Total; Male;  46
+wa_sex1_age46,Race Alone - White; Male;  46
+ba_sex1_age46,Race Alone - Black or African American; Male;  46
+ia_sex1_age46,Race Alone - American Indian and Alaska Native; Male;  46
+aa_sex1_age46,Race Alone - Asian; Male;  46
+na_sex1_age46,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  46
+tom_sex1_age46,Two or More Races; Male;  46
+totpop_sex1_age47,Total; Male;  47
+wa_sex1_age47,Race Alone - White; Male;  47
+ba_sex1_age47,Race Alone - Black or African American; Male;  47
+ia_sex1_age47,Race Alone - American Indian and Alaska Native; Male;  47
+aa_sex1_age47,Race Alone - Asian; Male;  47
+na_sex1_age47,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  47
+tom_sex1_age47,Two or More Races; Male;  47
+totpop_sex1_age48,Total; Male;  48
+wa_sex1_age48,Race Alone - White; Male;  48
+ba_sex1_age48,Race Alone - Black or African American; Male;  48
+ia_sex1_age48,Race Alone - American Indian and Alaska Native; Male;  48
+aa_sex1_age48,Race Alone - Asian; Male;  48
+na_sex1_age48,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  48
+tom_sex1_age48,Two or More Races; Male;  48
+totpop_sex1_age49,Total; Male;  49
+wa_sex1_age49,Race Alone - White; Male;  49
+ba_sex1_age49,Race Alone - Black or African American; Male;  49
+ia_sex1_age49,Race Alone - American Indian and Alaska Native; Male;  49
+aa_sex1_age49,Race Alone - Asian; Male;  49
+na_sex1_age49,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  49
+tom_sex1_age49,Two or More Races; Male;  49
+totpop_sex1_age50,Total; Male;  50
+wa_sex1_age50,Race Alone - White; Male;  50
+ba_sex1_age50,Race Alone - Black or African American; Male;  50
+ia_sex1_age50,Race Alone - American Indian and Alaska Native; Male;  50
+aa_sex1_age50,Race Alone - Asian; Male;  50
+na_sex1_age50,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  50
+tom_sex1_age50,Two or More Races; Male;  50
+totpop_sex1_age51,Total; Male;  51
+wa_sex1_age51,Race Alone - White; Male;  51
+ba_sex1_age51,Race Alone - Black or African American; Male;  51
+ia_sex1_age51,Race Alone - American Indian and Alaska Native; Male;  51
+aa_sex1_age51,Race Alone - Asian; Male;  51
+na_sex1_age51,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  51
+tom_sex1_age51,Two or More Races; Male;  51
+totpop_sex1_age52,Total; Male;  52
+wa_sex1_age52,Race Alone - White; Male;  52
+ba_sex1_age52,Race Alone - Black or African American; Male;  52
+ia_sex1_age52,Race Alone - American Indian and Alaska Native; Male;  52
+aa_sex1_age52,Race Alone - Asian; Male;  52
+na_sex1_age52,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  52
+tom_sex1_age52,Two or More Races; Male;  52
+totpop_sex1_age53,Total; Male;  53
+wa_sex1_age53,Race Alone - White; Male;  53
+ba_sex1_age53,Race Alone - Black or African American; Male;  53
+ia_sex1_age53,Race Alone - American Indian and Alaska Native; Male;  53
+aa_sex1_age53,Race Alone - Asian; Male;  53
+na_sex1_age53,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  53
+tom_sex1_age53,Two or More Races; Male;  53
+totpop_sex1_age54,Total; Male;  54
+wa_sex1_age54,Race Alone - White; Male;  54
+ba_sex1_age54,Race Alone - Black or African American; Male;  54
+ia_sex1_age54,Race Alone - American Indian and Alaska Native; Male;  54
+aa_sex1_age54,Race Alone - Asian; Male;  54
+na_sex1_age54,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  54
+tom_sex1_age54,Two or More Races; Male;  54
+totpop_sex1_age55,Total; Male;  55
+wa_sex1_age55,Race Alone - White; Male;  55
+ba_sex1_age55,Race Alone - Black or African American; Male;  55
+ia_sex1_age55,Race Alone - American Indian and Alaska Native; Male;  55
+aa_sex1_age55,Race Alone - Asian; Male;  55
+na_sex1_age55,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  55
+tom_sex1_age55,Two or More Races; Male;  55
+totpop_sex1_age56,Total; Male;  56
+wa_sex1_age56,Race Alone - White; Male;  56
+ba_sex1_age56,Race Alone - Black or African American; Male;  56
+ia_sex1_age56,Race Alone - American Indian and Alaska Native; Male;  56
+aa_sex1_age56,Race Alone - Asian; Male;  56
+na_sex1_age56,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  56
+tom_sex1_age56,Two or More Races; Male;  56
+totpop_sex1_age57,Total; Male;  57
+wa_sex1_age57,Race Alone - White; Male;  57
+ba_sex1_age57,Race Alone - Black or African American; Male;  57
+ia_sex1_age57,Race Alone - American Indian and Alaska Native; Male;  57
+aa_sex1_age57,Race Alone - Asian; Male;  57
+na_sex1_age57,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  57
+tom_sex1_age57,Two or More Races; Male;  57
+totpop_sex1_age58,Total; Male;  58
+wa_sex1_age58,Race Alone - White; Male;  58
+ba_sex1_age58,Race Alone - Black or African American; Male;  58
+ia_sex1_age58,Race Alone - American Indian and Alaska Native; Male;  58
+aa_sex1_age58,Race Alone - Asian; Male;  58
+na_sex1_age58,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  58
+tom_sex1_age58,Two or More Races; Male;  58
+totpop_sex1_age59,Total; Male;  59
+wa_sex1_age59,Race Alone - White; Male;  59
+ba_sex1_age59,Race Alone - Black or African American; Male;  59
+ia_sex1_age59,Race Alone - American Indian and Alaska Native; Male;  59
+aa_sex1_age59,Race Alone - Asian; Male;  59
+na_sex1_age59,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  59
+tom_sex1_age59,Two or More Races; Male;  59
+totpop_sex1_age60,Total; Male;  60
+wa_sex1_age60,Race Alone - White; Male;  60
+ba_sex1_age60,Race Alone - Black or African American; Male;  60
+ia_sex1_age60,Race Alone - American Indian and Alaska Native; Male;  60
+aa_sex1_age60,Race Alone - Asian; Male;  60
+na_sex1_age60,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  60
+tom_sex1_age60,Two or More Races; Male;  60
+totpop_sex1_age61,Total; Male;  61
+wa_sex1_age61,Race Alone - White; Male;  61
+ba_sex1_age61,Race Alone - Black or African American; Male;  61
+ia_sex1_age61,Race Alone - American Indian and Alaska Native; Male;  61
+aa_sex1_age61,Race Alone - Asian; Male;  61
+na_sex1_age61,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  61
+tom_sex1_age61,Two or More Races; Male;  61
+totpop_sex1_age62,Total; Male;  62
+wa_sex1_age62,Race Alone - White; Male;  62
+ba_sex1_age62,Race Alone - Black or African American; Male;  62
+ia_sex1_age62,Race Alone - American Indian and Alaska Native; Male;  62
+aa_sex1_age62,Race Alone - Asian; Male;  62
+na_sex1_age62,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  62
+tom_sex1_age62,Two or More Races; Male;  62
+totpop_sex1_age63,Total; Male;  63
+wa_sex1_age63,Race Alone - White; Male;  63
+ba_sex1_age63,Race Alone - Black or African American; Male;  63
+ia_sex1_age63,Race Alone - American Indian and Alaska Native; Male;  63
+aa_sex1_age63,Race Alone - Asian; Male;  63
+na_sex1_age63,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  63
+tom_sex1_age63,Two or More Races; Male;  63
+totpop_sex1_age64,Total; Male;  64
+wa_sex1_age64,Race Alone - White; Male;  64
+ba_sex1_age64,Race Alone - Black or African American; Male;  64
+ia_sex1_age64,Race Alone - American Indian and Alaska Native; Male;  64
+aa_sex1_age64,Race Alone - Asian; Male;  64
+na_sex1_age64,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  64
+tom_sex1_age64,Two or More Races; Male;  64
+totpop_sex1_age65,Total; Male;  65
+wa_sex1_age65,Race Alone - White; Male;  65
+ba_sex1_age65,Race Alone - Black or African American; Male;  65
+ia_sex1_age65,Race Alone - American Indian and Alaska Native; Male;  65
+aa_sex1_age65,Race Alone - Asian; Male;  65
+na_sex1_age65,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  65
+tom_sex1_age65,Two or More Races; Male;  65
+totpop_sex1_age66,Total; Male;  66
+wa_sex1_age66,Race Alone - White; Male;  66
+ba_sex1_age66,Race Alone - Black or African American; Male;  66
+ia_sex1_age66,Race Alone - American Indian and Alaska Native; Male;  66
+aa_sex1_age66,Race Alone - Asian; Male;  66
+na_sex1_age66,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  66
+tom_sex1_age66,Two or More Races; Male;  66
+totpop_sex1_age67,Total; Male;  67
+wa_sex1_age67,Race Alone - White; Male;  67
+ba_sex1_age67,Race Alone - Black or African American; Male;  67
+ia_sex1_age67,Race Alone - American Indian and Alaska Native; Male;  67
+aa_sex1_age67,Race Alone - Asian; Male;  67
+na_sex1_age67,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  67
+tom_sex1_age67,Two or More Races; Male;  67
+totpop_sex1_age68,Total; Male;  68
+wa_sex1_age68,Race Alone - White; Male;  68
+ba_sex1_age68,Race Alone - Black or African American; Male;  68
+ia_sex1_age68,Race Alone - American Indian and Alaska Native; Male;  68
+aa_sex1_age68,Race Alone - Asian; Male;  68
+na_sex1_age68,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  68
+tom_sex1_age68,Two or More Races; Male;  68
+totpop_sex1_age69,Total; Male;  69
+wa_sex1_age69,Race Alone - White; Male;  69
+ba_sex1_age69,Race Alone - Black or African American; Male;  69
+ia_sex1_age69,Race Alone - American Indian and Alaska Native; Male;  69
+aa_sex1_age69,Race Alone - Asian; Male;  69
+na_sex1_age69,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  69
+tom_sex1_age69,Two or More Races; Male;  69
+totpop_sex1_age70,Total; Male;  70
+wa_sex1_age70,Race Alone - White; Male;  70
+ba_sex1_age70,Race Alone - Black or African American; Male;  70
+ia_sex1_age70,Race Alone - American Indian and Alaska Native; Male;  70
+aa_sex1_age70,Race Alone - Asian; Male;  70
+na_sex1_age70,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  70
+tom_sex1_age70,Two or More Races; Male;  70
+totpop_sex1_age71,Total; Male;  71
+wa_sex1_age71,Race Alone - White; Male;  71
+ba_sex1_age71,Race Alone - Black or African American; Male;  71
+ia_sex1_age71,Race Alone - American Indian and Alaska Native; Male;  71
+aa_sex1_age71,Race Alone - Asian; Male;  71
+na_sex1_age71,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  71
+tom_sex1_age71,Two or More Races; Male;  71
+totpop_sex1_age72,Total; Male;  72
+wa_sex1_age72,Race Alone - White; Male;  72
+ba_sex1_age72,Race Alone - Black or African American; Male;  72
+ia_sex1_age72,Race Alone - American Indian and Alaska Native; Male;  72
+aa_sex1_age72,Race Alone - Asian; Male;  72
+na_sex1_age72,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  72
+tom_sex1_age72,Two or More Races; Male;  72
+totpop_sex1_age73,Total; Male;  73
+wa_sex1_age73,Race Alone - White; Male;  73
+ba_sex1_age73,Race Alone - Black or African American; Male;  73
+ia_sex1_age73,Race Alone - American Indian and Alaska Native; Male;  73
+aa_sex1_age73,Race Alone - Asian; Male;  73
+na_sex1_age73,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  73
+tom_sex1_age73,Two or More Races; Male;  73
+totpop_sex1_age74,Total; Male;  74
+wa_sex1_age74,Race Alone - White; Male;  74
+ba_sex1_age74,Race Alone - Black or African American; Male;  74
+ia_sex1_age74,Race Alone - American Indian and Alaska Native; Male;  74
+aa_sex1_age74,Race Alone - Asian; Male;  74
+na_sex1_age74,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  74
+tom_sex1_age74,Two or More Races; Male;  74
+totpop_sex1_age75,Total; Male;  75
+wa_sex1_age75,Race Alone - White; Male;  75
+ba_sex1_age75,Race Alone - Black or African American; Male;  75
+ia_sex1_age75,Race Alone - American Indian and Alaska Native; Male;  75
+aa_sex1_age75,Race Alone - Asian; Male;  75
+na_sex1_age75,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  75
+tom_sex1_age75,Two or More Races; Male;  75
+totpop_sex1_age76,Total; Male;  76
+wa_sex1_age76,Race Alone - White; Male;  76
+ba_sex1_age76,Race Alone - Black or African American; Male;  76
+ia_sex1_age76,Race Alone - American Indian and Alaska Native; Male;  76
+aa_sex1_age76,Race Alone - Asian; Male;  76
+na_sex1_age76,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  76
+tom_sex1_age76,Two or More Races; Male;  76
+totpop_sex1_age77,Total; Male;  77
+wa_sex1_age77,Race Alone - White; Male;  77
+ba_sex1_age77,Race Alone - Black or African American; Male;  77
+ia_sex1_age77,Race Alone - American Indian and Alaska Native; Male;  77
+aa_sex1_age77,Race Alone - Asian; Male;  77
+na_sex1_age77,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  77
+tom_sex1_age77,Two or More Races; Male;  77
+totpop_sex1_age78,Total; Male;  78
+wa_sex1_age78,Race Alone - White; Male;  78
+ba_sex1_age78,Race Alone - Black or African American; Male;  78
+ia_sex1_age78,Race Alone - American Indian and Alaska Native; Male;  78
+aa_sex1_age78,Race Alone - Asian; Male;  78
+na_sex1_age78,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  78
+tom_sex1_age78,Two or More Races; Male;  78
+totpop_sex1_age79,Total; Male;  79
+wa_sex1_age79,Race Alone - White; Male;  79
+ba_sex1_age79,Race Alone - Black or African American; Male;  79
+ia_sex1_age79,Race Alone - American Indian and Alaska Native; Male;  79
+aa_sex1_age79,Race Alone - Asian; Male;  79
+na_sex1_age79,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  79
+tom_sex1_age79,Two or More Races; Male;  79
+totpop_sex1_age80,Total; Male;  80
+wa_sex1_age80,Race Alone - White; Male;  80
+ba_sex1_age80,Race Alone - Black or African American; Male;  80
+ia_sex1_age80,Race Alone - American Indian and Alaska Native; Male;  80
+aa_sex1_age80,Race Alone - Asian; Male;  80
+na_sex1_age80,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  80
+tom_sex1_age80,Two or More Races; Male;  80
+totpop_sex1_age81,Total; Male;  81
+wa_sex1_age81,Race Alone - White; Male;  81
+ba_sex1_age81,Race Alone - Black or African American; Male;  81
+ia_sex1_age81,Race Alone - American Indian and Alaska Native; Male;  81
+aa_sex1_age81,Race Alone - Asian; Male;  81
+na_sex1_age81,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  81
+tom_sex1_age81,Two or More Races; Male;  81
+totpop_sex1_age82,Total; Male;  82
+wa_sex1_age82,Race Alone - White; Male;  82
+ba_sex1_age82,Race Alone - Black or African American; Male;  82
+ia_sex1_age82,Race Alone - American Indian and Alaska Native; Male;  82
+aa_sex1_age82,Race Alone - Asian; Male;  82
+na_sex1_age82,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  82
+tom_sex1_age82,Two or More Races; Male;  82
+totpop_sex1_age83,Total; Male;  83
+wa_sex1_age83,Race Alone - White; Male;  83
+ba_sex1_age83,Race Alone - Black or African American; Male;  83
+ia_sex1_age83,Race Alone - American Indian and Alaska Native; Male;  83
+aa_sex1_age83,Race Alone - Asian; Male;  83
+na_sex1_age83,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  83
+tom_sex1_age83,Two or More Races; Male;  83
+totpop_sex1_age84,Total; Male;  84
+wa_sex1_age84,Race Alone - White; Male;  84
+ba_sex1_age84,Race Alone - Black or African American; Male;  84
+ia_sex1_age84,Race Alone - American Indian and Alaska Native; Male;  84
+aa_sex1_age84,Race Alone - Asian; Male;  84
+na_sex1_age84,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  84
+tom_sex1_age84,Two or More Races; Male;  84
+totpop_sex1_age85,Total; Male;  85
+wa_sex1_age85,Race Alone - White; Male;  85
+ba_sex1_age85,Race Alone - Black or African American; Male;  85
+ia_sex1_age85,Race Alone - American Indian and Alaska Native; Male;  85
+aa_sex1_age85,Race Alone - Asian; Male;  85
+na_sex1_age85,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  85
+tom_sex1_age85,Two or More Races; Male;  85
+totpop_sex1_age86,Total; Male;  86
+wa_sex1_age86,Race Alone - White; Male;  86
+ba_sex1_age86,Race Alone - Black or African American; Male;  86
+ia_sex1_age86,Race Alone - American Indian and Alaska Native; Male;  86
+aa_sex1_age86,Race Alone - Asian; Male;  86
+na_sex1_age86,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  86
+tom_sex1_age86,Two or More Races; Male;  86
+totpop_sex1_age87,Total; Male;  87
+wa_sex1_age87,Race Alone - White; Male;  87
+ba_sex1_age87,Race Alone - Black or African American; Male;  87
+ia_sex1_age87,Race Alone - American Indian and Alaska Native; Male;  87
+aa_sex1_age87,Race Alone - Asian; Male;  87
+na_sex1_age87,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  87
+tom_sex1_age87,Two or More Races; Male;  87
+totpop_sex1_age88,Total; Male;  88
+wa_sex1_age88,Race Alone - White; Male;  88
+ba_sex1_age88,Race Alone - Black or African American; Male;  88
+ia_sex1_age88,Race Alone - American Indian and Alaska Native; Male;  88
+aa_sex1_age88,Race Alone - Asian; Male;  88
+na_sex1_age88,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  88
+tom_sex1_age88,Two or More Races; Male;  88
+totpop_sex1_age89,Total; Male;  89
+wa_sex1_age89,Race Alone - White; Male;  89
+ba_sex1_age89,Race Alone - Black or African American; Male;  89
+ia_sex1_age89,Race Alone - American Indian and Alaska Native; Male;  89
+aa_sex1_age89,Race Alone - Asian; Male;  89
+na_sex1_age89,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  89
+tom_sex1_age89,Two or More Races; Male;  89
+totpop_sex1_age90,Total; Male;  90
+wa_sex1_age90,Race Alone - White; Male;  90
+ba_sex1_age90,Race Alone - Black or African American; Male;  90
+ia_sex1_age90,Race Alone - American Indian and Alaska Native; Male;  90
+aa_sex1_age90,Race Alone - Asian; Male;  90
+na_sex1_age90,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  90
+tom_sex1_age90,Two or More Races; Male;  90
+totpop_sex1_age91,Total; Male;  91
+wa_sex1_age91,Race Alone - White; Male;  91
+ba_sex1_age91,Race Alone - Black or African American; Male;  91
+ia_sex1_age91,Race Alone - American Indian and Alaska Native; Male;  91
+aa_sex1_age91,Race Alone - Asian; Male;  91
+na_sex1_age91,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  91
+tom_sex1_age91,Two or More Races; Male;  91
+totpop_sex1_age92,Total; Male;  92
+wa_sex1_age92,Race Alone - White; Male;  92
+ba_sex1_age92,Race Alone - Black or African American; Male;  92
+ia_sex1_age92,Race Alone - American Indian and Alaska Native; Male;  92
+aa_sex1_age92,Race Alone - Asian; Male;  92
+na_sex1_age92,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  92
+tom_sex1_age92,Two or More Races; Male;  92
+totpop_sex1_age93,Total; Male;  93
+wa_sex1_age93,Race Alone - White; Male;  93
+ba_sex1_age93,Race Alone - Black or African American; Male;  93
+ia_sex1_age93,Race Alone - American Indian and Alaska Native; Male;  93
+aa_sex1_age93,Race Alone - Asian; Male;  93
+na_sex1_age93,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  93
+tom_sex1_age93,Two or More Races; Male;  93
+totpop_sex1_age94,Total; Male;  94
+wa_sex1_age94,Race Alone - White; Male;  94
+ba_sex1_age94,Race Alone - Black or African American; Male;  94
+ia_sex1_age94,Race Alone - American Indian and Alaska Native; Male;  94
+aa_sex1_age94,Race Alone - Asian; Male;  94
+na_sex1_age94,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  94
+tom_sex1_age94,Two or More Races; Male;  94
+totpop_sex1_age95,Total; Male;  95
+wa_sex1_age95,Race Alone - White; Male;  95
+ba_sex1_age95,Race Alone - Black or African American; Male;  95
+ia_sex1_age95,Race Alone - American Indian and Alaska Native; Male;  95
+aa_sex1_age95,Race Alone - Asian; Male;  95
+na_sex1_age95,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  95
+tom_sex1_age95,Two or More Races; Male;  95
+totpop_sex1_age96,Total; Male;  96
+wa_sex1_age96,Race Alone - White; Male;  96
+ba_sex1_age96,Race Alone - Black or African American; Male;  96
+ia_sex1_age96,Race Alone - American Indian and Alaska Native; Male;  96
+aa_sex1_age96,Race Alone - Asian; Male;  96
+na_sex1_age96,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  96
+tom_sex1_age96,Two or More Races; Male;  96
+totpop_sex1_age97,Total; Male;  97
+wa_sex1_age97,Race Alone - White; Male;  97
+ba_sex1_age97,Race Alone - Black or African American; Male;  97
+ia_sex1_age97,Race Alone - American Indian and Alaska Native; Male;  97
+aa_sex1_age97,Race Alone - Asian; Male;  97
+na_sex1_age97,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  97
+tom_sex1_age97,Two or More Races; Male;  97
+totpop_sex1_age98,Total; Male;  98
+wa_sex1_age98,Race Alone - White; Male;  98
+ba_sex1_age98,Race Alone - Black or African American; Male;  98
+ia_sex1_age98,Race Alone - American Indian and Alaska Native; Male;  98
+aa_sex1_age98,Race Alone - Asian; Male;  98
+na_sex1_age98,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  98
+tom_sex1_age98,Two or More Races; Male;  98
+totpop_sex1_age99,Total; Male;  99
+wa_sex1_age99,Race Alone - White; Male;  99
+ba_sex1_age99,Race Alone - Black or African American; Male;  99
+ia_sex1_age99,Race Alone - American Indian and Alaska Native; Male;  99
+aa_sex1_age99,Race Alone - Asian; Male;  99
+na_sex1_age99,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  99
+tom_sex1_age99,Two or More Races; Male;  99
+totpop_sex1_age100plus,Total; Male;  100+
+wa_sex1_age100plus,Race Alone - White; Male;  100+
+ba_sex1_age100plus,Race Alone - Black or African American; Male;  100+
+ia_sex1_age100plus,Race Alone - American Indian and Alaska Native; Male;  100+
+aa_sex1_age100plus,Race Alone - Asian; Male;  100+
+na_sex1_age100plus,Race Alone - Native Hawaiian and Other Pacific Islander; Male;  100+
+tom_sex1_age100plus,Two or More Races; Male;  100+
+totpop_sex1_medage,Total; Male; Median age (years)
+wa_sex1_medage,Race Alone - White; Male; Median age (years)
+ba_sex1_medage,Race Alone - Black or African American; Male; Median age (years)
+ia_sex1_medage,Race Alone - American Indian and Alaska Native; Male; Median age (years)
+aa_sex1_medage,Race Alone - Asian; Male; Median age (years)
+na_sex1_medage,Race Alone - Native Hawaiian and Other Pacific Islander; Male; Median age (years)
+tom_sex1_medage,Two or More Races; Male; Median age (years)
+totpop_sex2_age999,Total; Female; Total
+wa_sex2_age999,Race Alone - White; Female; Total
+ba_sex2_age999,Race Alone - Black or African American; Female; Total
+ia_sex2_age999,Race Alone - American Indian and Alaska Native; Female; Total
+aa_sex2_age999,Race Alone - Asian; Female; Total
+na_sex2_age999,Race Alone - Native Hawaiian and Other Pacific Islander; Female; Total
+tom_sex2_age999,Two or More Races; Female; Total
+totpop_sex2_age0,Total; Female;  0
+wa_sex2_age0,Race Alone - White; Female;  0
+ba_sex2_age0,Race Alone - Black or African American; Female;  0
+ia_sex2_age0,Race Alone - American Indian and Alaska Native; Female;  0
+aa_sex2_age0,Race Alone - Asian; Female;  0
+na_sex2_age0,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  0
+tom_sex2_age0,Two or More Races; Female;  0
+totpop_sex2_age1,Total; Female;  1
+wa_sex2_age1,Race Alone - White; Female;  1
+ba_sex2_age1,Race Alone - Black or African American; Female;  1
+ia_sex2_age1,Race Alone - American Indian and Alaska Native; Female;  1
+aa_sex2_age1,Race Alone - Asian; Female;  1
+na_sex2_age1,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  1
+tom_sex2_age1,Two or More Races; Female;  1
+totpop_sex2_age2,Total; Female;  2
+wa_sex2_age2,Race Alone - White; Female;  2
+ba_sex2_age2,Race Alone - Black or African American; Female;  2
+ia_sex2_age2,Race Alone - American Indian and Alaska Native; Female;  2
+aa_sex2_age2,Race Alone - Asian; Female;  2
+na_sex2_age2,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  2
+tom_sex2_age2,Two or More Races; Female;  2
+totpop_sex2_age3,Total; Female;  3
+wa_sex2_age3,Race Alone - White; Female;  3
+ba_sex2_age3,Race Alone - Black or African American; Female;  3
+ia_sex2_age3,Race Alone - American Indian and Alaska Native; Female;  3
+aa_sex2_age3,Race Alone - Asian; Female;  3
+na_sex2_age3,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  3
+tom_sex2_age3,Two or More Races; Female;  3
+totpop_sex2_age4,Total; Female;  4
+wa_sex2_age4,Race Alone - White; Female;  4
+ba_sex2_age4,Race Alone - Black or African American; Female;  4
+ia_sex2_age4,Race Alone - American Indian and Alaska Native; Female;  4
+aa_sex2_age4,Race Alone - Asian; Female;  4
+na_sex2_age4,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  4
+tom_sex2_age4,Two or More Races; Female;  4
+totpop_sex2_age5,Total; Female;  5
+wa_sex2_age5,Race Alone - White; Female;  5
+ba_sex2_age5,Race Alone - Black or African American; Female;  5
+ia_sex2_age5,Race Alone - American Indian and Alaska Native; Female;  5
+aa_sex2_age5,Race Alone - Asian; Female;  5
+na_sex2_age5,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  5
+tom_sex2_age5,Two or More Races; Female;  5
+totpop_sex2_age6,Total; Female;  6
+wa_sex2_age6,Race Alone - White; Female;  6
+ba_sex2_age6,Race Alone - Black or African American; Female;  6
+ia_sex2_age6,Race Alone - American Indian and Alaska Native; Female;  6
+aa_sex2_age6,Race Alone - Asian; Female;  6
+na_sex2_age6,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  6
+tom_sex2_age6,Two or More Races; Female;  6
+totpop_sex2_age7,Total; Female;  7
+wa_sex2_age7,Race Alone - White; Female;  7
+ba_sex2_age7,Race Alone - Black or African American; Female;  7
+ia_sex2_age7,Race Alone - American Indian and Alaska Native; Female;  7
+aa_sex2_age7,Race Alone - Asian; Female;  7
+na_sex2_age7,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  7
+tom_sex2_age7,Two or More Races; Female;  7
+totpop_sex2_age8,Total; Female;  8
+wa_sex2_age8,Race Alone - White; Female;  8
+ba_sex2_age8,Race Alone - Black or African American; Female;  8
+ia_sex2_age8,Race Alone - American Indian and Alaska Native; Female;  8
+aa_sex2_age8,Race Alone - Asian; Female;  8
+na_sex2_age8,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  8
+tom_sex2_age8,Two or More Races; Female;  8
+totpop_sex2_age9,Total; Female;  9
+wa_sex2_age9,Race Alone - White; Female;  9
+ba_sex2_age9,Race Alone - Black or African American; Female;  9
+ia_sex2_age9,Race Alone - American Indian and Alaska Native; Female;  9
+aa_sex2_age9,Race Alone - Asian; Female;  9
+na_sex2_age9,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  9
+tom_sex2_age9,Two or More Races; Female;  9
+totpop_sex2_age10,Total; Female;  10
+wa_sex2_age10,Race Alone - White; Female;  10
+ba_sex2_age10,Race Alone - Black or African American; Female;  10
+ia_sex2_age10,Race Alone - American Indian and Alaska Native; Female;  10
+aa_sex2_age10,Race Alone - Asian; Female;  10
+na_sex2_age10,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  10
+tom_sex2_age10,Two or More Races; Female;  10
+totpop_sex2_age11,Total; Female;  11
+wa_sex2_age11,Race Alone - White; Female;  11
+ba_sex2_age11,Race Alone - Black or African American; Female;  11
+ia_sex2_age11,Race Alone - American Indian and Alaska Native; Female;  11
+aa_sex2_age11,Race Alone - Asian; Female;  11
+na_sex2_age11,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  11
+tom_sex2_age11,Two or More Races; Female;  11
+totpop_sex2_age12,Total; Female;  12
+wa_sex2_age12,Race Alone - White; Female;  12
+ba_sex2_age12,Race Alone - Black or African American; Female;  12
+ia_sex2_age12,Race Alone - American Indian and Alaska Native; Female;  12
+aa_sex2_age12,Race Alone - Asian; Female;  12
+na_sex2_age12,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  12
+tom_sex2_age12,Two or More Races; Female;  12
+totpop_sex2_age13,Total; Female;  13
+wa_sex2_age13,Race Alone - White; Female;  13
+ba_sex2_age13,Race Alone - Black or African American; Female;  13
+ia_sex2_age13,Race Alone - American Indian and Alaska Native; Female;  13
+aa_sex2_age13,Race Alone - Asian; Female;  13
+na_sex2_age13,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  13
+tom_sex2_age13,Two or More Races; Female;  13
+totpop_sex2_age14,Total; Female;  14
+wa_sex2_age14,Race Alone - White; Female;  14
+ba_sex2_age14,Race Alone - Black or African American; Female;  14
+ia_sex2_age14,Race Alone - American Indian and Alaska Native; Female;  14
+aa_sex2_age14,Race Alone - Asian; Female;  14
+na_sex2_age14,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  14
+tom_sex2_age14,Two or More Races; Female;  14
+totpop_sex2_age15,Total; Female;  15
+wa_sex2_age15,Race Alone - White; Female;  15
+ba_sex2_age15,Race Alone - Black or African American; Female;  15
+ia_sex2_age15,Race Alone - American Indian and Alaska Native; Female;  15
+aa_sex2_age15,Race Alone - Asian; Female;  15
+na_sex2_age15,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  15
+tom_sex2_age15,Two or More Races; Female;  15
+totpop_sex2_age16,Total; Female;  16
+wa_sex2_age16,Race Alone - White; Female;  16
+ba_sex2_age16,Race Alone - Black or African American; Female;  16
+ia_sex2_age16,Race Alone - American Indian and Alaska Native; Female;  16
+aa_sex2_age16,Race Alone - Asian; Female;  16
+na_sex2_age16,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  16
+tom_sex2_age16,Two or More Races; Female;  16
+totpop_sex2_age17,Total; Female;  17
+wa_sex2_age17,Race Alone - White; Female;  17
+ba_sex2_age17,Race Alone - Black or African American; Female;  17
+ia_sex2_age17,Race Alone - American Indian and Alaska Native; Female;  17
+aa_sex2_age17,Race Alone - Asian; Female;  17
+na_sex2_age17,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  17
+tom_sex2_age17,Two or More Races; Female;  17
+totpop_sex2_age18,Total; Female;  18
+wa_sex2_age18,Race Alone - White; Female;  18
+ba_sex2_age18,Race Alone - Black or African American; Female;  18
+ia_sex2_age18,Race Alone - American Indian and Alaska Native; Female;  18
+aa_sex2_age18,Race Alone - Asian; Female;  18
+na_sex2_age18,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  18
+tom_sex2_age18,Two or More Races; Female;  18
+totpop_sex2_age19,Total; Female;  19
+wa_sex2_age19,Race Alone - White; Female;  19
+ba_sex2_age19,Race Alone - Black or African American; Female;  19
+ia_sex2_age19,Race Alone - American Indian and Alaska Native; Female;  19
+aa_sex2_age19,Race Alone - Asian; Female;  19
+na_sex2_age19,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  19
+tom_sex2_age19,Two or More Races; Female;  19
+totpop_sex2_age20,Total; Female;  20
+wa_sex2_age20,Race Alone - White; Female;  20
+ba_sex2_age20,Race Alone - Black or African American; Female;  20
+ia_sex2_age20,Race Alone - American Indian and Alaska Native; Female;  20
+aa_sex2_age20,Race Alone - Asian; Female;  20
+na_sex2_age20,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  20
+tom_sex2_age20,Two or More Races; Female;  20
+totpop_sex2_age21,Total; Female;  21
+wa_sex2_age21,Race Alone - White; Female;  21
+ba_sex2_age21,Race Alone - Black or African American; Female;  21
+ia_sex2_age21,Race Alone - American Indian and Alaska Native; Female;  21
+aa_sex2_age21,Race Alone - Asian; Female;  21
+na_sex2_age21,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  21
+tom_sex2_age21,Two or More Races; Female;  21
+totpop_sex2_age22,Total; Female;  22
+wa_sex2_age22,Race Alone - White; Female;  22
+ba_sex2_age22,Race Alone - Black or African American; Female;  22
+ia_sex2_age22,Race Alone - American Indian and Alaska Native; Female;  22
+aa_sex2_age22,Race Alone - Asian; Female;  22
+na_sex2_age22,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  22
+tom_sex2_age22,Two or More Races; Female;  22
+totpop_sex2_age23,Total; Female;  23
+wa_sex2_age23,Race Alone - White; Female;  23
+ba_sex2_age23,Race Alone - Black or African American; Female;  23
+ia_sex2_age23,Race Alone - American Indian and Alaska Native; Female;  23
+aa_sex2_age23,Race Alone - Asian; Female;  23
+na_sex2_age23,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  23
+tom_sex2_age23,Two or More Races; Female;  23
+totpop_sex2_age24,Total; Female;  24
+wa_sex2_age24,Race Alone - White; Female;  24
+ba_sex2_age24,Race Alone - Black or African American; Female;  24
+ia_sex2_age24,Race Alone - American Indian and Alaska Native; Female;  24
+aa_sex2_age24,Race Alone - Asian; Female;  24
+na_sex2_age24,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  24
+tom_sex2_age24,Two or More Races; Female;  24
+totpop_sex2_age25,Total; Female;  25
+wa_sex2_age25,Race Alone - White; Female;  25
+ba_sex2_age25,Race Alone - Black or African American; Female;  25
+ia_sex2_age25,Race Alone - American Indian and Alaska Native; Female;  25
+aa_sex2_age25,Race Alone - Asian; Female;  25
+na_sex2_age25,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  25
+tom_sex2_age25,Two or More Races; Female;  25
+totpop_sex2_age26,Total; Female;  26
+wa_sex2_age26,Race Alone - White; Female;  26
+ba_sex2_age26,Race Alone - Black or African American; Female;  26
+ia_sex2_age26,Race Alone - American Indian and Alaska Native; Female;  26
+aa_sex2_age26,Race Alone - Asian; Female;  26
+na_sex2_age26,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  26
+tom_sex2_age26,Two or More Races; Female;  26
+totpop_sex2_age27,Total; Female;  27
+wa_sex2_age27,Race Alone - White; Female;  27
+ba_sex2_age27,Race Alone - Black or African American; Female;  27
+ia_sex2_age27,Race Alone - American Indian and Alaska Native; Female;  27
+aa_sex2_age27,Race Alone - Asian; Female;  27
+na_sex2_age27,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  27
+tom_sex2_age27,Two or More Races; Female;  27
+totpop_sex2_age28,Total; Female;  28
+wa_sex2_age28,Race Alone - White; Female;  28
+ba_sex2_age28,Race Alone - Black or African American; Female;  28
+ia_sex2_age28,Race Alone - American Indian and Alaska Native; Female;  28
+aa_sex2_age28,Race Alone - Asian; Female;  28
+na_sex2_age28,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  28
+tom_sex2_age28,Two or More Races; Female;  28
+totpop_sex2_age29,Total; Female;  29
+wa_sex2_age29,Race Alone - White; Female;  29
+ba_sex2_age29,Race Alone - Black or African American; Female;  29
+ia_sex2_age29,Race Alone - American Indian and Alaska Native; Female;  29
+aa_sex2_age29,Race Alone - Asian; Female;  29
+na_sex2_age29,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  29
+tom_sex2_age29,Two or More Races; Female;  29
+totpop_sex2_age30,Total; Female;  30
+wa_sex2_age30,Race Alone - White; Female;  30
+ba_sex2_age30,Race Alone - Black or African American; Female;  30
+ia_sex2_age30,Race Alone - American Indian and Alaska Native; Female;  30
+aa_sex2_age30,Race Alone - Asian; Female;  30
+na_sex2_age30,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  30
+tom_sex2_age30,Two or More Races; Female;  30
+totpop_sex2_age31,Total; Female;  31
+wa_sex2_age31,Race Alone - White; Female;  31
+ba_sex2_age31,Race Alone - Black or African American; Female;  31
+ia_sex2_age31,Race Alone - American Indian and Alaska Native; Female;  31
+aa_sex2_age31,Race Alone - Asian; Female;  31
+na_sex2_age31,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  31
+tom_sex2_age31,Two or More Races; Female;  31
+totpop_sex2_age32,Total; Female;  32
+wa_sex2_age32,Race Alone - White; Female;  32
+ba_sex2_age32,Race Alone - Black or African American; Female;  32
+ia_sex2_age32,Race Alone - American Indian and Alaska Native; Female;  32
+aa_sex2_age32,Race Alone - Asian; Female;  32
+na_sex2_age32,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  32
+tom_sex2_age32,Two or More Races; Female;  32
+totpop_sex2_age33,Total; Female;  33
+wa_sex2_age33,Race Alone - White; Female;  33
+ba_sex2_age33,Race Alone - Black or African American; Female;  33
+ia_sex2_age33,Race Alone - American Indian and Alaska Native; Female;  33
+aa_sex2_age33,Race Alone - Asian; Female;  33
+na_sex2_age33,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  33
+tom_sex2_age33,Two or More Races; Female;  33
+totpop_sex2_age34,Total; Female;  34
+wa_sex2_age34,Race Alone - White; Female;  34
+ba_sex2_age34,Race Alone - Black or African American; Female;  34
+ia_sex2_age34,Race Alone - American Indian and Alaska Native; Female;  34
+aa_sex2_age34,Race Alone - Asian; Female;  34
+na_sex2_age34,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  34
+tom_sex2_age34,Two or More Races; Female;  34
+totpop_sex2_age35,Total; Female;  35
+wa_sex2_age35,Race Alone - White; Female;  35
+ba_sex2_age35,Race Alone - Black or African American; Female;  35
+ia_sex2_age35,Race Alone - American Indian and Alaska Native; Female;  35
+aa_sex2_age35,Race Alone - Asian; Female;  35
+na_sex2_age35,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  35
+tom_sex2_age35,Two or More Races; Female;  35
+totpop_sex2_age36,Total; Female;  36
+wa_sex2_age36,Race Alone - White; Female;  36
+ba_sex2_age36,Race Alone - Black or African American; Female;  36
+ia_sex2_age36,Race Alone - American Indian and Alaska Native; Female;  36
+aa_sex2_age36,Race Alone - Asian; Female;  36
+na_sex2_age36,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  36
+tom_sex2_age36,Two or More Races; Female;  36
+totpop_sex2_age37,Total; Female;  37
+wa_sex2_age37,Race Alone - White; Female;  37
+ba_sex2_age37,Race Alone - Black or African American; Female;  37
+ia_sex2_age37,Race Alone - American Indian and Alaska Native; Female;  37
+aa_sex2_age37,Race Alone - Asian; Female;  37
+na_sex2_age37,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  37
+tom_sex2_age37,Two or More Races; Female;  37
+totpop_sex2_age38,Total; Female;  38
+wa_sex2_age38,Race Alone - White; Female;  38
+ba_sex2_age38,Race Alone - Black or African American; Female;  38
+ia_sex2_age38,Race Alone - American Indian and Alaska Native; Female;  38
+aa_sex2_age38,Race Alone - Asian; Female;  38
+na_sex2_age38,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  38
+tom_sex2_age38,Two or More Races; Female;  38
+totpop_sex2_age39,Total; Female;  39
+wa_sex2_age39,Race Alone - White; Female;  39
+ba_sex2_age39,Race Alone - Black or African American; Female;  39
+ia_sex2_age39,Race Alone - American Indian and Alaska Native; Female;  39
+aa_sex2_age39,Race Alone - Asian; Female;  39
+na_sex2_age39,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  39
+tom_sex2_age39,Two or More Races; Female;  39
+totpop_sex2_age40,Total; Female;  40
+wa_sex2_age40,Race Alone - White; Female;  40
+ba_sex2_age40,Race Alone - Black or African American; Female;  40
+ia_sex2_age40,Race Alone - American Indian and Alaska Native; Female;  40
+aa_sex2_age40,Race Alone - Asian; Female;  40
+na_sex2_age40,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  40
+tom_sex2_age40,Two or More Races; Female;  40
+totpop_sex2_age41,Total; Female;  41
+wa_sex2_age41,Race Alone - White; Female;  41
+ba_sex2_age41,Race Alone - Black or African American; Female;  41
+ia_sex2_age41,Race Alone - American Indian and Alaska Native; Female;  41
+aa_sex2_age41,Race Alone - Asian; Female;  41
+na_sex2_age41,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  41
+tom_sex2_age41,Two or More Races; Female;  41
+totpop_sex2_age42,Total; Female;  42
+wa_sex2_age42,Race Alone - White; Female;  42
+ba_sex2_age42,Race Alone - Black or African American; Female;  42
+ia_sex2_age42,Race Alone - American Indian and Alaska Native; Female;  42
+aa_sex2_age42,Race Alone - Asian; Female;  42
+na_sex2_age42,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  42
+tom_sex2_age42,Two or More Races; Female;  42
+totpop_sex2_age43,Total; Female;  43
+wa_sex2_age43,Race Alone - White; Female;  43
+ba_sex2_age43,Race Alone - Black or African American; Female;  43
+ia_sex2_age43,Race Alone - American Indian and Alaska Native; Female;  43
+aa_sex2_age43,Race Alone - Asian; Female;  43
+na_sex2_age43,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  43
+tom_sex2_age43,Two or More Races; Female;  43
+totpop_sex2_age44,Total; Female;  44
+wa_sex2_age44,Race Alone - White; Female;  44
+ba_sex2_age44,Race Alone - Black or African American; Female;  44
+ia_sex2_age44,Race Alone - American Indian and Alaska Native; Female;  44
+aa_sex2_age44,Race Alone - Asian; Female;  44
+na_sex2_age44,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  44
+tom_sex2_age44,Two or More Races; Female;  44
+totpop_sex2_age45,Total; Female;  45
+wa_sex2_age45,Race Alone - White; Female;  45
+ba_sex2_age45,Race Alone - Black or African American; Female;  45
+ia_sex2_age45,Race Alone - American Indian and Alaska Native; Female;  45
+aa_sex2_age45,Race Alone - Asian; Female;  45
+na_sex2_age45,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  45
+tom_sex2_age45,Two or More Races; Female;  45
+totpop_sex2_age46,Total; Female;  46
+wa_sex2_age46,Race Alone - White; Female;  46
+ba_sex2_age46,Race Alone - Black or African American; Female;  46
+ia_sex2_age46,Race Alone - American Indian and Alaska Native; Female;  46
+aa_sex2_age46,Race Alone - Asian; Female;  46
+na_sex2_age46,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  46
+tom_sex2_age46,Two or More Races; Female;  46
+totpop_sex2_age47,Total; Female;  47
+wa_sex2_age47,Race Alone - White; Female;  47
+ba_sex2_age47,Race Alone - Black or African American; Female;  47
+ia_sex2_age47,Race Alone - American Indian and Alaska Native; Female;  47
+aa_sex2_age47,Race Alone - Asian; Female;  47
+na_sex2_age47,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  47
+tom_sex2_age47,Two or More Races; Female;  47
+totpop_sex2_age48,Total; Female;  48
+wa_sex2_age48,Race Alone - White; Female;  48
+ba_sex2_age48,Race Alone - Black or African American; Female;  48
+ia_sex2_age48,Race Alone - American Indian and Alaska Native; Female;  48
+aa_sex2_age48,Race Alone - Asian; Female;  48
+na_sex2_age48,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  48
+tom_sex2_age48,Two or More Races; Female;  48
+totpop_sex2_age49,Total; Female;  49
+wa_sex2_age49,Race Alone - White; Female;  49
+ba_sex2_age49,Race Alone - Black or African American; Female;  49
+ia_sex2_age49,Race Alone - American Indian and Alaska Native; Female;  49
+aa_sex2_age49,Race Alone - Asian; Female;  49
+na_sex2_age49,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  49
+tom_sex2_age49,Two or More Races; Female;  49
+totpop_sex2_age50,Total; Female;  50
+wa_sex2_age50,Race Alone - White; Female;  50
+ba_sex2_age50,Race Alone - Black or African American; Female;  50
+ia_sex2_age50,Race Alone - American Indian and Alaska Native; Female;  50
+aa_sex2_age50,Race Alone - Asian; Female;  50
+na_sex2_age50,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  50
+tom_sex2_age50,Two or More Races; Female;  50
+totpop_sex2_age51,Total; Female;  51
+wa_sex2_age51,Race Alone - White; Female;  51
+ba_sex2_age51,Race Alone - Black or African American; Female;  51
+ia_sex2_age51,Race Alone - American Indian and Alaska Native; Female;  51
+aa_sex2_age51,Race Alone - Asian; Female;  51
+na_sex2_age51,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  51
+tom_sex2_age51,Two or More Races; Female;  51
+totpop_sex2_age52,Total; Female;  52
+wa_sex2_age52,Race Alone - White; Female;  52
+ba_sex2_age52,Race Alone - Black or African American; Female;  52
+ia_sex2_age52,Race Alone - American Indian and Alaska Native; Female;  52
+aa_sex2_age52,Race Alone - Asian; Female;  52
+na_sex2_age52,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  52
+tom_sex2_age52,Two or More Races; Female;  52
+totpop_sex2_age53,Total; Female;  53
+wa_sex2_age53,Race Alone - White; Female;  53
+ba_sex2_age53,Race Alone - Black or African American; Female;  53
+ia_sex2_age53,Race Alone - American Indian and Alaska Native; Female;  53
+aa_sex2_age53,Race Alone - Asian; Female;  53
+na_sex2_age53,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  53
+tom_sex2_age53,Two or More Races; Female;  53
+totpop_sex2_age54,Total; Female;  54
+wa_sex2_age54,Race Alone - White; Female;  54
+ba_sex2_age54,Race Alone - Black or African American; Female;  54
+ia_sex2_age54,Race Alone - American Indian and Alaska Native; Female;  54
+aa_sex2_age54,Race Alone - Asian; Female;  54
+na_sex2_age54,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  54
+tom_sex2_age54,Two or More Races; Female;  54
+totpop_sex2_age55,Total; Female;  55
+wa_sex2_age55,Race Alone - White; Female;  55
+ba_sex2_age55,Race Alone - Black or African American; Female;  55
+ia_sex2_age55,Race Alone - American Indian and Alaska Native; Female;  55
+aa_sex2_age55,Race Alone - Asian; Female;  55
+na_sex2_age55,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  55
+tom_sex2_age55,Two or More Races; Female;  55
+totpop_sex2_age56,Total; Female;  56
+wa_sex2_age56,Race Alone - White; Female;  56
+ba_sex2_age56,Race Alone - Black or African American; Female;  56
+ia_sex2_age56,Race Alone - American Indian and Alaska Native; Female;  56
+aa_sex2_age56,Race Alone - Asian; Female;  56
+na_sex2_age56,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  56
+tom_sex2_age56,Two or More Races; Female;  56
+totpop_sex2_age57,Total; Female;  57
+wa_sex2_age57,Race Alone - White; Female;  57
+ba_sex2_age57,Race Alone - Black or African American; Female;  57
+ia_sex2_age57,Race Alone - American Indian and Alaska Native; Female;  57
+aa_sex2_age57,Race Alone - Asian; Female;  57
+na_sex2_age57,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  57
+tom_sex2_age57,Two or More Races; Female;  57
+totpop_sex2_age58,Total; Female;  58
+wa_sex2_age58,Race Alone - White; Female;  58
+ba_sex2_age58,Race Alone - Black or African American; Female;  58
+ia_sex2_age58,Race Alone - American Indian and Alaska Native; Female;  58
+aa_sex2_age58,Race Alone - Asian; Female;  58
+na_sex2_age58,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  58
+tom_sex2_age58,Two or More Races; Female;  58
+totpop_sex2_age59,Total; Female;  59
+wa_sex2_age59,Race Alone - White; Female;  59
+ba_sex2_age59,Race Alone - Black or African American; Female;  59
+ia_sex2_age59,Race Alone - American Indian and Alaska Native; Female;  59
+aa_sex2_age59,Race Alone - Asian; Female;  59
+na_sex2_age59,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  59
+tom_sex2_age59,Two or More Races; Female;  59
+totpop_sex2_age60,Total; Female;  60
+wa_sex2_age60,Race Alone - White; Female;  60
+ba_sex2_age60,Race Alone - Black or African American; Female;  60
+ia_sex2_age60,Race Alone - American Indian and Alaska Native; Female;  60
+aa_sex2_age60,Race Alone - Asian; Female;  60
+na_sex2_age60,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  60
+tom_sex2_age60,Two or More Races; Female;  60
+totpop_sex2_age61,Total; Female;  61
+wa_sex2_age61,Race Alone - White; Female;  61
+ba_sex2_age61,Race Alone - Black or African American; Female;  61
+ia_sex2_age61,Race Alone - American Indian and Alaska Native; Female;  61
+aa_sex2_age61,Race Alone - Asian; Female;  61
+na_sex2_age61,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  61
+tom_sex2_age61,Two or More Races; Female;  61
+totpop_sex2_age62,Total; Female;  62
+wa_sex2_age62,Race Alone - White; Female;  62
+ba_sex2_age62,Race Alone - Black or African American; Female;  62
+ia_sex2_age62,Race Alone - American Indian and Alaska Native; Female;  62
+aa_sex2_age62,Race Alone - Asian; Female;  62
+na_sex2_age62,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  62
+tom_sex2_age62,Two or More Races; Female;  62
+totpop_sex2_age63,Total; Female;  63
+wa_sex2_age63,Race Alone - White; Female;  63
+ba_sex2_age63,Race Alone - Black or African American; Female;  63
+ia_sex2_age63,Race Alone - American Indian and Alaska Native; Female;  63
+aa_sex2_age63,Race Alone - Asian; Female;  63
+na_sex2_age63,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  63
+tom_sex2_age63,Two or More Races; Female;  63
+totpop_sex2_age64,Total; Female;  64
+wa_sex2_age64,Race Alone - White; Female;  64
+ba_sex2_age64,Race Alone - Black or African American; Female;  64
+ia_sex2_age64,Race Alone - American Indian and Alaska Native; Female;  64
+aa_sex2_age64,Race Alone - Asian; Female;  64
+na_sex2_age64,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  64
+tom_sex2_age64,Two or More Races; Female;  64
+totpop_sex2_age65,Total; Female;  65
+wa_sex2_age65,Race Alone - White; Female;  65
+ba_sex2_age65,Race Alone - Black or African American; Female;  65
+ia_sex2_age65,Race Alone - American Indian and Alaska Native; Female;  65
+aa_sex2_age65,Race Alone - Asian; Female;  65
+na_sex2_age65,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  65
+tom_sex2_age65,Two or More Races; Female;  65
+totpop_sex2_age66,Total; Female;  66
+wa_sex2_age66,Race Alone - White; Female;  66
+ba_sex2_age66,Race Alone - Black or African American; Female;  66
+ia_sex2_age66,Race Alone - American Indian and Alaska Native; Female;  66
+aa_sex2_age66,Race Alone - Asian; Female;  66
+na_sex2_age66,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  66
+tom_sex2_age66,Two or More Races; Female;  66
+totpop_sex2_age67,Total; Female;  67
+wa_sex2_age67,Race Alone - White; Female;  67
+ba_sex2_age67,Race Alone - Black or African American; Female;  67
+ia_sex2_age67,Race Alone - American Indian and Alaska Native; Female;  67
+aa_sex2_age67,Race Alone - Asian; Female;  67
+na_sex2_age67,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  67
+tom_sex2_age67,Two or More Races; Female;  67
+totpop_sex2_age68,Total; Female;  68
+wa_sex2_age68,Race Alone - White; Female;  68
+ba_sex2_age68,Race Alone - Black or African American; Female;  68
+ia_sex2_age68,Race Alone - American Indian and Alaska Native; Female;  68
+aa_sex2_age68,Race Alone - Asian; Female;  68
+na_sex2_age68,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  68
+tom_sex2_age68,Two or More Races; Female;  68
+totpop_sex2_age69,Total; Female;  69
+wa_sex2_age69,Race Alone - White; Female;  69
+ba_sex2_age69,Race Alone - Black or African American; Female;  69
+ia_sex2_age69,Race Alone - American Indian and Alaska Native; Female;  69
+aa_sex2_age69,Race Alone - Asian; Female;  69
+na_sex2_age69,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  69
+tom_sex2_age69,Two or More Races; Female;  69
+totpop_sex2_age70,Total; Female;  70
+wa_sex2_age70,Race Alone - White; Female;  70
+ba_sex2_age70,Race Alone - Black or African American; Female;  70
+ia_sex2_age70,Race Alone - American Indian and Alaska Native; Female;  70
+aa_sex2_age70,Race Alone - Asian; Female;  70
+na_sex2_age70,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  70
+tom_sex2_age70,Two or More Races; Female;  70
+totpop_sex2_age71,Total; Female;  71
+wa_sex2_age71,Race Alone - White; Female;  71
+ba_sex2_age71,Race Alone - Black or African American; Female;  71
+ia_sex2_age71,Race Alone - American Indian and Alaska Native; Female;  71
+aa_sex2_age71,Race Alone - Asian; Female;  71
+na_sex2_age71,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  71
+tom_sex2_age71,Two or More Races; Female;  71
+totpop_sex2_age72,Total; Female;  72
+wa_sex2_age72,Race Alone - White; Female;  72
+ba_sex2_age72,Race Alone - Black or African American; Female;  72
+ia_sex2_age72,Race Alone - American Indian and Alaska Native; Female;  72
+aa_sex2_age72,Race Alone - Asian; Female;  72
+na_sex2_age72,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  72
+tom_sex2_age72,Two or More Races; Female;  72
+totpop_sex2_age73,Total; Female;  73
+wa_sex2_age73,Race Alone - White; Female;  73
+ba_sex2_age73,Race Alone - Black or African American; Female;  73
+ia_sex2_age73,Race Alone - American Indian and Alaska Native; Female;  73
+aa_sex2_age73,Race Alone - Asian; Female;  73
+na_sex2_age73,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  73
+tom_sex2_age73,Two or More Races; Female;  73
+totpop_sex2_age74,Total; Female;  74
+wa_sex2_age74,Race Alone - White; Female;  74
+ba_sex2_age74,Race Alone - Black or African American; Female;  74
+ia_sex2_age74,Race Alone - American Indian and Alaska Native; Female;  74
+aa_sex2_age74,Race Alone - Asian; Female;  74
+na_sex2_age74,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  74
+tom_sex2_age74,Two or More Races; Female;  74
+totpop_sex2_age75,Total; Female;  75
+wa_sex2_age75,Race Alone - White; Female;  75
+ba_sex2_age75,Race Alone - Black or African American; Female;  75
+ia_sex2_age75,Race Alone - American Indian and Alaska Native; Female;  75
+aa_sex2_age75,Race Alone - Asian; Female;  75
+na_sex2_age75,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  75
+tom_sex2_age75,Two or More Races; Female;  75
+totpop_sex2_age76,Total; Female;  76
+wa_sex2_age76,Race Alone - White; Female;  76
+ba_sex2_age76,Race Alone - Black or African American; Female;  76
+ia_sex2_age76,Race Alone - American Indian and Alaska Native; Female;  76
+aa_sex2_age76,Race Alone - Asian; Female;  76
+na_sex2_age76,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  76
+tom_sex2_age76,Two or More Races; Female;  76
+totpop_sex2_age77,Total; Female;  77
+wa_sex2_age77,Race Alone - White; Female;  77
+ba_sex2_age77,Race Alone - Black or African American; Female;  77
+ia_sex2_age77,Race Alone - American Indian and Alaska Native; Female;  77
+aa_sex2_age77,Race Alone - Asian; Female;  77
+na_sex2_age77,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  77
+tom_sex2_age77,Two or More Races; Female;  77
+totpop_sex2_age78,Total; Female;  78
+wa_sex2_age78,Race Alone - White; Female;  78
+ba_sex2_age78,Race Alone - Black or African American; Female;  78
+ia_sex2_age78,Race Alone - American Indian and Alaska Native; Female;  78
+aa_sex2_age78,Race Alone - Asian; Female;  78
+na_sex2_age78,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  78
+tom_sex2_age78,Two or More Races; Female;  78
+totpop_sex2_age79,Total; Female;  79
+wa_sex2_age79,Race Alone - White; Female;  79
+ba_sex2_age79,Race Alone - Black or African American; Female;  79
+ia_sex2_age79,Race Alone - American Indian and Alaska Native; Female;  79
+aa_sex2_age79,Race Alone - Asian; Female;  79
+na_sex2_age79,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  79
+tom_sex2_age79,Two or More Races; Female;  79
+totpop_sex2_age80,Total; Female;  80
+wa_sex2_age80,Race Alone - White; Female;  80
+ba_sex2_age80,Race Alone - Black or African American; Female;  80
+ia_sex2_age80,Race Alone - American Indian and Alaska Native; Female;  80
+aa_sex2_age80,Race Alone - Asian; Female;  80
+na_sex2_age80,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  80
+tom_sex2_age80,Two or More Races; Female;  80
+totpop_sex2_age81,Total; Female;  81
+wa_sex2_age81,Race Alone - White; Female;  81
+ba_sex2_age81,Race Alone - Black or African American; Female;  81
+ia_sex2_age81,Race Alone - American Indian and Alaska Native; Female;  81
+aa_sex2_age81,Race Alone - Asian; Female;  81
+na_sex2_age81,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  81
+tom_sex2_age81,Two or More Races; Female;  81
+totpop_sex2_age82,Total; Female;  82
+wa_sex2_age82,Race Alone - White; Female;  82
+ba_sex2_age82,Race Alone - Black or African American; Female;  82
+ia_sex2_age82,Race Alone - American Indian and Alaska Native; Female;  82
+aa_sex2_age82,Race Alone - Asian; Female;  82
+na_sex2_age82,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  82
+tom_sex2_age82,Two or More Races; Female;  82
+totpop_sex2_age83,Total; Female;  83
+wa_sex2_age83,Race Alone - White; Female;  83
+ba_sex2_age83,Race Alone - Black or African American; Female;  83
+ia_sex2_age83,Race Alone - American Indian and Alaska Native; Female;  83
+aa_sex2_age83,Race Alone - Asian; Female;  83
+na_sex2_age83,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  83
+tom_sex2_age83,Two or More Races; Female;  83
+totpop_sex2_age84,Total; Female;  84
+wa_sex2_age84,Race Alone - White; Female;  84
+ba_sex2_age84,Race Alone - Black or African American; Female;  84
+ia_sex2_age84,Race Alone - American Indian and Alaska Native; Female;  84
+aa_sex2_age84,Race Alone - Asian; Female;  84
+na_sex2_age84,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  84
+tom_sex2_age84,Two or More Races; Female;  84
+totpop_sex2_age85,Total; Female;  85
+wa_sex2_age85,Race Alone - White; Female;  85
+ba_sex2_age85,Race Alone - Black or African American; Female;  85
+ia_sex2_age85,Race Alone - American Indian and Alaska Native; Female;  85
+aa_sex2_age85,Race Alone - Asian; Female;  85
+na_sex2_age85,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  85
+tom_sex2_age85,Two or More Races; Female;  85
+totpop_sex2_age86,Total; Female;  86
+wa_sex2_age86,Race Alone - White; Female;  86
+ba_sex2_age86,Race Alone - Black or African American; Female;  86
+ia_sex2_age86,Race Alone - American Indian and Alaska Native; Female;  86
+aa_sex2_age86,Race Alone - Asian; Female;  86
+na_sex2_age86,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  86
+tom_sex2_age86,Two or More Races; Female;  86
+totpop_sex2_age87,Total; Female;  87
+wa_sex2_age87,Race Alone - White; Female;  87
+ba_sex2_age87,Race Alone - Black or African American; Female;  87
+ia_sex2_age87,Race Alone - American Indian and Alaska Native; Female;  87
+aa_sex2_age87,Race Alone - Asian; Female;  87
+na_sex2_age87,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  87
+tom_sex2_age87,Two or More Races; Female;  87
+totpop_sex2_age88,Total; Female;  88
+wa_sex2_age88,Race Alone - White; Female;  88
+ba_sex2_age88,Race Alone - Black or African American; Female;  88
+ia_sex2_age88,Race Alone - American Indian and Alaska Native; Female;  88
+aa_sex2_age88,Race Alone - Asian; Female;  88
+na_sex2_age88,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  88
+tom_sex2_age88,Two or More Races; Female;  88
+totpop_sex2_age89,Total; Female;  89
+wa_sex2_age89,Race Alone - White; Female;  89
+ba_sex2_age89,Race Alone - Black or African American; Female;  89
+ia_sex2_age89,Race Alone - American Indian and Alaska Native; Female;  89
+aa_sex2_age89,Race Alone - Asian; Female;  89
+na_sex2_age89,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  89
+tom_sex2_age89,Two or More Races; Female;  89
+totpop_sex2_age90,Total; Female;  90
+wa_sex2_age90,Race Alone - White; Female;  90
+ba_sex2_age90,Race Alone - Black or African American; Female;  90
+ia_sex2_age90,Race Alone - American Indian and Alaska Native; Female;  90
+aa_sex2_age90,Race Alone - Asian; Female;  90
+na_sex2_age90,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  90
+tom_sex2_age90,Two or More Races; Female;  90
+totpop_sex2_age91,Total; Female;  91
+wa_sex2_age91,Race Alone - White; Female;  91
+ba_sex2_age91,Race Alone - Black or African American; Female;  91
+ia_sex2_age91,Race Alone - American Indian and Alaska Native; Female;  91
+aa_sex2_age91,Race Alone - Asian; Female;  91
+na_sex2_age91,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  91
+tom_sex2_age91,Two or More Races; Female;  91
+totpop_sex2_age92,Total; Female;  92
+wa_sex2_age92,Race Alone - White; Female;  92
+ba_sex2_age92,Race Alone - Black or African American; Female;  92
+ia_sex2_age92,Race Alone - American Indian and Alaska Native; Female;  92
+aa_sex2_age92,Race Alone - Asian; Female;  92
+na_sex2_age92,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  92
+tom_sex2_age92,Two or More Races; Female;  92
+totpop_sex2_age93,Total; Female;  93
+wa_sex2_age93,Race Alone - White; Female;  93
+ba_sex2_age93,Race Alone - Black or African American; Female;  93
+ia_sex2_age93,Race Alone - American Indian and Alaska Native; Female;  93
+aa_sex2_age93,Race Alone - Asian; Female;  93
+na_sex2_age93,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  93
+tom_sex2_age93,Two or More Races; Female;  93
+totpop_sex2_age94,Total; Female;  94
+wa_sex2_age94,Race Alone - White; Female;  94
+ba_sex2_age94,Race Alone - Black or African American; Female;  94
+ia_sex2_age94,Race Alone - American Indian and Alaska Native; Female;  94
+aa_sex2_age94,Race Alone - Asian; Female;  94
+na_sex2_age94,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  94
+tom_sex2_age94,Two or More Races; Female;  94
+totpop_sex2_age95,Total; Female;  95
+wa_sex2_age95,Race Alone - White; Female;  95
+ba_sex2_age95,Race Alone - Black or African American; Female;  95
+ia_sex2_age95,Race Alone - American Indian and Alaska Native; Female;  95
+aa_sex2_age95,Race Alone - Asian; Female;  95
+na_sex2_age95,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  95
+tom_sex2_age95,Two or More Races; Female;  95
+totpop_sex2_age96,Total; Female;  96
+wa_sex2_age96,Race Alone - White; Female;  96
+ba_sex2_age96,Race Alone - Black or African American; Female;  96
+ia_sex2_age96,Race Alone - American Indian and Alaska Native; Female;  96
+aa_sex2_age96,Race Alone - Asian; Female;  96
+na_sex2_age96,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  96
+tom_sex2_age96,Two or More Races; Female;  96
+totpop_sex2_age97,Total; Female;  97
+wa_sex2_age97,Race Alone - White; Female;  97
+ba_sex2_age97,Race Alone - Black or African American; Female;  97
+ia_sex2_age97,Race Alone - American Indian and Alaska Native; Female;  97
+aa_sex2_age97,Race Alone - Asian; Female;  97
+na_sex2_age97,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  97
+tom_sex2_age97,Two or More Races; Female;  97
+totpop_sex2_age98,Total; Female;  98
+wa_sex2_age98,Race Alone - White; Female;  98
+ba_sex2_age98,Race Alone - Black or African American; Female;  98
+ia_sex2_age98,Race Alone - American Indian and Alaska Native; Female;  98
+aa_sex2_age98,Race Alone - Asian; Female;  98
+na_sex2_age98,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  98
+tom_sex2_age98,Two or More Races; Female;  98
+totpop_sex2_age99,Total; Female;  99
+wa_sex2_age99,Race Alone - White; Female;  99
+ba_sex2_age99,Race Alone - Black or African American; Female;  99
+ia_sex2_age99,Race Alone - American Indian and Alaska Native; Female;  99
+aa_sex2_age99,Race Alone - Asian; Female;  99
+na_sex2_age99,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  99
+tom_sex2_age99,Two or More Races; Female;  99
+totpop_sex2_age100plus,Total; Female;  100+
+wa_sex2_age100plus,Race Alone - White; Female;  100+
+ba_sex2_age100plus,Race Alone - Black or African American; Female;  100+
+ia_sex2_age100plus,Race Alone - American Indian and Alaska Native; Female;  100+
+aa_sex2_age100plus,Race Alone - Asian; Female;  100+
+na_sex2_age100plus,Race Alone - Native Hawaiian and Other Pacific Islander; Female;  100+
+tom_sex2_age100plus,Two or More Races; Female;  100+
+totpop_sex2_medage,Total; Female; Median age (years)
+wa_sex2_medage,Race Alone - White; Female; Median age (years)
+ba_sex2_medage,Race Alone - Black or African American; Female; Median age (years)
+ia_sex2_medage,Race Alone - American Indian and Alaska Native; Female; Median age (years)
+aa_sex2_medage,Race Alone - Asian; Female; Median age (years)
+na_sex2_medage,Race Alone - Native Hawaiian and Other Pacific Islander; Female; Median age (years)
+tom_sex2_medage,Two or More Races; Female; Median age (years)

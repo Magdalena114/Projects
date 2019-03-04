@@ -1,0 +1,99 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Row(city='Walnut Creek', county='Contra Costa', population=70000, state='California', state_code='CA', zipcodes=SortedSet([94507, 94518, 94521, 94595, 94596, 94597, 94598]))\n",
+      "City Name : Walnut Creek , City Population: 70000\n",
+      "Row(city='Cupertino', county='Santa Clara', population=50000, state='California', state_code='CA', zipcodes=SortedSet([95014, 95015]))\n",
+      "City Name : Cupertino , City Population: 50000\n",
+      "Row(city='Santa Clara', county='Santa Clara', population=100000, state='California', state_code='CA', zipcodes=SortedSet([95050, 95051, 95052, 95053, 95054, 95055, 95056]))\n",
+      "City Name : Santa Clara , City Population: 100000\n",
+      "Select Walnut Creek\n",
+      "Row(city='Walnut Creek', county='Contra Costa', population=70000, state='California', state_code='CA', zipcodes=SortedSet([94507, 94518, 94521, 94595, 94596, 94597, 94598]))\n",
+      "City Name : Walnut Creek , City Population: 70000\n",
+      "Row(system_count_population=3, system_avg_population=73333, system_sum_population=220000, system_min_population=50000, system_max_population=100000)\n",
+      "City Count 3\n",
+      "Total population 220000\n",
+      "Average Population 73333\n"
+     ]
+    }
+   ],
+   "source": [
+    "from cassandra.cluster import Cluster\n",
+    "import json\n",
+    "\n",
+    "host = 'ec2-54-67-15-68.us-west-1.compute.amazonaws.com'\n",
+    "port = 9220\n",
+    "\n",
+    "cluster = Cluster([host], port = port)\n",
+    "\n",
+    "session = cluster.connect()\n",
+    "\n",
+    "session.set_keyspace('nosql')\n",
+    "\n",
+    "# Example 1 - Insert population information in table with columns defined for each field\n",
+    "# Defining a new table\n",
+    "# session.execute(\"create table nosql.city_population_ali (city text PRIMARY KEY ,zipcodes set<int>, county text, state_code text, state text, population int)\")\n",
+    "\n",
+    "\n",
+    "\n",
+    "session.execute(\"INSERT INTO city_population_ali (city, zipcodes, county, state_code, state, population) VALUES (%s, %s, %s, %s, %s, %s)\", (\"Cupertino\", {95014, 95015}, \"Santa Clara\", \"CA\", \"California\", 50000 ))\n",
+    "session.execute(\"INSERT INTO city_population_ali (city, zipcodes, county, state_code, state, population) VALUES (%s, %s, %s, %s, %s, %s)\", (\"Santa Clara\", {95050, 95051, 95052, 95053, 95054, 95055, 95056}, \"Santa Clara\", \"CA\", \"California\", 100000 ))\n",
+    "session.execute(\"INSERT INTO city_population_ali (city, zipcodes, county, state_code, state, population) VALUES (%s, %s, %s, %s, %s, %s)\", (\"Walnut Creek\", {94507, 94518, 94521, 94595, 94596, 94597, 94598}, \"Contra Costa\", \"CA\", \"California\", 70000 ))\n",
+    "\n",
+    "rows = session.execute('Select * from city_population_ali')\n",
+    "\n",
+    "for row in rows:\n",
+    "    print(row)\n",
+    "    print('City Name :', row.city, ', City Population:', row.population)\n",
+    "\n",
+    "# Select where city is Cupertino\n",
+    "city_stmt = session.prepare(\"Select * from city_population_ali where city=?\")\n",
+    "rows = session.execute(city_stmt, ['Walnut Creek'])\n",
+    "\n",
+    "print('Select Walnut Creek')\n",
+    "for row in rows:\n",
+    "    print(row)\n",
+    "    print('City Name :', row.city, ', City Population:', row.population)\n",
+    "\n",
+    "\n",
+    "\n",
+    "# Example 2 - Using aggregate functions\n",
+    "rows = session.execute('Select count(population), avg(population), sum(population), min(population), max(population) from city_population_ali')\n",
+    "for row in rows:\n",
+    "    print(row)\n",
+    "    print('City Count', row.system_count_population)\n",
+    "    print('Total population', row.system_sum_population)\n",
+    "    print('Average Population', row.system_avg_population)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

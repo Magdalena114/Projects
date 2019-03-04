@@ -1,0 +1,1 @@
+f0a3b2b89cd97cc38e2763d36fd696e8d106c2ed968e0c81643c6688f994076c welcome-packet [24/Jul/2017:18:02:03 +0000] 99.73.92.216 - 0E4B106170A0D9BF REST.HEAD.BUCKET - "HEAD /welcome-packet HTTP/1.1" 301 PermanentRedirect 443 - 8 - "-" "S3Console/0.4, aws-internal/3" -

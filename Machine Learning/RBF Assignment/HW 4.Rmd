@@ -1,0 +1,211 @@
+---
+title: "ANLT-203_01 Assignment 4: K-means Clustering and Radial Basis Functions (RBF) "
+author:  "Matthew Swogger - Ali Taheri"
+date: "Mar 28, 2018"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stats)
+library(flexclust)
+library(MASS)
+```
+
+
+## Problem 1
+
+### 1) RBF with gamma equal 5
+
+```{r 1-1, warning=FALSE}
+
+#Reading data to a dataframe
+df=read.csv("vizData.csv",header=TRUE)
+
+tmp.matrix = matrix(rep(df$x,nrow(df)) , nrow=nrow(df))
+y=as.matrix(df$y)
+
+gamma = 5
+
+#Finding matrix of phi
+phi = (exp(1))^(-gamma*((tmp.matrix-t(tmp.matrix))^2))
+W=solve(phi) %*% y
+
+
+X.vector = seq(-10,10,.01)
+Y.vector =sapply(X.vector , function(new.point) (exp(1))^(-gamma*((df$x-new.point)^2)) %*% W )
+plot(X.vector , Y.vector ,pch=18,col="blue",xlim=c(-5,5),ylim=c(-.7,0.7),xlab='input value', ylab= 'Prediction' , main= 'RBF regression with big gamma')
+points(df$x, df$y , pch=8 ,col="red" , cex=1.5)
+
+
+```
+
+### 2) RBF with gamma equal 1/5
+
+```{r 1-2, warning=FALSE}
+gamma = 1/5
+
+#Finding matrix of phi
+phi = (exp(1))^(-gamma*((tmp.matrix-t(tmp.matrix))^2))
+W=solve(phi) %*% y
+
+
+X.vector = seq(-10,10,.01)
+Y.vector =sapply(X.vector , function(new.point) (exp(1))^(-gamma*((df$x-new.point)^2)) %*% W )
+plot(X.vector , Y.vector ,pch=18,col="blue",xlim=c(-5,5),ylim=c(-.7,0.7),xlab='input value', ylab= 'Prediction' , main= 'RBF regression with small gamma')
+points(df$x, df$y , pch=8 ,col="red" , cex=1.5)
+
+
+```
+
+### 3) Explaination
+
+It shows that only near neighbors will contribute more when gamma is big but curve would be more smooth when gamma is small and it shows that far points will contribute too.
+
+
+## Problem 2
+
+### 1) A function for K-Means clustring
+
+```{r 2-1 , warning=FALSE}
+
+#Function for K-Means clustring
+
+my.KMeans <- function(df,num,k) { # k is number of clusters and num is number of features
+
+#A list of list for saving clusters and centroids
+result =vector('list',2) 
+
+#number of iterations
+n=1
+
+#distance between centers of consecutive iterations
+difference=1
+ 
+#first random selection of k centroids
+old.centroids = df[sample(nrow(df),k),1:num]
+
+ 
+ while ((n <= 1000) & (difference >= 0.001)) {
+   
+  distances = dist2(as.matrix(df)[,1:num], old.centroids, method = "euclid") 
+  #distances is data size x centroid size => 150 x 3
+  #col 1 (150x1) is the distance between first centroid and all 150 points in dataset
+  #col 2 (150x1) is the distance between second centroid and all 150 points in dataset
+  #col 3 (150x1) is the distance between third centroid and all 150 points in dataset 
+  
+  
+  #Selection of cluster for each point based on minimum distance to 3 centroids
+  clusters = apply(distances, MARGIN = 1, which.min)
+  
+  #Finding new centroids by averaing x1 and x2 for all points of each cluster
+  new.centroids = apply(as.matrix(df)[,1:num], MARGIN = 2, FUN = tapply, clusters, mean)
+  
+  #maximum distance between centers of two consecutive iterations
+  difference = max(diag(dist2(old.centroids, new.centroids, method = "euclid")))
+  
+  old.centroids = new.centroids
+  
+  #updating number of iterations
+  n=n+1
+ }
+
+ #saving clusters and centroids in result
+ result[[1]] = clusters
+ result[[2]] = new.centroids
+ return(result)
+}
+```
+
+### 2) Applying our function to respective dataset
+
+```{r 2-2 , warning=FALSE}
+
+#Reading data to a dataframe
+df=read.csv("kMeansData.csv",header=TRUE)
+
+final = my.KMeans(df,num=2,k=3)
+clusters =final[[1]]
+centroids = final[[2]]
+
+#plotting points
+plot(df[clusters == 1,1] , df[clusters == 1,2] ,pch=18,col="blue",xlim=c(0,8),ylim=c(0,3),xlab='x1', ylab= 'x2' , main= 'K-Means Clustring')
+points(df[clusters == 2,1] , df[clusters == 2,2] , pch=18 ,col="red")
+points(df[clusters == 3,1] , df[clusters == 3,2] , pch=18 ,col="black")
+points(centroids[,1],centroids[,2], pch=8 ,col="green" ,cex=1.5)
+
+```
+
+
+##  Problem 3
+
+### 1) K-Means clustring 
+```{r 3-1 , warning=FALSE}
+
+#Reading data to a dataframe
+df=read.csv("rbfClassification.csv",header=TRUE)
+
+final = my.KMeans(df,num=2,k=2)
+clusters =final[[1]]
+centroids = final[[2]]
+
+print(centroids)
+
+
+#plotting points
+plot(df[clusters == 1,1] , df[clusters == 1,2] ,pch=18,col="blue",xlim=c(-3,3),ylim=c(-3,3),xlab='x1', ylab= 'x2' , main= 'K-Means Clustring')
+points(df[clusters == 2,1] , df[clusters == 2,2] , pch=18 ,col="red")
+points(centroids[,1],centroids[,2], pch=12 ,col="green" )  
+```
+
+### 2) RBF classification
+
+```{r 3-2 , warning=FALSE}
+#extraction of data points as classes in separate matrices
+X=as.matrix(df[,1:2])  #data point
+class=as.matrix(df$cls) #classes
+class[class == 0] = -1  #Changing value of 0 one's to -1
+
+dist.to.centroids = dist2(X, centroids, method = "euclid")
+  #distances is data size x centroid size => 20 x 2
+  #col 1 (20x1) is the distance between first centroid and all 20 points in dataset
+  #col 2 (20x1) is the distance between second centroid and all 20 points in dataset
+
+#function for finding accuracy
+rbf.accuracy <- function (gamma) {
+
+#Finding matrix of phi
+tmp = (exp(1))^(-gamma*(dist.to.centroids)^2)
+one.matrix=matrix(rep(1,nrow(df)),nrow=nrow(df))
+phi=cbind(one.matrix,tmp)
+
+#learned weights
+W=ginv(phi) %*% class 
+
+#prediction of classes by learned w's
+predClass = sign(phi %*% W)
+
+class[class == -1] = 0  #Changing value of -1 one's to 0
+predClass[predClass == -1] = 0  #Changing value of -1 one's to 0
+
+return(round(100 * sum(class == predClass) /nrow(df) ,2))
+}
+
+cat("Accuracy rate of RBF  parametric classification with gamms of 0.5 is",rbf.accuracy(0.5),"%\n\n")
+
+#finding a value of gamma with maximim accuracy rate
+gamma.vector = seq(0.001,1,.0005)
+accuracy.vector =sapply(gamma.vector , function(gamma) rbf.accuracy(gamma) )
+max.accuracy= max(accuracy.vector)
+gamma.with.max.accuracy = gamma.vector[which.max(accuracy.vector)]
+cat("Accuracy rate of RBF  parametric classification would be maximum with value of",max(accuracy.vector),"% at gamma of",gamma.vector[which.max(accuracy.vector)],"\n\n")
+plot(gamma.vector , accuracy.vector ,pch=20,col="blue",xlim=c(0,.8),ylim=c(0,100),xlab='gamma', ylab= 'Accuracy Rate' , main= 'Accuracy of RBF classification based on gamma')
+
+
+```
+

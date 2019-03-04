@@ -1,0 +1,730 @@
+---
+title: 'Regularization, Perceptron, and Deep Neural Networks'
+subtitle: |
+          | ANLT 222 - Machine Learning II
+          | Assignment 6
+          |  
+          | 
+author: |  
+        | University of the Pacific 
+        | School of Engineering and Computer Science
+        | MSc in Data Science
+        |
+        | Alan Kuang a_kuang1@u.pacific.edu 
+        | Ali Taheri s_taheritari@u.pacific.edu
+        | 
+date: May 4, 2018
+output: 
+  html_document:
+    fig_height: 8
+    fig_width: 10
+    theme: lumen
+    toc: true
+    numbered_sections: true
+    toc_float:
+      collapsed: no
+  pdf_document:
+    toc: yes
+fontsize: 12pt
+mainfont: Calibri Light
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<br>
+<br>
+
+## Problem 1
+
+<br>
+**Consider a learning scenario where the goal is to learn the target function f(x) = sin(πx) for −1 ≤ x ≤ +1 from two points in the training sets. The two training points in R2 have a uniform distribution between -1 and +1. You will create two models in linear hypothesis set y = mx + b: 1) unregularized, 2) weight-decay regularized (use L2 regularization with λ = 0.1).**<br>
+<br>
+
+### Part I
+
+<br>
+**Generate 10,000 hypotheses for each version. Report the average hypothesis g ̄(x) in each case.**<br>
+<br>
+```{r, comment=NA , message=FALSE}
+# Defining the target function and lambda.
+#
+f_x <- function(x) {
+  sin(pi * x)
+}
+
+
+# Generating 20,000 x-coordinates for both hypothesis versions. The y-coordinates will be generated from applying the
+# target function. Dataframe will contain 10,000 rows, each row containing two ordered pairs.
+#
+set.seed(18)
+
+xy_points <- data.frame(matrix(runif(20000, -1, 1), ncol = 2))
+
+xy_points['Y1'] <- f_x(xy_points$X1)
+xy_points['Y2'] <- f_x(xy_points$X2)
+xy_points <- xy_points[, c('X1', 'Y1', 'X2', 'Y2')]
+
+head(xy_points, 2)
+```
+<br>
+<br>
+```{r, comment=NA , message=FALSE}
+# Creating a function to generate each version of the hypothesis.
+#
+lin.model <- function(df, reg = FALSE, lambda) {
+  
+  # Setting up the dataframe to be returned. 
+  # It will include the intercepts and slopes of the linear models.
+  #
+  betas <- matrix(rep(0, nrow(df) * 2), ncol = 2)
+  
+  # Regularized models.
+  #
+  if(reg == TRUE) {
+    lambda_i <- lambda * diag(2)
+    
+    for (i in 1:nrow(df)) {
+      x <- matrix(c(rep(1, 2), rbind(df[i, 1], df[i, 3])), ncol = 2)
+      y <- rbind(df[i, 2], df[i, 4])
+      beta0 <- (solve(((t(x) %*% x) + lambda_i)) %*% t(x) %*% y)[1]
+      beta1 <- (solve(((t(x) %*% x) + lambda_i)) %*% t(x) %*% y)[2]
+      betas[i,] <- c(beta0, beta1)
+    }
+    return(betas)
+  }
+  
+  # Unregularized models.
+  #
+  if(reg == FALSE) {
+    for (i in 1:nrow(df)) {
+      x <- matrix(c(rep(1, 2), rbind(df[i, 1], df[i, 3])), ncol = 2)
+      y <- rbind(df[i, 2], df[i, 4])
+      beta0 <- (solve(t(x) %*% x) %*% t(x) %*% y)[1]
+      beta1 <- (solve(t(x) %*% x) %*% t(x) %*% y)[2]
+      betas[i,] <- c(beta0, beta1)
+    }
+    return(betas)
+  }
+}
+```
+<br>
+<br>
+```{r, comment=NA , message=FALSE}
+# Applying the function to the datapoints. Then, compute the average hypothesis.
+#
+# Unregularized:
+#
+unreg <- lin.model(xy_points)
+
+g_Bar.unreg <- colMeans(unreg)
+
+# Regularized:
+#
+reg <- lin.model(xy_points, reg = TRUE, 0.1)
+
+g_Bar.reg <- colMeans(reg)
+```
+<br/>
+**Reporting the average hypothesis for each case:**<br/>
+<br/>
+**$\bar{g}(x)_{unregularized} \ = \ $ `r round(g_Bar.unreg[2], 3)` $x \ + \ $ `r round(g_Bar.unreg[1], 3)`** <br/>
+<br/>
+**$\bar{g}(x)_{regularized} \ = \ $ `r round(g_Bar.reg[2], 3)` $x \ + \ $ `r round(g_Bar.reg[1], 3)`** <br/>
+<br/>
+<br/>
+
+### Part II
+
+<br>
+**Find and report $bias^2$ for each model.**<br>
+<br>
+```{r, comment=NA , message=FALSE}
+# Structuring a dataframe to reflect each ordered pair per row, for a total of 20,000 rows.
+#
+xy_pts <- data.frame(matrix(c(rbind(xy_points$X1, xy_points$X2), 
+                              rbind(xy_points$Y1, xy_points$Y2)), ncol = 2))
+
+
+# First, define the g_Bar(x) function for each case.
+#
+unreg.g_Bar <- function(x) {
+    g_Bar.unreg[2] * x + g_Bar.unreg[1]
+}
+
+
+reg.g_Bar <- function(x) {
+    g_Bar.reg[2] * x + g_Bar.reg[1]
+}
+
+
+# Computing the bias squared for the unregularized model.
+#
+# Unregularized:
+#
+bias_sq.unreg <- mean((unreg.g_Bar(xy_pts[, 1]) - f_x(xy_pts[, 1]))^2)
+
+
+# Unregularized:
+#
+bias_sq.reg <- mean((reg.g_Bar(xy_pts[, 1]) - f_x(xy_pts[, 1]))^2)
+```
+<br/>
+**Reporting the $bias^2$ for each model:**<br/>
+<br/>
+$bias^2_{unregularized} \ = \ $ `r round(bias_sq.unreg, 3)` <br/>
+<br/>
+$bias^2_{regularized} \ = \ $ `r round(bias_sq.reg, 3)`<br/>
+<br/>
+<br/>
+
+### Part III
+
+<br>
+**Find and report variance for each model.**<br>
+<br>
+```{r, comment=NA , message=FALSE}
+# Computing the variance for the unregularized model.
+#
+var_x.unreg <- sapply(1:nrow(xy_points), function(x) {
+  mean(((unreg[, 2] - g_Bar.unreg[2]) * xy_points[x, 1] + (unreg[, 1] - g_Bar.unreg[1]))^2)
+  }
+)
+
+var.unreg <- mean(var_x.unreg)
+
+# Computing the variance for the regularized model.
+#
+var_x.reg <- sapply(1:nrow(xy_points), function(x) {
+  mean(((reg[, 2] - g_Bar.reg[2]) * xy_points[x, 1] + (reg[, 1] - g_Bar.reg[1]))^2)
+  }
+)
+
+var.reg <- mean(var_x.reg)
+```
+<br/>
+**Reporting the variance for each model:**<br/>
+<br/>
+$variance_{unregularized} \ = \ $ `r round(var.unreg, 3)` <br/>
+<br/>
+$variance_{regularized} \ = \ $ `r round(var.reg, 3)` <br/>
+<br/>
+<br/>
+
+### Part IV
+
+<br>
+**For each case, plot g ̄(x) ± √var along with g ̄(x) and target function f(x) = sin(πx) . Which model will you choose? Why?**<br>
+<br>
+**Round your answers to 3 decimal places.**<br>
+<br>
+```{r}
+# Computing g ̄(x) ± √var.
+#
+# Unregularized:
+#
+g_Bar.plus_rootVar.unreg <- unreg.g_Bar(xy_points[, 1]) + sqrt(var_x.unreg)
+g_Bar.minus_rootVar.unreg <- unreg.g_Bar(xy_points[, 1]) - sqrt(var_x.unreg)
+
+
+# Regularized:
+#
+g_Bar.plus_rootVar.reg <- reg.g_Bar(xy_points[, 1]) + sqrt(var_x.reg)
+g_Bar.minus_rootVar.reg <- reg.g_Bar(xy_points[, 1]) - sqrt(var_x.reg)
+```
+<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Plotting g ̄(x) ± √var along with g ̄(x) and target function f(x) = sin(πx) , for the unregularized model.
+#
+library(ggplot2)
+
+
+plt1 <- ggplot(data = xy_points, mapping = aes(x = X1))
+
+plt1 +
+  xlim(-1, 1) +
+  stat_function(fun = f_x, size = 1) +
+  stat_function(fun = unreg.g_Bar, color = 'red', size = 1) +
+  geom_ribbon(aes(ymin = g_Bar.minus_rootVar.unreg, ymax = g_Bar.plus_rootVar.unreg), 
+              fill = 'blue', alpha = 0.3) +
+  geom_line(aes(y = g_Bar.plus_rootVar.unreg), color = 'navy', size = 0.5) +
+  geom_line(aes(y = g_Bar.minus_rootVar.unreg), color = 'navy', size = 0.5) +
+  labs(title = 'Learning the Sinusoidal Function\n\nUsing an Unregularized Linear Model',
+       subtitle = 'y = b + mx') +
+  ylab('y    ') + xlab('\nx') +
+  annotate('text', x = c(-0.90, -0.5, 0.625), y = c(0.125, -0.25, -0.375), 
+           label = c('sin(πx)', 'ḡ(x)', 'shaded region:\nḡ(x) ± √var'), size = 5) +
+  theme(plot.title = element_text(hjust = 0.5, size = 16, face = 'bold'),
+        plot.subtitle = element_text(hjust = 0.95, size = 12),
+        axis.title.y = element_text(angle = 0, vjust = 0.5, size = 14),
+        axis.title.x = element_text(size = 14))
+```
+<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Plotting g ̄(x) ± √var along with g ̄(x) and target function f(x) = sin(πx) , for the regularized model.
+#
+plt2 <- ggplot(data = xy_points, mapping = aes(x = X1))
+
+plt2 +
+  xlim(-1, 1) +
+  stat_function(fun = f_x, size = 1) +
+  stat_function(fun = reg.g_Bar, color = 'red', size = 1) +
+  geom_ribbon(aes(ymin = g_Bar.minus_rootVar.reg, ymax = g_Bar.plus_rootVar.reg), 
+              fill = 'blue', alpha = 0.3) +
+  geom_line(aes(y = g_Bar.plus_rootVar.reg), color = 'navy', size = 0.5) +
+  geom_line(aes(y = g_Bar.minus_rootVar.reg), color = 'navy', size = 0.5) +
+  labs(title = 'Learning the Sinusoidal Function\n\nUsing a Regularized Linear Model',
+       subtitle = 'y = b + mx') +
+  ylab('y    ') + xlab('\nx') +
+  annotate('text', x = c(-0.875, -0.5, 0.625), y = c(0, -0.25, -0.375), 
+           label = c('sin(πx)', 'ḡ(x)', 'shaded region:\nḡ(x) ± √var'), size = 5) +
+  theme(plot.title = element_text(hjust = 0.5, size = 16, face = 'bold'),
+        plot.subtitle = element_text(hjust = 0.95, size = 12),
+        axis.title.y = element_text(angle = 0, vjust = 0.5, size = 14),
+        axis.title.x = element_text(size = 14))
+```
+<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Reporting the MSE for each hypothesis; Non-Regularized vs Regularized.
+#
+cat('Non-Regularized Model:\n\n', 
+    'The sum of variance and bias-squared (a.k.a. Mean-Squared Error) is ', 
+    round(sum(var.unreg, bias_sq.unreg), 3), '.', '\n\nRegularized Model:\n\n',
+    'The sum of variance and bias-squared (a.k.a. Mean-Squared Error) is ',
+    round(sum(var.reg, bias_sq.reg), 3), '.')
+```
+<br>
+<br>
+**It is evident that the regularization significantly improved the model's performance, indicating that the trade off of a higher $bias^2$ for a lower $variance$ is a profitable one.**<br>
+<br>
+<br>
+
+## Problem 2
+
+<br>
+**An online rental video company is interested in creating a model to make movie recommendations to one of its customers, Ms. X. As a consultant to this company, you are provided with the history of the movies that she accepted or rejected to watch. She makes her selections solely based on the movie genre and critic ratings. The data is in movieData.csv on Canvas.**<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Importing the dataset.
+#
+movie_df <- read.csv('movieData.csv')
+
+head(movie_df, 2)
+```
+<br>
+<br>
+
+### Part I
+
+<br>
+**Train a perceptron that will create a linear boundary decision that will help the company to make future recommendations to Ms. X. After how many iterations does the algorithm converge?**<br>
+<br>
+```{r}
+# Creating a function for the perceptron algorithm.
+#
+perceptron <- function(X, y, iterations = 10000) {
+  converged <- FALSE
+  X <- cbind(rep(1, nrow(X)), X)
+  
+  # Initializing the weights.
+  w <- matrix(0, nrow = 1, ncol = ncol(X))
+  
+  for(i in 1:iterations) {
+    
+    # Calculating h(x).
+    #
+    h_X <- sign(w %*% t(X))
+    
+    # Selecting misclassified points.
+    #
+    misclassified <- h_X != y
+    
+    # If there are none misclassifications, we have converged.
+    #
+    if(sum(misclassified) == 0) {
+      converged <- TRUE
+      break
+    }
+  
+    else {
+      misclassified_X <- X[misclassified, , drop = FALSE] 
+      misclassified_y <- y[misclassified]
+    
+      # Selecting a single misclassified point.
+      #
+      misclassified_idx <- sample(nrow(misclassified_X), 1)
+      misclassified_pt_X <- misclassified_X[misclassified_idx, , drop = FALSE]
+      misclassified_pt_y <- misclassified_y[misclassified_idx]
+    
+      # Updating the weight vector.
+      #
+      w <- w + misclassified_pt_y * misclassified_pt_X
+    }
+  }
+    
+  if (converged == FALSE) {
+    cat('The algorithm did not converge. Try increasing the number of epochs.')
+  }
+  else {
+    cat('The algorithm converged after ', i, 'iterations.\n\n')
+    return(list(weights = w))
+  }
+}
+```
+<br>
+<br>
+```{r, comment=NA, messages=FALSE}
+# Running the perceptron() function.
+#
+X <- as.matrix(movie_df[, 1:2])
+y <- as.vector(movie_df$Watched)
+
+
+set.seed(18)
+
+perceptron_model <- perceptron(X, y); perceptron_model
+```
+
+### Part II
+
+<br>
+**Upon creating a model, plot the boundary line along with all the data points and axes clearly marked.**<br>
+<br>
+
+```{r}
+# Defining the formula for the boundary line.
+#
+decision.boundary <- function(x) {
+  -(perceptron_model$weights[2]/perceptron_model$weights[3]) * x -
+   (perceptron_model$weights[1]/perceptron_model$weights[3])
+}
+
+
+# Plotting the boundary line with data points.
+#
+Watched <- as.factor(movie_df$Watched)
+
+plt3 <- ggplot(data = movie_df, mapping = aes(x = Genre, y = CriticsRating, color = as.factor(Watched),
+                                              shape = as.factor(Watched)))
+
+plt3 +
+  xlim(min(movie_df$Genre) -0.5, max(movie_df$Genre) +0.5) +
+  geom_point(size = 3.5) +
+  stat_function(fun = decision.boundary, color = 'black', size = 1) +
+  labs(title = '\nPerceptron Learning Algorithm\n',
+       subtitle = 'Decision Boundary Line\n') +
+  ylab("CriticsRating\n") + xlab('\nGenre') +
+  guides(color = guide_legend(title = 'Watched?\n'), shape = guide_legend(title = 'Watched?\n')) +
+  theme(plot.title = element_text(hjust = 0.5, size = 16, face = 'bold'),
+        plot.subtitle = element_text(hjust = 0.5, size = 12),
+        axis.title.y = element_text(size = 14),
+        axis.title.x = element_text(size = 14))
+```
+<br>
+<br>
+
+## Problem 3
+
+<br>
+**In this problem you will use the data in siCoData.csv file to train a neural network. Use the backpropagation algorithm to train a 3-layer (input, hidden, output) neural network. Use stochastic gradient decent (SGD) technique and assume that the activation function for the hidden layer and output layer are tanh and linear, respectively. (You must write your own code for BP and SGD).**<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Importing the dataset.
+#
+sico <- read.csv('siCoData.csv')
+```
+<br>
+<br>
+
+### Part I
+
+<br>
+**The stopping criteria for training in this problem should be a combination of achieving a minimum in-sample error and reaching a maximum number of epochs (In this expression N is the number of observations in the data set and en is the error corresponding to each individual training point). Report the minimum Ein that you could achieve along with the related weights and number of iterations.**<br>
+<br>
+```{r, comment=NA, message=FALSE, warning=FALSE}
+# Determining number of hidden neurons, h. 
+# d is the number of input dimensions.
+#
+d <- 1
+h <- ((nrow(sico)/10 - 1)/(d + 2)) - 1   # We subtract 1 because h must be less than the formula output.
+
+# Initializing the weights, Gaussian distribution with small values. The number of weights will be 
+# calculated by ((d + 1) * h) + (h + 1).
+#
+weights <- rnorm(((d + 1) * h) + (h + 1), mean = 0, sd = 0.1)
+
+# Learning rate, eta.
+#
+eta <- 0.1
+
+# Number of iterations.
+#
+iterations <- 2000
+
+
+for(i in 1:iterations) {
+  
+  # Selecting a random point; uniform distribution.
+  #
+  row <- sample(1:nrow(sico), 1)
+  
+  # Matrix of weights:
+  #   First  row: weights of bias of input layer to 7 nodes of hidden layer.
+  #   Second row: weights of x of input layer to 7 nodes of hidden layer.
+  #   Third row:  weights of 7 nodes from hidden layer to output node.
+  #   Last item of weights vector is weight of bias from hidden layer to output node.
+  w <- matrix(weights[1:(length(weights) - 1)], nrow = 3, byrow = TRUE)
+  
+  # Calculating s for the 7 nodes of hidden layer.
+  #
+  s <- w[1, 1:7] + sico$x[row] * w[2, 1:7]
+  
+  # Calculating the output of the network.
+  #
+  output <- tail(weights, 1) + tanh(s) %*% matrix(w[3, 1:7], nrow = 7)
+  
+  # Calculating the gradient; taking the derivative with respect to each weight.
+  #
+  gradient <- 2 * (output - sico$y[row]) * 
+    c(w[3, 1:7] * (1 - (tanh(s)^2)), # Derivative of output to bias of hidden layer.
+      w[3, 1:7] * (1 - (tanh(s)^2)) * sico$x[row], # Derivative of output to input layer.
+      tanh(s), # Derivative of ouput to hidden layer.
+      1)
+  
+  # Updating the weights vector.
+  #
+  weights <- weights - eta * gradient
+}
+```
+<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Creating the predictions vector.
+# 
+predictions <- rep(0, nrow(sico))
+Error <- 0
+
+for (i in 1:nrow(sico)) {
+  
+  w = matrix(weights[1:21], nrow = 3, byrow = TRUE)
+  
+  s = w[1, 1:7] + sico$x[i] * w[2,1:7]
+  
+  # Calculation of the output of the network.
+  #
+  predictions[i] = weights[22] + tanh(s) %*% matrix(w[3, 1:7] , nrow = 7)
+  
+  Error = Error + (predictions[i] - sico$y[i])^2
+}
+
+
+# Normalizing the total error.
+#
+E.in = Error / nrow(sico)
+
+
+cat("With", iterations, "iterations, we reached the following weights with an MSE of", round(E.in, 3),
+    ":\n\n")
+
+round(weights, 4)
+```
+<br>
+<br>
+
+### Part II
+
+<br>
+**Graph the original data (y vs. x) and the predicted values (yˆ vs. x) on two separate scatter plots.**<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Plotting the original data vs predicted data. 
+#
+par(mfrow = c(1, 2))
+
+plot(sico$x, sico$y, pch = 18, col = "blue", xlim = c(-1, 1), ylim = c(-1, 1), xlab = 'X', ylab = 'Y',
+     main = 'Original Data')
+plot(sico$x, predictions, pch = 18, col = "green", xlim = c(-1, 1), ylim = c(-1, 1), xlab ='X', ylab = 'Y',
+     main = 'Predicted Data')
+```
+<br>
+<br>
+
+## Problem 4
+
+<br>
+**Use the keras package to create an MLP deep NN and a convolutional NN to classify mnist data set. Examine different architectures and fine tune parameters to improve classification results.**<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Loading the mnist dataset.
+#
+library(stats)
+suppressMessages(library(dplyr))
+library(MASS)
+library(keras)
+
+mnist <- dataset_mnist()
+```
+<br>
+<br>
+
+### Part I
+
+<br>
+**Report the architecture of the MLP deep NN and hyper parameters that resulted in the best performance. What is the classification error?**<br>
+<br>
+```{r, comment=NA, message=FALSE, warning=FALSE}
+# Training inputs; array of 60k images with size of 60000 x 28 x 28 reshaped into 60000 x 784, 
+# then rescaled from integers ranging between 0 to 255 into floating point values ranging between 0 and 1.
+#
+x_train <- mnist$train$x
+x_train <- array_reshape(x_train, c(nrow(x_train), 784))
+x_train <- x_train / 255
+
+# Training outputs; array of 60K digits between 0 and 9.
+#
+y_train <- mnist$train$y
+
+# Testing inputs; array of 10K images with size of 10000 x 28 x 28 reshaped into 10000 x 784,
+# then rescaled from integers ranging between 0 to 255 into floating point values ranging between 0 and 1.
+#
+x_test  <- mnist$test$x
+x_test <- array_reshape(x_test, c(nrow(x_test), 784))
+x_test <- x_test / 255
+
+# Testing outputs; an array of 10K digits between 0 and 9.
+#
+y_test  <- mnist$test$y
+
+
+#  One-hot encoding of outputs into binary class matrices.
+#
+y_train <- to_categorical(y_train, 10)
+y_test <- to_categorical(y_test, 10)
+
+
+# Defining the model: (784 + 1) x (256 + 1) x (128 + 1) x 10 nodes.
+#
+model.mlp <- keras_model_sequential() 
+model.mlp %>% 
+  layer_dense(units = 256, activation = 'relu', input_shape = c(784)) %>% 
+  layer_dropout(rate = 0.4) %>% 
+  layer_dense(units = 128, activation = 'relu') %>%
+  layer_dropout(rate = 0.3) %>%
+  layer_dense(units = 10, activation = 'softmax')
+
+summary(model.mlp)
+
+
+# Compiling the model with the appropriate loss function, optimizer, and metrics.
+#
+model.mlp %>% 
+  compile(
+    loss = 'categorical_crossentropy', 
+    optimizer = optimizer_rmsprop(),
+    metrics = c('accuracy')
+)
+
+# Using the fit() function to train the model with epochs = 30, and batch_size = 128.
+#
+history.mlp <- model.mlp %>% 
+  fit(
+    x_train, y_train,
+    epochs = 30, batch_size = 128, 
+    validation_split = 0.2
+)
+
+plot(history.mlp)
+```
+<br>
+<br>
+```{r, comment=NA, message=FALSE, warning=FALSE}
+# Evaluating the model's performance on the test data.
+#
+
+scores.mlp = model.mlp %>% evaluate(x_test, y_test, verbose = 0)
+
+cat('Test loss:\t', scores.mlp[[1]], '\n\nTest accuracy:\t', scores.mlp[[2]])
+```
+<br>
+<br>
+
+### Part II
+
+<br>
+**Report the architecture of the convolutional NN and hyper parameters that resulted in the best performance. What is the classification error?**<br>
+<br>
+```{r, comment=NA, message=FALSE}
+# Training data.
+#
+x_train.cnn <- array(as.numeric(mnist$train$x), dim = c(dim(mnist$train$x)[[1]], 28, 28, 1))/255
+
+y_train.cnn = to_categorical(mnist$train$y, 10)
+
+# Test data.
+#
+x_test.cnn <- array(as.numeric(mnist$test$x), dim = c(dim(mnist$test$x)[[1]], 28, 28, 1))/255
+
+y_test.cnn = to_categorical(mnist$test$y, 10)
+
+
+# Model definition with 784 x 3164 x 1000 x 10 nodes.
+#
+model.cnn <- keras_model_sequential()
+model.cnn %>%
+  layer_conv_2d(filters = 32, kernel_size = c(3, 3), activation = 'relu', 
+                input_shape = c(28, 28, 1)) %>% 
+  layer_max_pooling_2d(pool_size = c(2, 2)) %>% 
+  layer_dropout(rate = 0.2) %>% 
+  layer_flatten() %>% 
+  layer_dense(units = 128, activation = 'relu') %>% 
+  layer_dropout(rate = 0.5) %>% 
+  layer_dense(units = 10, activation = 'softmax')
+
+
+summary(model.cnn)
+
+
+# Compiling the model with the appropriate loss function, optimizer, and metrics.
+#
+model.cnn %>% 
+  compile(
+    loss = loss_categorical_crossentropy, 
+    optimizer = optimizer_adam(),
+    metrics = c('accuracy')
+    )
+
+# Using the fit() function to train the model with epochs = 30, and batch_size = 128.
+#
+history.cnn = model.cnn %>% 
+  fit(
+    x = x_train.cnn, y = y_train.cnn, 
+    batch_size = 128, epochs = 10, 
+    validation_split = 0.2
+    )
+
+plot(history.cnn)
+```
+<br>
+<br>
+```{r, comment=NA, message=FALSE, warning=FALSE}
+# Evaluating the model's performance on the test data.
+#
+
+scores.cnn = model.cnn %>% evaluate(x_test.cnn, y_test.cnn, verbose = 0)
+
+cat('Test loss:\t', scores.cnn[[1]], '\n\nTest accuracy:\t', scores.cnn[[2]])
+```
+<br>
+<br>
+
+### Part III
+
+<br>
+**Report the most important architectural manipulations that lead to improving the performance.**<br>
+<br>
+We can see that the accuracy of the **Convolutional Neural Network** is about `r round((scores.cnn[[2]] - scores.mlp[[2]]) * 100, 1)` percent higher than **Multi-Layered Perceptron Deep Neural Network**, which is not very significant. The loss is about `r round((scores.cnn[[2]] - scores.mlp[[2]]), 3)` less.<br>
+<br>
+The reason is that MNIST dataset is quite simple. The images are small (only 28 x 28 pixels), are single layered (i.e. greyscale, rather than a colored 3 layer RGB image), and include pretty simple shapes (digits only, no other objects). Once we start trying to classify things in more complicated colored images such as buses, cars, trains etc., we will see a bigger discrepancy with the accuracies between the two models. Because of this issue, usage of CNN does not outperforms MLP deep NN considerably. One important hyper parameter is dropout rate in each layer that would prevent overfitting and could increase accuracy rate. With trial and error, we can reach the optimum values for each type of neural network.
